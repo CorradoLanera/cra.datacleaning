@@ -1,18 +1,121 @@
 ---
-title: "Data Cleaning for Clinical Research Academy"
+title: "Data Cleaning nella Ricerca Clinica"
+author:
+  - name: Corrado Lanera, Ph.D.
+    url: https://www.CorradoLanera.it
+    affiliation: Unit of Biostatistics, Epidemiology, and Public Health -- University of Padova (IT)
+    affiliation_url: http://www.unipd-ubep.it
+    orcid_id: 0000-0002-0520-7428
+date: "`r Sys.Date()`"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  Una panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R).
 site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
 ```
+
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "Panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R).",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "CorradoLanera/cra.datacleaning") %>% 
+  meta_social(
+    title = "Data Cleaning nella Ricerca Clinica",
+    url = "",
+    image = "",
+    image_alt = "",
+    og_type = "website",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@CorradoLanera"
+  )
+```
+
+## Benvenuto
+
+Grazie per aver deciso di partecipare a questo breve corso di un paio d'ore sul _data cleaning_! Di seguito trovi il materiale utilizzato da me, Corrado Lanera, per il suo svolgimento nel contesto dei corsi offerti gratuitamente da [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/) e pensati nel contesto del loro percorso formativo [Clinical Research Accademy](https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy).
+
+<aside>Il corso e tutto il materiale è in lingua italiana.</aside>
+
+```{r, include=FALSE, fig.cap="[Slides](slides/index.html)"}
+knitr::include_url("slides/index.html")
+```
+
+Il corso sarà incentrato sull'introdurre le principali problematiche, e le corrispondenti soluzioni (con esempi pratici in R), per una corretta e fedele importazione di dati clinici; il tutto al fine di poterli analizzare, con confidenza di correttezza, tramite programmi di analisi di dati e statistici.
+
+Introdurrò quindi le principali problematiche in cui ci si può imbattere quando importiamo dati clinici (a partire da _come_ ci vengono forniti), analizzandone le cause, i possibili effetti indesiderati che si potrebbero verificare nel caso in cui tali problematiche non venissero gestite, e infine proporrò per ciascuno alcuni metodi pratici, con esempi in R, per poterli gestire al meglio.
+
+Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affrontare le principali problematiche legate al _data cleaning_ nell'ambito della ricerca clinica. Potendole affrontare in modo robusto ed efficiente. In particolare, verrai a conoscenza delle funzionalità principali che ti potranno essere utili tra quelle offerte dai pacchetti R: 
+[`{dplyr}`](https://dplyr.tidyverse.org/), [`{janitor}`](https://garthtarr.github.io/meatR/janitor.html), [`{naniar}`](https://naniar.njtierney.com/), [`{readr}`](https://readr.tidyverse.org/), [`{stringr}`](https://stringr.tidyverse.org/), [`{tidyr}`](https://tidyr.tidyverse.org/), e [`{unheadr}`](https://unheadr.liomys.mx/).
+
+Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto questo sia certamente un limite, ci permette di poter registrare il corso a beneficio futuro di quanti non avessero potuto partecipare in diretta. A garanzia di protezione della privacy di tutti i partecipanti, non potrai attivare la tua webcam né il microfono. La possibilità di porre (e rispondere a) domande in modo scritto e mediato sarà comunque garantita.
+
+
+\
+
+## Operazioni Preliminari
+
+### Essenziali
+
++ La piattaforma utilizzata per il corso sarà [GoToWebinar](https://www.goto.com/it/webinar), assicurati di soddisfare i [requisiti minimi di sistema](https://support.goto.com/it/webinar#Standard) per poter partecipare.
+
+
+
+### Opzionali
+
+Per (e)seguire tu stesso gli esempi applicati proposti, ti consiglio di aver installato in anticipo, sul computer che utilizzerai, i seguenti software:
+
+* Una versione recente di R (>=4.0.0), scaricabile gratuitamente da <https://cran.r-project.org/>
+
+* Una versione recente di RStudio (>=1.4.0), scaricabile gratuitamente da <https://www.rstudio.com/download> (Licenza Open Source di RStudio Desktop)
+
+* I pacchetti che utilizzeremo saranno quelli riportati di seguito, i quali possono essere installati, collegandosi a internet, aprendo RStudio, ed eseguendo la seguente riga di codice nella console:
+
+    ```{r echo=TRUE, eval = FALSE}
+    install.packages(c("tidyverse", "janitor", "unheadr", "naniar"))
+
+    ```
+<aside>Il giorno del corso, fornirò un link a un progetto RStudio Cloud che conterrà tutto il materiale utile per il corso, oltre ad avere già installati tutti i pacchetti che useremo. Se tu preferissi (e)seguire gli esempi su tale piattaforma remota, invece che su un _tuo_ computer, è necessario (ma sufficiente) che tu abbia un account su [RStudio Cloud](https://rstudio.cloud/); se già non ce l'hai, puoi crearlo gratuitaemnte su <https://rstudio.cloud/>.</aside>
+
+
+## Data e ora
+
+- **Dal vivo**: 13 Ottobre 2021 | 14:30--16:30
+
+- **Registrato**: A seguire (post _tempi tecnici_ di messa on-line)
+
+
+\
+
+Ti aspetto al corso!! `r emo::ji("popper")``
+
+Corrado.
+
+
+
+
+
+
+\
+
+## Link
+
+### Ambiente di lavoro remoto
+
++ [RStudio Cloud workspace](https://bit.ly/datacleaning-cra)
+
+### Slide
+
++ [01: Introduzione](slides/01-introduzione.html)
++ [06: Case study](slides/06-case-study.html)
+
+
+
+## Crediti {.appendix}
+
+Questo sito Web è stato costruito utilizzando il pacchetto R [{distill}](https://rstudio.github.io/distill/) e un tema personalizzato creato da [Alison Hill](https://www.apreshill.com/) & [Desirée De Leon](https://desiree.rbind.io/).
 

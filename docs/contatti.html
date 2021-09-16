@@ -86,29 +86,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Data Cleaning for Clinical Research Academy: About this site</title>
+  <title>Data Cleaning nella Ricerca Clinica: Contatti</title>
 
-  <meta property="description" itemprop="description" content="Some additional details about the website"/>
+  <meta property="description" itemprop="description" content="Alcuni link utili."/>
 
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Data Cleaning for Clinical Research Academy: About this site"/>
+  <meta property="og:title" content="Data Cleaning nella Ricerca Clinica: Contatti"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Some additional details about the website"/>
+  <meta property="og:description" content="Alcuni link utili."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Data Cleaning for Clinical Research Academy"/>
+  <meta property="og:site_name" content="Data Cleaning nella Ricerca Clinica"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Data Cleaning for Clinical Research Academy: About this site"/>
-  <meta property="twitter:description" content="Some additional details about the website"/>
+  <meta property="twitter:title" content="Data Cleaning nella Ricerca Clinica: Contatti"/>
+  <meta property="twitter:description" content="Alcuni link utili."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["About this site"]},{"type":"character","attributes":{},"value":["Some additional details about the website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Contatti"]},{"type":"character","attributes":{},"value":["Alcuni link utili."]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2043,8 +2044,200 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
+  <style type="text/css">
+  @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:300, 300i&display=swap');
+
+  @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
+
+  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+
+  body {
+    font-family: "Lato";
+    /*color: #1f1f1f;*/
+    color: #404040;
+    font-size: 16px;
+  }
+
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Noto Serif JP";
+    letter-spacing: 2px;
+    line-height: 2rem; /* increases, so wrapping headers don't overlap */ 
+    color: #ca225e;
+    font-weight: 300;
+  }
+
+  d-title {
+    padding-top: 13rem; /*so that navbar doesn't overlap fixed title */
+  }
+
+  d-title h1,
+  d-article h2 {
+  	font-weight: 300;
+  }
+
+
+  /* --------------Navbar-------------------- */
+
+
+  /* background-image for fade-to-white color of navbar */
+  .distill-site-header{ 
+    padding: 40px 0px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255,255,255,0.5));   
+    background-color: transparent;
+    font-size: 15px;
+    font-family: "Noto Serif JP";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .distill-site-header .logo img{
+    max-height: 40px; /* Makes logo bigger, default was 20px */
+  }
+
+  /* dropdown navbar color on mobile */
+
+  @media screen and (max-width: 768px){
+    .distill-site-header.responsive {
+        background: rgba(255,255,255,0.99);
+    }
+  }
+
+
+  /* Navbar Links with Animated Hover */ 
+
+
+  .distill-site-header a { /* A normal link in navbar */
+    color: #1f1f1f;
+    display: inline-block; /* This line and line below is so pseudo-element will work later */
+    position: relative; 
+    text-decoration: none;
+    padding-left: 0px; /* overrides default so animation looks Ok */
+    padding-right: 0px; /* overrides default so animation looks Ok */
+    margin: 10px 14px; /* replaces default padding values for margin values */
+  }
+
+
+  .distill-site-header a:hover { /* (unanimated) hover behavior for navbar links */
+    color: #787878;
+    padding-left: 0px; /* overrides default so animation looks Ok */
+    padding-right: 0px; /* overrides default so animation looks Ok */
+    margin: 10px 14px; /* replaces default padding values for margin values */
+  }
+
+  .distill-site-header a:before { /*Creates pseudoelement line under link */
+    background-color: #787878;
+    content: '';
+    height: 1px; 
+    position: absolute;
+    bottom: -1px;
+    transition: width 0.3s ease-in-out; /* animate the width */
+    width: 100%;
+  }
+
+  .distill-site-header a:hover:before {
+    width: 0; /* Shrinks width of pseudoelement to 0 when hovered */
+  }
+
+  /* Makes sure animation does NOT apply to Title or Logo links (or toggle on mobile) */
+
+  .distill-site-header a.title:before, .distill-site-nav a.logo:before, a.nav-toggle:before {
+    display: none;
+  }
+
+  .distill-site-header a.title, .distill-site-nav a.logo {
+    padding: 10px 0px;
+    margin: 10px 14px;
+  }
+
+
+  /* No navbar links on mobile except title and nav-toggle */
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown {
+      display: none;
+    }
+    
+    .distill-site-header a.title, .distill-site-header a.nav-toggle {
+      display: inline-block;
+      padding: 10px 0px;
+      margin: 10px 14px; 
+    }
+  }
+
+  /* -------------Appendix---------------- */
+
+  d-appendix {
+    background-color: #fdf7f9;
+    border-top: none !important;
+    color: #1a162d !important;
+  }
+
+  /* -------------Footer------------------*/
+
+  .distill-site-footer {
+    color: #7e7b88;
+    background-color: #ca225e3d;
+    margin-top: 0px;
+    padding: 50px 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 12px;
+    
+  }
+
+  d-byline div.byline.grid div p,
+  d-byline,
+  d-byline p,
+  p.author,
+  p.affiliation,
+  d-byline h3,
+  .d-toc,
+  .d-toc-header,
+  .d-toc ul,
+  d-appendix p {
+  	font-size: 0.9rem;
+  }
+
+  d-appendix h3 + * {
+  	margin-top: 1.5em !important;
+  }
+
+
+  /*----- COLORED LIST BULLET----*/
+
+  d-article ul {
+    list-style: none; /* Remove default bullets */
+  }
+
+  d-article ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #CA225E; /* Change the color */
+    font-weight: normal; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1.5em; /* Also needed for space (tweak if needed) */
+    margin-left: -1.5em; /* Also needed for space (tweak if needed) */
+  }
+
+  d-article ul > li > p {
+    display: inline; /* to have content show up next to bullet */
+    line-height: 1.6em;
+  }
+
+  d-article ul > li { /*to add back in space between bullet items that I took away by making p display inline */
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .d-toc ul li::before {
+    content: " ";  /* Remove toc bullets */
+  }
+
+  </style>
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="styles.css" type="text/css"/>
 
 </head>
 
@@ -2053,7 +2246,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"About this site","description":"Some additional details about the website","authors":[]}
+{"title":"Contatti","description":"Alcuni link utili.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2061,11 +2254,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a href="index.html" class="title">Data Cleaning for Clinical Research Academy</a>
+<a class="logo" href="https://CorradoLanera.it">
+<img src="images/logo.png" alt="Logo"/>
+</a>
+<a href="index.html" class="title">Data Cleaning nella Ricerca Clinica</a>
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
-<a href="about.html">About</a>
+<a href="slides/data-cleaning-slide.html">Slide</a>
+<a href="contatti.html">Contatti</a>
+<a href="https://github.com/CorradoLanera/cra.datacleaning">
+<i class="fab fa-github" aria-hidden="true"></i>
+</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2075,14 +2275,50 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>About this site</h1>
+<h1>Contatti</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Some additional details about the website</p></p>
+<p><p>Alcuni link utili.</p></p>
 </div>
 
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#corrado-lanera">Corrado Lanera</a>
+<ul>
+<li><a href="#web">Web</a></li>
+<li><a href="#social">Social</a></li>
+<li><a href="#contacts">Contacts</a></li>
+</ul></li>
+<li><a href="#formazione-nel-farmaceutico">Formazione nel Farmaceutico</a>
+<ul>
+<li><a href="#web-1">Web</a></li>
+<li><a href="#academy">Academy</a></li>
+<li><a href="#social-1">Social</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h2 id="corrado-lanera">Corrado Lanera</h2>
+<h3 id="web">Web</h3>
+<p><a href="https://www.CorradoLanera.it"><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a> <a href="https://www.CorradoLanera.it">www.CorradoLanera.it</a></p>
+<h3 id="social">Social</h3>
+<p><a href="https://twitter.com/corradolanera"><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a> <a href="https://twitter.com/corradolanera">@CorradoLanera</a></p>
+<p><a href="https://telegram.me/CorradoLanera"><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg></a> <a href="https://telegram.me/CorradoLanera">@CorradoLanera</a></p>
+<h3 id="contacts">Contacts</h3>
+<p><a href="mailto:corrado.lanera@ubep.unipd.it"><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg></a> <a href="mailto:corrado.lanera@ubep.unipd.it">corrado.lanera@ubep.unipd.it</a></p>
+<p><a href="mailto:corrado.lanera@gmail.com"><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg></a> <a href="mailto:corrado.lanera@gmail.com">corrado.lanera@gmail.com</a></p>
+<p><a href="https://calendly.com/corradolanera"><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M436 160H12c-6.627 0-12-5.373-12-12v-36c0-26.51 21.49-48 48-48h48V12c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v52h128V12c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v52h48c26.51 0 48 21.49 48 48v36c0 6.627-5.373 12-12 12zM12 192h424c6.627 0 12 5.373 12 12v260c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V204c0-6.627 5.373-12 12-12zm333.296 95.947l-28.169-28.398c-4.667-4.705-12.265-4.736-16.97-.068L194.12 364.665l-45.98-46.352c-4.667-4.705-12.266-4.736-16.971-.068l-28.397 28.17c-4.705 4.667-4.736 12.265-.068 16.97l82.601 83.269c4.667 4.705 12.265 4.736 16.97.068l142.953-141.805c4.705-4.667 4.736-12.265.068-16.97z"/></svg></a> <a href="https://calendly.com/corradolanera">calendly.com/corradolanera</a></p>
+<h2 id="formazione-nel-farmaceutico">Formazione nel Farmaceutico</h2>
+<h3 id="web-1">Web</h3>
+<p><a href="https://formazionenelfarmaceutico.com/"><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a> <a href="https://formazionenelfarmaceutico.com/">FormazioneNelFarmaceutico.com/</a></p>
+<h3 id="academy">Academy</h3>
+<p><a href="https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy"><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a> <a href="https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy">ClincalResearchAcademy</a></p>
+<h3 id="social-1">Social</h3>
+<p><a href="https://t.me/FormazioneNelFarmaceutico"><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg></a> <a href="https://t.me/FormazioneNelFarmaceutico">@FormazioneNelFarmaceutico</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2095,7 +2331,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+<h3 id="updates-and-corrections">Corrections</h3>
+<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/CorradoLanera/cra.datacleaning/issues/new">create an issue</a> on the source repository.</p>
+<h3 id="reuse">Reuse</h3>
+<p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Source code is available at <a href="https://github.com/CorradoLanera/cra.datacleaning">https://github.com/CorradoLanera/cra.datacleaning</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

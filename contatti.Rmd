@@ -1,0 +1,47 @@
+---
+title: "Contatti"
+description: |
+  Alcuni link utili.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Corrado Lanera
+
+### Web
+[`r fontawesome::fa("link")` ](https://www.CorradoLanera.it) [www.CorradoLanera.it](https://www.CorradoLanera.it)
+
+
+### Social
+
+[`r fontawesome::fa("twitter")` ](https://twitter.com/corradolanera) [\@CorradoLanera](https://twitter.com/corradolanera)
+
+[`r fontawesome::fa("telegram-plane")` ](https://telegram.me/CorradoLanera) [\@CorradoLanera](https://telegram.me/CorradoLanera)
+
+
+### Contacts
+
+[`r fontawesome::fa("envelope")` ](mailto:corrado.lanera@ubep.unipd.it) [corrado.lanera@ubep.unipd.it](mailto:corrado.lanera@ubep.unipd.it)
+
+[`r fontawesome::fa("envelope")` ](mailto:corrado.lanera@gmail.com) [corrado.lanera@gmail.com](mailto:corrado.lanera@gmail.com)
+
+[`r fontawesome::fa("calendar-check")` ](https://calendly.com/corradolanera) [calendly.com/corradolanera](https://calendly.com/corradolanera)
+
+
+
+## Formazione nel Farmaceutico
+
+### Web
+
+[`r fontawesome::fa("link")` ](https://formazionenelfarmaceutico.com/) [FormazioneNelFarmaceutico.com/](https://formazionenelfarmaceutico.com/)
+
+### Academy
+
+[`r fontawesome::fa("link")` ](https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy) [ClincalResearchAcademy](https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy)
+
+
+### Social
+
+[`r fontawesome::fa("telegram-plane")` ](https://t.me/FormazioneNelFarmaceutico) [\@FormazioneNelFarmaceutico](https://t.me/FormazioneNelFarmaceutico)

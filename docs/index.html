@@ -86,29 +86,34 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Data Cleaning for Clinical Research Academy</title>
+  <title>Data Cleaning nella Ricerca Clinica</title>
 
-  <meta property="description" itemprop="description" content="Welcome to the website. I hope you enjoy it!"/>
+  <meta property="description" itemprop="description" content="Una panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R)."/>
 
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-09-16"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-09-16"/>
+  <meta name="article:author" content="Corrado Lanera, Ph.D."/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Data Cleaning for Clinical Research Academy"/>
+  <meta property="og:title" content="Data Cleaning nella Ricerca Clinica"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Welcome to the website. I hope you enjoy it!"/>
+  <meta property="og:description" content="Una panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R)."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Data Cleaning for Clinical Research Academy"/>
+  <meta property="og:site_name" content="Data Cleaning nella Ricerca Clinica"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Data Cleaning for Clinical Research Academy"/>
-  <meta property="twitter:description" content="Welcome to the website. I hope you enjoy it!"/>
+  <meta property="twitter:title" content="Data Cleaning nella Ricerca Clinica"/>
+  <meta property="twitter:description" content="Una panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R)."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["Data Cleaning for Clinical Research Academy"]},{"type":"character","attributes":{},"value":["Welcome to the website. I hope you enjoy it!\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","description","site"]}},"value":[{"type":"character","attributes":{},"value":["Data Cleaning nella Ricerca Clinica"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url","orcid_id"]}},"value":[{"type":"character","attributes":{},"value":["Corrado Lanera, Ph.D."]},{"type":"character","attributes":{},"value":["https://www.CorradoLanera.it"]},{"type":"character","attributes":{},"value":["Unit of Biostatistics, Epidemiology, and Public Health -- University of Padova (IT)"]},{"type":"character","attributes":{},"value":["http://www.unipd-ubep.it"]},{"type":"character","attributes":{},"value":["0000-0002-0520-7428"]}]}]},{"type":"character","attributes":{},"value":["2021-09-16"]},{"type":"character","attributes":{},"value":["Una panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R).\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2034,6 +2039,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+  <meta name="description" content="Panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R)."/>
+  <meta name="generator" content="xaringan and remark.js"/>
+  <meta name="github-repo" content="CorradoLanera/cra.datacleaning"/>
+  <meta name="twitter:title" content="Data Cleaning nella Ricerca Clinica"/>
+  <meta name="twitter:description" content="Panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R)."/>
+  <meta name="twitter:url" content=""/>
+  <meta name="twitter:image" content=""/>
+  <meta name="twitter:image:alt" content=""/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:creator" content="@CorradoLanera"/>
+  <meta name="twitter:site" content="@CorradoLanera"/>
+  <meta property="og:title" content="Data Cleaning nella Ricerca Clinica"/>
+  <meta property="og:description" content="Panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R)."/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content=""/>
+  <meta property="og:image:alt" content=""/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="en_US"/>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2043,8 +2066,200 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
+  <style type="text/css">
+  @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:300, 300i&display=swap');
+
+  @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
+
+  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+
+  body {
+    font-family: "Lato";
+    /*color: #1f1f1f;*/
+    color: #404040;
+    font-size: 16px;
+  }
+
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Noto Serif JP";
+    letter-spacing: 2px;
+    line-height: 2rem; /* increases, so wrapping headers don't overlap */ 
+    color: #ca225e;
+    font-weight: 300;
+  }
+
+  d-title {
+    padding-top: 13rem; /*so that navbar doesn't overlap fixed title */
+  }
+
+  d-title h1,
+  d-article h2 {
+  	font-weight: 300;
+  }
+
+
+  /* --------------Navbar-------------------- */
+
+
+  /* background-image for fade-to-white color of navbar */
+  .distill-site-header{ 
+    padding: 40px 0px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255,255,255,0.5));   
+    background-color: transparent;
+    font-size: 15px;
+    font-family: "Noto Serif JP";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .distill-site-header .logo img{
+    max-height: 40px; /* Makes logo bigger, default was 20px */
+  }
+
+  /* dropdown navbar color on mobile */
+
+  @media screen and (max-width: 768px){
+    .distill-site-header.responsive {
+        background: rgba(255,255,255,0.99);
+    }
+  }
+
+
+  /* Navbar Links with Animated Hover */ 
+
+
+  .distill-site-header a { /* A normal link in navbar */
+    color: #1f1f1f;
+    display: inline-block; /* This line and line below is so pseudo-element will work later */
+    position: relative; 
+    text-decoration: none;
+    padding-left: 0px; /* overrides default so animation looks Ok */
+    padding-right: 0px; /* overrides default so animation looks Ok */
+    margin: 10px 14px; /* replaces default padding values for margin values */
+  }
+
+
+  .distill-site-header a:hover { /* (unanimated) hover behavior for navbar links */
+    color: #787878;
+    padding-left: 0px; /* overrides default so animation looks Ok */
+    padding-right: 0px; /* overrides default so animation looks Ok */
+    margin: 10px 14px; /* replaces default padding values for margin values */
+  }
+
+  .distill-site-header a:before { /*Creates pseudoelement line under link */
+    background-color: #787878;
+    content: '';
+    height: 1px; 
+    position: absolute;
+    bottom: -1px;
+    transition: width 0.3s ease-in-out; /* animate the width */
+    width: 100%;
+  }
+
+  .distill-site-header a:hover:before {
+    width: 0; /* Shrinks width of pseudoelement to 0 when hovered */
+  }
+
+  /* Makes sure animation does NOT apply to Title or Logo links (or toggle on mobile) */
+
+  .distill-site-header a.title:before, .distill-site-nav a.logo:before, a.nav-toggle:before {
+    display: none;
+  }
+
+  .distill-site-header a.title, .distill-site-nav a.logo {
+    padding: 10px 0px;
+    margin: 10px 14px;
+  }
+
+
+  /* No navbar links on mobile except title and nav-toggle */
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown {
+      display: none;
+    }
+    
+    .distill-site-header a.title, .distill-site-header a.nav-toggle {
+      display: inline-block;
+      padding: 10px 0px;
+      margin: 10px 14px; 
+    }
+  }
+
+  /* -------------Appendix---------------- */
+
+  d-appendix {
+    background-color: #fdf7f9;
+    border-top: none !important;
+    color: #1a162d !important;
+  }
+
+  /* -------------Footer------------------*/
+
+  .distill-site-footer {
+    color: #7e7b88;
+    background-color: #ca225e3d;
+    margin-top: 0px;
+    padding: 50px 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 12px;
+    
+  }
+
+  d-byline div.byline.grid div p,
+  d-byline,
+  d-byline p,
+  p.author,
+  p.affiliation,
+  d-byline h3,
+  .d-toc,
+  .d-toc-header,
+  .d-toc ul,
+  d-appendix p {
+  	font-size: 0.9rem;
+  }
+
+  d-appendix h3 + * {
+  	margin-top: 1.5em !important;
+  }
+
+
+  /*----- COLORED LIST BULLET----*/
+
+  d-article ul {
+    list-style: none; /* Remove default bullets */
+  }
+
+  d-article ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #CA225E; /* Change the color */
+    font-weight: normal; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1.5em; /* Also needed for space (tweak if needed) */
+    margin-left: -1.5em; /* Also needed for space (tweak if needed) */
+  }
+
+  d-article ul > li > p {
+    display: inline; /* to have content show up next to bullet */
+    line-height: 1.6em;
+  }
+
+  d-article ul > li { /*to add back in space between bullet items that I took away by making p display inline */
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .d-toc ul li::before {
+    content: " ";  /* Remove toc bullets */
+  }
+
+  </style>
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="styles.css" type="text/css"/>
 
 </head>
 
@@ -2053,7 +2268,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Data Cleaning for Clinical Research Academy","description":"Welcome to the website. I hope you enjoy it!","authors":[]}
+{"title":"Data Cleaning nella Ricerca Clinica","description":"Una panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R).","authors":[{"author":"Corrado Lanera, Ph.D.","authorURL":"https://www.CorradoLanera.it","affiliation":"Unit of Biostatistics, Epidemiology, and Public Health -- University of Padova (IT)","affiliationURL":"http://www.unipd-ubep.it","orcidID":"0000-0002-0520-7428"}],"publishedDate":"2021-09-16T00:00:00.000+02:00","citationText":"Ph.D., 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2061,11 +2276,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a href="index.html" class="title">Data Cleaning for Clinical Research Academy</a>
+<a class="logo" href="https://CorradoLanera.it">
+<img src="images/logo.png" alt="Logo"/>
+</a>
+<a href="index.html" class="title">Data Cleaning nella Ricerca Clinica</a>
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
-<a href="about.html">About</a>
+<a href="slides/data-cleaning-slide.html">Slide</a>
+<a href="contatti.html">Contatti</a>
+<a href="https://github.com/CorradoLanera/cra.datacleaning">
+<i class="fab fa-github" aria-hidden="true"></i>
+</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2075,14 +2297,97 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Data Cleaning for Clinical Research Academy</h1>
+<h1>Data Cleaning nella Ricerca Clinica</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Welcome to the website. I hope you enjoy it!</p></p>
+<p><p>Una panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R).</p></p>
 </div>
 
+<div class="d-byline">
+  Corrado Lanera, Ph.D. <a href="https://www.CorradoLanera.it" class="uri">https://www.CorradoLanera.it</a> (Unit of Biostatistics, Epidemiology, and Public Health – University of Padova (IT))<a href="http://www.unipd-ubep.it" class="uri">http://www.unipd-ubep.it</a>
+  
+<br/>2021-09-16
+</div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#benvenuto">Benvenuto</a></li>
+<li><a href="#operazioni-preliminari">Operazioni Preliminari</a>
+<ul>
+<li><a href="#essenziali">Essenziali</a></li>
+<li><a href="#opzionali">Opzionali</a></li>
+</ul></li>
+<li><a href="#data-e-ora">Data e ora</a></li>
+<li><a href="#link">Link</a>
+<ul>
+<li><a href="#ambiente-di-lavoro-remoto">Ambiente di lavoro remoto</a></li>
+<li><a href="#slide">Slide</a></li>
+</ul></li>
+<li><a href="#crediti">Crediti</a></li>
+</ul>
+</nav>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 id="benvenuto">Benvenuto</h2>
+<p>Grazie per aver deciso di partecipare a questo breve corso di un paio d’ore sul <em>data cleaning</em>! Di seguito trovi il materiale utilizzato da me, Corrado Lanera, per il suo svolgimento nel contesto dei corsi offerti gratuitamente da <a href="https://formazionenelfarmaceutico.com/">FormazioneNelFarmaceutico</a> e pensati nel contesto del loro percorso formativo <a href="https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy">Clinical Research Accademy</a>.</p>
+<aside>
+Il corso e tutto il materiale è in lingua italiana.
+</aside>
+<p>Il corso sarà incentrato sull’introdurre le principali problematiche, e le corrispondenti soluzioni (con esempi pratici in R), per una corretta e fedele importazione di dati clinici; il tutto al fine di poterli analizzare, con confidenza di correttezza, tramite programmi di analisi di dati e statistici.</p>
+<p>Introdurrò quindi le principali problematiche in cui ci si può imbattere quando importiamo dati clinici (a partire da <em>come</em> ci vengono forniti), analizzandone le cause, i possibili effetti indesiderati che si potrebbero verificare nel caso in cui tali problematiche non venissero gestite, e infine proporrò per ciascuno alcuni metodi pratici, con esempi in R, per poterli gestire al meglio.</p>
+<p>Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affrontare le principali problematiche legate al <em>data cleaning</em> nell’ambito della ricerca clinica. Potendole affrontare in modo robusto ed efficiente. In particolare, verrai a conoscenza delle funzionalità principali che ti potranno essere utili tra quelle offerte dai pacchetti R: <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a>, <a href="https://garthtarr.github.io/meatR/janitor.html"><code>{janitor}</code></a>, <a href="https://naniar.njtierney.com/"><code>{naniar}</code></a>, <a href="https://readr.tidyverse.org/"><code>{readr}</code></a>, <a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a>, <a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a>, e <a href="https://unheadr.liomys.mx/"><code>{unheadr}</code></a>.</p>
+<p>Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto questo sia certamente un limite, ci permette di poter registrare il corso a beneficio futuro di quanti non avessero potuto partecipare in diretta. A garanzia di protezione della privacy di tutti i partecipanti, non potrai attivare la tua webcam né il microfono. La possibilità di porre (e rispondere a) domande in modo scritto e mediato sarà comunque garantita.</p>
+<p><br />
+</p>
+<h2 id="operazioni-preliminari">Operazioni Preliminari</h2>
+<h3 id="essenziali">Essenziali</h3>
+<ul>
+<li>La piattaforma utilizzata per il corso sarà <a href="https://www.goto.com/it/webinar">GoToWebinar</a>, assicurati di soddisfare i <a href="https://support.goto.com/it/webinar#Standard">requisiti minimi di sistema</a> per poter partecipare.</li>
+</ul>
+<h3 id="opzionali">Opzionali</h3>
+<p>Per (e)seguire tu stesso gli esempi applicati proposti, ti consiglio di aver installato in anticipo, sul computer che utilizzerai, i seguenti software:</p>
+<ul>
+<li><p>Una versione recente di R (&gt;=4.0.0), scaricabile gratuitamente da <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
+<li><p>Una versione recente di RStudio (&gt;=1.4.0), scaricabile gratuitamente da <a href="https://www.rstudio.com/download" class="uri">https://www.rstudio.com/download</a> (Licenza Open Source di RStudio Desktop)</p></li>
+<li><p>I pacchetti che utilizzeremo saranno quelli riportati di seguito, i quali possono essere installati, collegandosi a internet, aprendo RStudio, ed eseguendo la seguente riga di codice nella console:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"tidyverse"</span>, <span class='st'>"janitor"</span>, <span class='st'>"unheadr"</span>, <span class='st'>"naniar"</span><span class='op'>)</span><span class='op'>)</span>
+  </code></pre>
+</div>
+</div></li>
+</ul>
+<aside>
+Il giorno del corso, fornirò un link a un progetto RStudio Cloud che conterrà tutto il materiale utile per il corso, oltre ad avere già installati tutti i pacchetti che useremo. Se tu preferissi (e)seguire gli esempi su tale piattaforma remota, invece che su un <em>tuo</em> computer, è necessario (ma sufficiente) che tu abbia un account su <a href="https://rstudio.cloud/">RStudio Cloud</a>; se già non ce l’hai, puoi crearlo gratuitaemnte su <a href="https://rstudio.cloud/" class="uri">https://rstudio.cloud/</a>.
+</aside>
+<h2 id="data-e-ora">Data e ora</h2>
+<ul>
+<li><p><strong>Dal vivo</strong>: 13 Ottobre 2021 | 14:30–16:30</p></li>
+<li><p><strong>Registrato</strong>: A seguire (post <em>tempi tecnici</em> di messa on-line)</p></li>
+</ul>
+<p><br />
+</p>
+<p>Ti aspetto al corso!! 🎉`</p>
+<p>Corrado.</p>
+<p><br />
+</p>
+<h2 id="link">Link</h2>
+<h3 id="ambiente-di-lavoro-remoto">Ambiente di lavoro remoto</h3>
+<ul>
+<li><a href="https://bit.ly/datacleaning-cra">RStudio Cloud workspace</a></li>
+</ul>
+<h3 id="slide">Slide</h3>
+<ul>
+<li><a href="slides/01-introduzione.html">01: Introduzione</a></li>
+<li><a href="slides/06-case-study.html">06: Case study</a></li>
+</ul>
+<h2 class="appendix" id="crediti">Crediti</h2>
+<p>Questo sito Web è stato costruito utilizzando il pacchetto R <a href="https://rstudio.github.io/distill/">{distill}</a> e un tema personalizzato creato da <a href="https://www.apreshill.com/">Alison Hill</a> &amp; <a href="https://desiree.rbind.io/">Desirée De Leon</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2095,7 +2400,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+<h3 id="updates-and-corrections">Corrections</h3>
+<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/CorradoLanera/cra.datacleaning/issues/new">create an issue</a> on the source repository.</p>
+<h3 id="reuse">Reuse</h3>
+<p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Source code is available at <a href="https://github.com/CorradoLanera/cra.datacleaning">https://github.com/CorradoLanera/cra.datacleaning</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->
