@@ -70,19 +70,17 @@ Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affron
 Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto questo sia certamente un limite, ci permetterà di poterlo registrare a beneficio futuro di quanti non avessero potuto partecipare in diretta. A garanzia della protezione della privacy di tutti i partecipanti, non potrai attivare la tua webcam né il microfono. La possibilità di porre (e rispondere a) domande in modo scritto e mediato ti sarà comunque garantita.
 
 
-### Dove
+### Dove `r emo::ji("pushpin")`
 
 
-* [Registrazione al corso](https://formazionenelfarmaceutico.com/)
-
-+ [~~Stanza GoToWebinar del corso~~]()
++ Stanza [GoToWebinar](https://www.goto.com/it/webinar), accessibile previo registrazione al corso da effetture a [questa pagina](https://formazionenelfarmaceutico.com/).
 
 <aside>
-Il link alla stanza del corso sarà inserito appena disponibile.
+Un link personalizzato alla stanza del corso sarà condiviso privatamente dall'organizzazione ai partecipanti registrati.
 </aside>
 
 
-### Quando
+### Quando `r emo::ji("clock")`
 
 + **Dal vivo**: 13 Ottobre 2021 | 14:30--16:30 CEST/UTC+2
 
@@ -93,13 +91,18 @@ Se non sei in Italia, verifica [l'orario del corso nella tua zona](https://www.t
 </aside>
 
 
+### Quanto `r emo::ji("money_mouth_face")`
+
+Per la partecipazione al corso dal vivo, così come per la visione della sua registrazione in futuro, è richiesto che tu [ti registri](https://formazionenelfarmaceutico.com/). La registrazione, sia per partecipare al corso sia per poter accedere alla sua registrazione, è offerta gratuitamente a chiunque da [FormazioneNelFarmaceutico]<https://formazionenelfarmaceutico.com/>.
+
+
 \
 
 ## Operazioni Preliminari
 
 ### Essenziali
 
-+ La piattaforma utilizzata per il corso sarà [GoToWebinar](https://www.goto.com/it/webinar), assicurati per tempo che il tuo computer, software e connessione soddisfino i [requisiti minimi di sistema](https://support.goto.com/it/webinar#Standard) per poter partecipare in maniera ottimale.
++ La piattaforma utilizzata per il corso sarà [GoToWebinar](https://www.goto.com/it/webinar), assicurati per tempo che i tui computer, software e connessione soddisfino i [requisiti minimi di sistema](https://support.goto.com/it/webinar#Standard) per poter partecipare col minimo rischio di intoppi.
 
 
 
@@ -132,11 +135,11 @@ Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud
  **Ora** | **Tema**
 --------:|:-------------------------------
  _Prima_ | [~~Sondaggio pre-corso~~]()
-  14:30  | _Benvenuti_ dall'organizzazione
-  14:40  | Corso
-  16:10  | Domande, dubbi, curiosità
-  16:30  | [~~Sondaggio post-corso~~]()
-  16:40  | FINE
+  14:00  | _Benvenuti_ dall'organizzazione
+  14:10  | Corso
+  15:40  | Domande, dubbi, curiosità
+  16:00  | [~~Sondaggio post-corso~~]()
+  16:10  | FINE
   
 
 \
@@ -212,9 +215,9 @@ Durante il corso, useremo [questo pad](https://etherpad.wikimedia.org/p/20211013
 
 ### Sondaggi
 
-Ti chiederei di completare i seguenti sondaggi, uno prima di partecipare, dopo esserti iscritto, e l'altro al termine del corso.
+Ti chiederei di completare i seguenti sondaggi: uno prima dell'inizio del corso (dopo esserti iscritto) e l'altro al termine del corso.
 
-Il primo sondaggio mi servirà per eliminare dalla lezione tutto quello che conosci già molto bene, per non farti perdere tempo né annoiarti a raccontarti cose che non ti interessano e magari conosci meglio di me. Inoltre, mi permetterà di dare più attenzione alle parti che ti potranno essere davvero utili per migliorare, sfruttando al meglio il tempo che avremo a disposizione.
+Il primo sondaggio mi servirà principalmente per conoscere meglio le tue esigenze specifiche, e poter eliminare quindi dalla lezione tutto quanto conosci già molto bene, così da non farti perdere tempo né annoiarti con cose che non ti interessano e magari conosci anche meglio di me `r emo::ji("winking_face_with_tongue")`. Inoltre, mi permetterà di dare più attenzione alle parti che ti potranno essere davvero utili per migliorare, sfruttando al meglio il tempo che avremo a disposizione `r emo::ji("flexed_biceps")`.
 
 <aside>
 Il sondaggio pre-corso **non** è un esame per capire se hai le competenze per seguirlo. Non preoccuparti se non sai rispondere ad alcune domande: è previsto! Anzi, se rispondi a tutto... `r emo::ji("winking_face")`
@@ -232,7 +235,7 @@ Il secondo sondaggio mi servirà per capire quanto sono stato efficace con la le
 \
 
 
-**Ti aspetto al corso!!** `r emo::ji("popper")``
+**Ti aspetto al corso!!** `r emo::ji("popper")`
 
 **Corrado.**
 
