@@ -52,7 +52,7 @@ knitr::include_graphics("images/2560px-Procyon_lotor(Gollibolli)1.JPG")
 
 ## Informazioni generali
 
-Grazie per aver deciso di partecipare a questo breve corso di un paio d'ore sul _data cleaning_! Di seguito trovi il materiale utilizzato da me, Corrado Lanera, per il suo svolgimento nel contesto dei corsi offerti gratuitamente a tutti da [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/) e inseriti nel contesto del loro percorso formativo [Clinical Research Accademy](https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy).
+Grazie per aver deciso di partecipare a questo breve corso di un paio d'ore sul _data cleaning_! Di seguito trovi il materiale utilizzato da me, Corrado Lanera, per il suo svolgimento nel contesto dei corsi offerti gratuitamente per tutti da [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/) e inseriti nel contesto del loro percorso formativo [Clinical Research Accademy](https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy).
 
 <aside>Il corso e tutto il materiale sono in lingua italiana.</aside>
 
@@ -93,7 +93,7 @@ Se non sei in Italia, verifica [l'orario del corso nella tua zona](https://www.t
 
 ### Quanto `r emo::ji("money_mouth_face")`
 
-Per la partecipazione al corso dal vivo, così come per la visione della sua registrazione in futuro, è richiesto che tu [ti registri](https://formazionenelfarmaceutico.com/). La registrazione, sia per partecipare al corso sia per poter accedere alla sua registrazione, è offerta gratuitamente a chiunque da [FormazioneNelFarmaceutico]<https://formazionenelfarmaceutico.com/>.
+Per la partecipazione al corso dal vivo, così come per la visione della sua registrazione in futuro, è richiesto che tu [ti registri](https://formazionenelfarmaceutico.com/). La registrazione, sia per partecipare al corso sia per poter accedere alla sua registrazione, è offerta gratuitamente a chiunque da [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/).
 
 
 \
@@ -235,7 +235,8 @@ Il secondo sondaggio mi servirà per capire quanto sono stato efficace con la le
 \
 
 
-**Ti aspetto al corso!!** `r emo::ji("popper")`
+**Ti aspetto al corso _Data Cleaning per la Ricerca Clinica_!!** `r emo::ji("popper")`
+
 
 **Corrado.**
 
