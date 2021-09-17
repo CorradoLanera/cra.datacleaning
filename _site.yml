@@ -1,19 +1,19 @@
 name: "cra.datacleaning"
-title: "Data Cleaning nella Ricerca Clinica"
+title: "Data Cleaning per la Ricerca Clinica"
 description: |
-  Breve excursus sul __data cleaning__ nella Ricerca Clinica
+  Un (per)corso panoramico sulle sfide a un'importazione corretta di dati clinici in un sistema informatico, con esempi e soluzioni in R.
 output_dir: "docs"
 creative_commons: CC BY-SA
 repository_url: https://github.com/CorradoLanera/cra.datacleaning
 navbar:
-  logo:
-    image: images/logo.png
-    href: https://CorradoLanera.it
+  # logo:
+  #   image: CorradoLanera.it
+  #   href: https://CorradoLanera.it
   right:
-    - text: "Home"
+    - text: "Inizio"
       href: index.html
-    - text: "Slide"
-      href: slides/data-cleaning-slide.html
+    - text: "Materiale"
+      href: index.html#materiale
     - text: "Contatti"
       href: contatti.html
     - icon: fab fa-github

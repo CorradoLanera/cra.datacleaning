@@ -1,5 +1,5 @@
 ---
-title: "Data Cleaning nella Ricerca Clinica"
+title: "Data Cleaning per la Ricerca Clinica"
 author:
   - name: Corrado Lanera, Ph.D.
     url: https://www.CorradoLanera.it
@@ -8,8 +8,11 @@ author:
     orcid_id: 0000-0002-0520-7428
 date: "`r Sys.Date()`"
 description: |
-  Una panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R).
-site: distill::distill_website
+  Un (per)corso panoramico sulle sfide a un'importazione corretta di dati clinici in un sistema informatico, con esempi e soluzioni in `r fontawesome::fa("r-project", fill = "blue")`.
+site: 
+    distill::distill_website:
+        toc: true
+        toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -20,24 +23,36 @@ knitr::opts_chunk$set(echo = FALSE)
 library(metathis)
 meta() %>%
   meta_general(
-    description = "Panoramica sulle problematiche e soluzioni per una importazione fedele di dati clinici che sia utile alla loro analisi tramite sistemi informatici (con esempi in R).",
+    description = "Un (per)corso panoramico sulle sfide a un'importazione corretta di dati clinici in un sistema informatico, con esempi e soluzioni in R.",
     generator = "xaringan and remark.js"
   ) %>% 
   meta_name("github-repo" = "CorradoLanera/cra.datacleaning") %>% 
+  meta_viewport() %>% 
   meta_social(
-    title = "Data Cleaning nella Ricerca Clinica",
+    title = "Data Cleaning per la Ricerca Clinica",
     url = "",
-    image = "",
-    image_alt = "",
+    image = "https://live.staticflickr.com/3564/3479544099_444af398eb_c_d.jpg",
+    image_alt = "Problem Raccoon (Procyon lotor) by Jerry Kirkhart",
     og_type = "website",
     twitter_card_type = "summary_large_image",
     twitter_creator = "@CorradoLanera"
   )
 ```
 
-## Benvenuto
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c(
+    "panelset", "clipboard"
+))
+```
 
-Grazie per aver deciso di partecipare a questo breve corso di un paio d'ore sul _data cleaning_! Di seguito trovi il materiale utilizzato da me, Corrado Lanera, per il suo svolgimento nel contesto dei corsi offerti gratuitamente da [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/) e pensati nel contesto del loro percorso formativo [Clinical Research Accademy](https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy).
+```{r fig.cap="Figure from https://www.flickr.com/photos/jkirkhart35/3479544099", out.extra="class=external", layout="l-body-outset"}
+knitr::include_graphics("images/procyon_lotor-jerry_kirkhart.jpg")
+```
+
+
+## Informazioni generali
+
+Grazie per aver deciso di partecipare a questo breve corso di un paio d'ore sul _data cleaning_! Di seguito trovi il materiale utilizzato da me, Corrado Lanera, per il suo svolgimento nel contesto dei corsi offerti gratuitamente a tutti da [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/) e inseriti nel contesto del loro percorso formativo [Clinical Research Accademy](https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy).
 
 <aside>Il corso e tutto il materiale è in lingua italiana.</aside>
 
@@ -45,77 +60,150 @@ Grazie per aver deciso di partecipare a questo breve corso di un paio d'ore sul 
 knitr::include_url("slides/index.html")
 ```
 
-Il corso sarà incentrato sull'introdurre le principali problematiche, e le corrispondenti soluzioni (con esempi pratici in R), per una corretta e fedele importazione di dati clinici; il tutto al fine di poterli analizzare, con confidenza di correttezza, tramite programmi di analisi di dati e statistici.
+Il corso sarà incentrato sull'introdurre le principali sfide, e le corrispondenti soluzioni (con esempi pratici in `r fontawesome::fa("r-project", fill = "blue")`), per una corretta e fedele importazione di dati clinici; il tutto al fine di poterli analizzare, con la confidenza indispensabile rispetto la loro correttezza e consistenza, tramite programmi di analisi di dati e statistici.
 
-Introdurrò quindi le principali problematiche in cui ci si può imbattere quando importiamo dati clinici (a partire da _come_ ci vengono forniti), analizzandone le cause, i possibili effetti indesiderati che si potrebbero verificare nel caso in cui tali problematiche non venissero gestite, e infine proporrò per ciascuno alcuni metodi pratici, con esempi in R, per poterli gestire al meglio.
+Introdurrò le principali problematiche in cui ci si può imbattere quando importiamo dati clinici (a partire da _come_ ci vengono forniti, fino alla gestione della corretta tipologia di dato), analizzandone le cause, i possibili effetti indesiderati che si potrebbero verificare nel caso in cui tali problematiche non venissero gestite. Infine proporrò metodi pratici, sviluppati in `r fontawesome::fa("r-project", fill = "blue")`, per poterli gestire al meglio.
 
-Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affrontare le principali problematiche legate al _data cleaning_ nell'ambito della ricerca clinica. Potendole affrontare in modo robusto ed efficiente. In particolare, verrai a conoscenza delle funzionalità principali che ti potranno essere utili tra quelle offerte dai pacchetti R: 
+Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affrontare le principali problematiche legate al _data cleaning_ nell'ambito della ricerca clinica. Potendole affrontare in modo robusto ed efficiente. In particolare, verrai a conoscenza delle funzionalità principali che ti potranno essere utili tra quelle offerte dai pacchetti `r fontawesome::fa("r-project", fill = "blue")`: 
 [`{dplyr}`](https://dplyr.tidyverse.org/), [`{janitor}`](https://garthtarr.github.io/meatR/janitor.html), [`{naniar}`](https://naniar.njtierney.com/), [`{readr}`](https://readr.tidyverse.org/), [`{stringr}`](https://stringr.tidyverse.org/), [`{tidyr}`](https://tidyr.tidyverse.org/), e [`{unheadr}`](https://unheadr.liomys.mx/).
 
-Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto questo sia certamente un limite, ci permette di poter registrare il corso a beneficio futuro di quanti non avessero potuto partecipare in diretta. A garanzia di protezione della privacy di tutti i partecipanti, non potrai attivare la tua webcam né il microfono. La possibilità di porre (e rispondere a) domande in modo scritto e mediato sarà comunque garantita.
+Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto questo sia certamente un limite, ci permetterà di poterlo registrare a beneficio futuro di quanti non avessero potuto partecipare in diretta. A garanzia della protezione della privacy di tutti i partecipanti, non potrai attivare la tua webcam né il microfono. La possibilità di porre (e rispondere a) domande in modo scritto e mediato ti sarà comunque garantita.
 
-
-\
 
 ## Operazioni Preliminari
 
 ### Essenziali
 
-+ La piattaforma utilizzata per il corso sarà [GoToWebinar](https://www.goto.com/it/webinar), assicurati di soddisfare i [requisiti minimi di sistema](https://support.goto.com/it/webinar#Standard) per poter partecipare.
++ La piattaforma utilizzata per il corso sarà [GoToWebinar](https://www.goto.com/it/webinar), assicurati per tempo che il tuo computer, software e connessione soddisfino i [requisiti minimi di sistema](https://support.goto.com/it/webinar#Standard) per poter partecipare in maniera ottimale.
 
 
 
 ### Opzionali
 
-Per (e)seguire tu stesso gli esempi applicati proposti, ti consiglio di aver installato in anticipo, sul computer che utilizzerai, i seguenti software:
+Per (e)seguire gli esempi e gli esercizi proposti localmente sul computer che utilizzerai, ti consiglio di aver installato in anticipo i seguenti software:
 
-* Una versione recente di R (>=4.0.0), scaricabile gratuitamente da <https://cran.r-project.org/>
+* Una versione recente di `r fontawesome::fa("r-project", fill = "blue")` (>=4.0.0), scaricabile gratuitamente da <https://cran.r-project.org/>
 
 * Una versione recente di RStudio (>=1.4.0), scaricabile gratuitamente da <https://www.rstudio.com/download> (Licenza Open Source di RStudio Desktop)
 
 * I pacchetti che utilizzeremo saranno quelli riportati di seguito, i quali possono essere installati, collegandosi a internet, aprendo RStudio, ed eseguendo la seguente riga di codice nella console:
-
-    ```{r echo=TRUE, eval = FALSE}
-    install.packages(c("tidyverse", "janitor", "unheadr", "naniar"))
-
+    ```{r eval=FALSE, echo=TRUE}
+    install.packages(c("janitor", "naniar", "tidyverse", "unheadr"))
     ```
-<aside>Il giorno del corso, fornirò un link a un progetto RStudio Cloud che conterrà tutto il materiale utile per il corso, oltre ad avere già installati tutti i pacchetti che useremo. Se tu preferissi (e)seguire gli esempi su tale piattaforma remota, invece che su un _tuo_ computer, è necessario (ma sufficiente) che tu abbia un account su [RStudio Cloud](https://rstudio.cloud/); se già non ce l'hai, puoi crearlo gratuitaemnte su <https://rstudio.cloud/>.</aside>
 
+<aside>
+Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud](https://rstudio.cloud/) che conterrà tutto il materiale utile per il corso, oltre ad avere già installati tutti i pacchetti che useremo. Se tu preferissi (e)seguire gli esempi su tale piattaforma remota, invece che su un _tuo_ computer, è necessario (ma sufficiente) che tu abbia un account su [RStudio Cloud](https://rstudio.cloud/); se già non ce l'hai, puoi crearlo gratuitaemnte su <https://rstudio.cloud/>.
+</aside>
+
+
+\
 
 ## Data e ora
 
-- **Dal vivo**: 13 Ottobre 2021 | 14:30--16:30
+- **Dal vivo**: 13 Ottobre 2021 | 14:30--16:30 CEST/UTC+2
 
 - **Registrato**: A seguire (post _tempi tecnici_ di messa on-line)
 
-
-\
-
-Ti aspetto al corso!! `r emo::ji("popper")``
-
-Corrado.
-
-
-
-
+<aside>
+Se non sei in Italia, verifica [l'orario del corso nella tua zona](https://www.timeanddate.com/worldclock/meetingdetails.html?year=2021&month=10&day=13&hour=12&min=30&sec=0&p1=215).
+</aside>
 
 
 \
 
-## Link
 
-### Ambiente di lavoro remoto
+## Link utili
 
-+ [RStudio Cloud workspace](https://bit.ly/datacleaning-cra)
+### Webinar
 
-### Slide
++ [Registrazione al corso](https://formazionenelfarmaceutico.com/)
++ [~~Stanza GoToWebinar del corso~~]()
 
-+ [01: Introduzione](slides/01-introduzione.html)
-+ [06: Case study](slides/06-case-study.html)
+<aside>
+Il link alla stanza del corso sarà inserito appena disponibile.
+</aside>
 
 
 
-## Crediti {.appendix}
+### Ambiente di lavoro remoto {#rs-cloud}
 
-Questo sito Web è stato costruito utilizzando il pacchetto R [{distill}](https://rstudio.github.io/distill/) e un tema personalizzato creato da [Alison Hill](https://www.apreshill.com/) & [Desirée De Leon](https://desiree.rbind.io/).
++ [~~RStudio Cloud workspace~~](https://bit.ly/datacleaning-cra)
+
+<aside>
+Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà attivo durante il corso.
+</aside>
+
+
+\
+
+## Materiale
+
+
+::::: {.panelset}
+
+::: {.panel}
+
+### Slide {.panel-name}
+
++ [01: Introduzione]()
++ [02: Forma e tipologia]()
++ [03: Manipolazione]()
++ [04: Stringhe]()
++ [05: Problemi comuni]()
++ [06: Caso studio]()
+
+:::
+
+::: {.panel}
+
+### Sfide {.panel-name}
+
++ [02: Forma e tipologia]()
++ [03: Manipolazione]()
++ [04: Stringhe]()
++ [05: Problemi comuni]()
+
++ [Sfida finale]()
+
+:::
+
+::: {.panel}
+
+### Soluzioni {.panel-name}
+
++ [02: Forma e tipologia]()
++ [03: Manipolazione]()
++ [04: Stringhe]()
++ [05: Problemi comuni]()
+
++ [Sfida finale]()
+
+:::
+
+:::::
+
+
+\
+
+<!-- ## Sondaggi -->
+
+<!-- + [Pre-corso]() -->
+
+<!-- + [Post-corso]() -->
+
+
+
+
+
+**Ti aspetto al corso!!** `r emo::ji("popper")``
+
+**Corrado.**
+
+```{r fig.cap="Figure from https://www.flickr.com/photos/neuro74/3015200493", out.extra="class=external"}
+knitr::include_graphics("images/orsetto_lavatore-neuro74.png")
+```
+
+
+
+
 

@@ -45,3 +45,4 @@ knitr::opts_chunk$set(echo = FALSE)
 ### Social
 
 [`r fontawesome::fa("telegram-plane")` ](https://t.me/FormazioneNelFarmaceutico) [\@FormazioneNelFarmaceutico](https://t.me/FormazioneNelFarmaceutico)
+

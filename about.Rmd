@@ -1,0 +1,28 @@
+---
+title: "Corrado Lanera, Ph.D."
+image: "images/profilo_CL.jpg"
+links:
+  - label: Website
+    url: "https://www.CorradoLanera.com"
+  - label: GitHub
+    url: "https://github.com/CorradoLanera"
+  - label: Twitter
+    url: "https://twitter.com/CorradoLanera"
+  - label: LinkedIn
+    url: "https://linkedin.com/CorradoLanera"
+  - label: Email
+    url: "mailto:CorradoLanera@email.com"
+output:
+  postcards::jolla_blue
+---
+ 
+Sono un appassionato di [`r fontawesome::fa("r-project", fill = "red")`](https://www.r-project.org) e data scientist dal 2014, appassionato del [Tidyverse](https://www.tidyverse.org/) dal suo inizio. Attualmente, sono un post-doc presso [UBEP](http://www.unipd-ubep.it) (Unità di Biostatistica, Epidemiologia e Salute Pubblica) dell'Università di Padova. Lì, la mia attività di ricerca è diretta nell'area del machine learning e delle tecniche di phenomapping applicate a contesti clinici, con particolare attenzione alle analisi di dati di testo in linguaggio naturale e dati non strutturati per la classificazione automatica di:
+
+- outcome clinici
+- articoli scientifici per revisioni sistematiche
+- segnali cinetici di dispositivi indossabili
+
+
+Per la nostra unità, ho installato e gestisco i server [RStudio Server Pro](https://www.rstudio.com/products/rstudio/#rstudio-server) e [Shiny Server](https://www.rstudio.com/products/shiny/shiny-server/) per lo sviluppo e la distribuzione dei risultati, servizi e applicazioni che offriamo.
+
+Amo promuovere, insegnare ed essere un esempio di come creare codice ([`r fontawesome::fa("r-project", fill = "red")`](https://www.r-project.org), ma non solo) leggibile, riproducibile e robusto. Recentemente sono stato certificato come un [__RStudio Trainer__](https://education.rstudio.com/trainers/people/lanera+corrado/) per il [Tidyverse](https://www.tidyverse.org/).

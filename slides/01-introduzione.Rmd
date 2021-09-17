@@ -2,7 +2,7 @@
 title: "Data Cleaning"
 subtitle: "Clinical Research Academy"
 author: "[CorradoLanera](www.CorradoLanera.it)"
-date: "2021-10-15 (last update: `r Sys.Date()`)"
+date: "2021-10-13 (last update: `r Sys.Date()`)"
 output: 
   xaringan::moon_reader:
     seal: false  # no title slide! Do It Yourself
@@ -22,7 +22,7 @@ background-size: cover
 ### With examples in R
 
 .large[.white[
-  Corrado Lanera | Clinical Research Academy | 15 Oct 2021
+  Corrado Lanera | Clinical Research Academy | 13 Oct 2021
 ]]
 
 
@@ -70,7 +70,8 @@ xaringanExtra::use_xaringan_extra(c(
   "panelset",
   "webcam",
   "clipboard",
-  "freezeframe"
+  "freezeframe",
+  "share_again"
 ))
 
 xaringanExtra::use_logo(
@@ -81,6 +82,10 @@ xaringanExtra::use_logo(
 
 ```
 
+```{r countdown, echo = FALSE}
+library(countdown)
+# countdown(minutes = 0, seconds = 15)
+```
 
 ---
 class: inverse, middle, center
