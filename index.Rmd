@@ -31,8 +31,8 @@ meta() %>%
   meta_social(
     title = "Data Cleaning per la Ricerca Clinica",
     url = "",
-    image = "https://live.staticflickr.com/3564/3479544099_444af398eb_c_d.jpg",
-    image_alt = "Problem Raccoon (Procyon lotor) by Jerry Kirkhart",
+    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Procyon_lotor%28Gollibolli%291.JPG/2560px-Procyon_lotor%28Gollibolli%291.JPG",
+    image_alt = "Procyon lotor by Matthias Barby",
     og_type = "website",
     twitter_card_type = "summary_large_image",
     twitter_creator = "@CorradoLanera"
@@ -45,8 +45,8 @@ xaringanExtra::use_xaringan_extra(c(
 ))
 ```
 
-```{r fig.cap="Figure from https://www.flickr.com/photos/jkirkhart35/3479544099", out.extra="class=external", layout="l-body-outset"}
-knitr::include_graphics("images/procyon_lotor-jerry_kirkhart.jpg")
+```{r fig.cap="Figure from https://commons.wikimedia.org/wiki/File:Procyon_lotor(Gollibolli)1.JPG", out.extra="class=external", layout="l-body-outset"}
+knitr::include_graphics("images/2560px-Procyon_lotor(Gollibolli)1.JPG")
 ```
 
 
@@ -87,9 +87,12 @@ Per (e)seguire gli esempi e gli esercizi proposti localmente sul computer che ut
 * Una versione recente di RStudio (>=1.4.0), scaricabile gratuitamente da <https://www.rstudio.com/download> (Licenza Open Source di RStudio Desktop)
 
 * I pacchetti che utilizzeremo saranno quelli riportati di seguito, i quali possono essere installati, collegandosi a internet, aprendo RStudio, ed eseguendo la seguente riga di codice nella console:
-    ```{r eval=FALSE, echo=TRUE}
-    install.packages(c("janitor", "naniar", "tidyverse", "unheadr"))
-    ```
+  
+  ``` r
+  install.packages(c(
+    "janitor", "naniar", "tidyverse", "unheadr"
+  ))
+  ```
 
 <aside>
 Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud](https://rstudio.cloud/) che conterrà tutto il materiale utile per il corso, oltre ad avere già installati tutti i pacchetti che useremo. Se tu preferissi (e)seguire gli esempi su tale piattaforma remota, invece che su un _tuo_ computer, è necessario (ma sufficiente) che tu abbia un account su [RStudio Cloud](https://rstudio.cloud/); se già non ce l'hai, puoi crearlo gratuitaemnte su <https://rstudio.cloud/>.
@@ -145,12 +148,12 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 
 ### Slide {.panel-name}
 
-+ [01: Introduzione]()
-+ [02: Forma e tipologia]()
-+ [03: Manipolazione]()
-+ [04: Stringhe]()
-+ [05: Problemi comuni]()
-+ [06: Caso studio]()
++ [~~01: Introduzione~~]()
++ [~~02: Forma e tipologia~~]()
++ [~~03: Manipolazione~~]()
++ [~~04: Stringhe~~]()
++ [~~05: Problemi comuni~~]()
++ [~~06: Caso studio~~]()
 
 :::
 
@@ -158,12 +161,12 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 
 ### Sfide {.panel-name}
 
-+ [02: Forma e tipologia]()
-+ [03: Manipolazione]()
-+ [04: Stringhe]()
-+ [05: Problemi comuni]()
++ [~~02: Forma e tipologia~~]()
++ [~~03: Manipolazione~~]()
++ [~~04: Stringhe~~]()
++ [~~05: Problemi comuni~~]()
 
-+ [Sfida finale]()
++ [~~Sfida finale~~]()
 
 :::
 
@@ -171,25 +174,28 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 
 ### Soluzioni {.panel-name}
 
-+ [02: Forma e tipologia]()
-+ [03: Manipolazione]()
-+ [04: Stringhe]()
-+ [05: Problemi comuni]()
++ [~~02: Forma e tipologia~~]()
++ [~~03: Manipolazione~~]()
++ [~~04: Stringhe~~]()
++ [~~05: Problemi comuni~~]()
 
-+ [Sfida finale]()
++ [~~Sfida finale~~]()
 
 :::
 
 :::::
 
+<aside>
+Il materiale sarà disponibile dal giorno del corso.
+</aside>
 
 \
 
 <!-- ## Sondaggi -->
 
-<!-- + [Pre-corso]() -->
+<!-- + [~~Pre-corso~~]() -->
 
-<!-- + [Post-corso]() -->
+<!-- + [~~Post-corso~~]() -->
 
 
 
