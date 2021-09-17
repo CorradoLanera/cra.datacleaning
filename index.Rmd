@@ -127,6 +127,19 @@ Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud
 
 \
 
+## Programma
+
+ **Ora** | **Tema**
+--------:|:-------------------------------
+ _Prima_ | [~~Sondaggio pre-corso~~]()
+  14:30  | _Benvenuti_ dall'organizzazione
+  14:40  | Corso
+  16:10  | Domande, dubbi, curiosità
+  16:30  | [~~Sondaggio post-corso~~]()
+  16:40  | FINE
+  
+
+\
 
 ## Link
 
@@ -138,7 +151,6 @@ Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud
 <aside>
 Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà attivo durante il corso.
 </aside>
-
 
 
 ### Materiale
@@ -188,16 +200,19 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 :::::
 
 <aside>
-Il materiale sarà disponibile dal giorno del corso.
+Il materiale sarà reso disponibile prima del corso.
 </aside>
 
 
+### Note collaborative
+
+Durante il corso, useremo [questo pad](https://etherpad.wikimedia.org/p/20211013-datacleaning_cra) collaborativo per chattare e prendere appunti, oltre che per condividere link o piccoli blocchetti di codice.^[Il pad collaborativo è messo a disposizione gratuitamente da [Wikimedia](https://www.wikimedia.org/) attraverso l'editor collaborativo [Etherpad](https://etherpad.org/).]
 
 
 
 ### Sondaggi
 
-Ti chiederei di completare i seguenti sondaggi, uno prima di partecipare, dopo esserti iscritto, e l'altro una settimana dopo il corso.
+Ti chiederei di completare i seguenti sondaggi, uno prima di partecipare, dopo esserti iscritto, e l'altro al termine del corso.
 
 Il primo sondaggio mi servirà per eliminare dalla lezione tutto quello che conosci già molto bene, per non farti perdere tempo né annoiarti a raccontarti cose che non ti interessano e magari conosci meglio di me. Inoltre, mi permetterà di dare più attenzione alle parti che ti potranno essere davvero utili per migliorare, sfruttando al meglio il tempo che avremo a disposizione.
 
