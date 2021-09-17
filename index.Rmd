@@ -54,7 +54,7 @@ knitr::include_graphics("images/2560px-Procyon_lotor(Gollibolli)1.JPG")
 
 Grazie per aver deciso di partecipare a questo breve corso di un paio d'ore sul _data cleaning_! Di seguito trovi il materiale utilizzato da me, Corrado Lanera, per il suo svolgimento nel contesto dei corsi offerti gratuitamente a tutti da [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/) e inseriti nel contesto del loro percorso formativo [Clinical Research Accademy](https://formazionenelfarmaceutico.com/courses/category/Clinical%20Research%20Academy).
 
-<aside>Il corso e tutto il materiale è in lingua italiana.</aside>
+<aside>Il corso e tutto il materiale sono in lingua italiana.</aside>
 
 ```{r, include=FALSE, fig.cap="[Slides](slides/index.html)"}
 knitr::include_url("slides/index.html")
