@@ -12,6 +12,8 @@ navbar:
   right:
     - text: "Inizio"
       href: index.html
+    - text: "Il corso"
+      href: about.html
     - text: "Materiale"
       href: index.html#materiale
     - text: "Contatti"

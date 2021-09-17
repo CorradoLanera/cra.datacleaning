@@ -70,98 +70,6 @@ Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affron
 Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto questo sia certamente un limite, ci permetterà di poterlo registrare a beneficio futuro di quanti non avessero potuto partecipare in diretta. A garanzia della protezione della privacy di tutti i partecipanti, non potrai attivare la tua webcam né il microfono. La possibilità di porre (e rispondere a) domande in modo scritto e mediato ti sarà comunque garantita.
 
 
-
-
-### Chi sono __io__
-
-```{r}
-knitr::include_graphics("images/profilo_CL.jpg")
-```
-
-Piacere! Sono Corrado Lanera, un appassionato di [`r fontawesome::fa("r-project", fill = "orange")`](https://www.r-project.org) e data scientist dal 2014, seguace del [Tidyverse](https://www.tidyverse.org/) fin dal suo esordio  `r emo::ji("star-struck")`. Attualmente, sono un post-doc presso [UBEP](http://www.unipd-ubep.it) (Unità di Biostatistica, Epidemiologia e Salute Pubblica) dell'[Università di Padova](https://www.unipd.it/). Lì, la mia attività di ricerca è principalmente diretta nell'area del machine learning e delle tecniche di phenomapping applicate a contesti clinici, con particolare attenzione alle analisi di dati di testo in linguaggio naturale e dati non strutturati per la classificazione automatica di:
-
-- outcome clinici
-- articoli scientifici per revisioni sistematiche
-- segnali cinetici di dispositivi indossabili
-
-
-Per la nostra unità, gestisco i server [RStudio Server Pro](https://www.rstudio.com/products/rstudio/#rstudio-server) e [Shiny Server](https://www.rstudio.com/products/shiny/shiny-server/) per lo sviluppo e la distribuzione dei risultati, dei servizi e delle applicazioni che offriamo come unità.
-
-Amo promuovere, insegnare ed essere un esempio di come creare codice ([`r fontawesome::fa("r-project", fill = "red")`](https://www.r-project.org), ma non solo) leggibile, riproducibile e sopratutto robusto. Recentemente sono stato certificato come un [__RStudio Trainer__](https://education.rstudio.com/trainers/people/lanera+corrado/) per il [Tidyverse](https://www.tidyverse.org/).
-
-<aside>
-```{r}
-knitr::include_graphics("images/crst_cl_tidyverse.png")
-```
-</aside>
-
-
-### Chi sei __tu__
-
-Il corso è principalmente indirizzato a operatori della ricerca clinica, ovvero persone con esperienza lavorativa nell'ambito della ricercaa clinica o laureati che hanno seguito un corso di alta formazione in ricerca clinica.
-
-
-Non avendoti mai visto, nel preparare la lezione ho immaginato tu potessi essere...
-
-
-#### Carla Clinica
-
-In breve, Carla è ...
-
-::::: {.panelset}
-
-::: {.panel}
-
-##### Background {.panel-name}
-
-:::
-
-::: {.panel}
-
-##### Competenze {.panel-name}
-
-Ambito | Statistica | Programmazione | `r fontawesome::fa("r-project", fill = "brown")`
--------|------------|----------------|------------
-Expert^[Per sapere cosa rappresenta per me ciascuna _classe di competenza_ puoi fare riferimento a [queste note](https://www.rebeccawestburns.com/my-blog-3/notes/five-stages-of-acquiring-expertise-novice-to-expert) di [Rebecca West Burns](https://www.rebeccawestburns.com) (in inglese).] | Expert     | Expert         | Competent
-
-:::
-
-::: {.panel}
-
-##### Esigenze {.panel-name}
-
-:::
-
-::: {.panel}
-
-##### Extra {.panel-name}
-
-:::
-
-
-:::::
-
-
-### Che cosa faremo
-
-
-#### Obiettivi del corso
-
-1. **Rivedere** 
-
-2. **Imparare** 
-
-3. **Applicare** 
-
-
-#### In parole povere...
-
-Imparerai a ...
-
-
-#### Mappa concettuale
-
-
 ### Dove
 
 
@@ -199,7 +107,7 @@ Se non sei in Italia, verifica [l'orario del corso nella tua zona](https://www.t
 
 Per (e)seguire gli esempi e gli esercizi proposti localmente sul computer che utilizzerai, ti consiglio di aver installato in anticipo i seguenti software:
 
-* Una versione recente di `r fontawesome::fa("r-project", fill = "yellow")` (>=4.0.0), scaricabile gratuitamente da <https://cran.r-project.org/>
+* Una versione recente di `r fontawesome::fa("r-project", fill = "purple")` (>=4.0.0), scaricabile gratuitamente da <https://cran.r-project.org/>
 
 * Una versione recente di RStudio (>=1.4.0), scaricabile gratuitamente da <https://www.rstudio.com/download> (Licenza Open Source di RStudio Desktop)
 
@@ -220,7 +128,7 @@ Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud
 \
 
 
-## Link utili
+## Link
 
 
 ### Ambiente di lavoro remoto {#rs-cloud}
@@ -232,16 +140,15 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 </aside>
 
 
-\
 
-## Materiale
+### Materiale
 
 
 ::::: {.panelset}
 
 ::: {.panel}
 
-### Slide {.panel-name}
+#### Slide {.panel-name}
 
 + [~~01: Introduzione~~]()
 + [~~02: Forma e tipologia~~]()
@@ -254,7 +161,7 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 
 ::: {.panel}
 
-### Sfide {.panel-name}
+#### Sfide {.panel-name}
 
 + [~~02: Forma e tipologia~~]()
 + [~~03: Manipolazione~~]()
@@ -267,7 +174,7 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 
 ::: {.panel}
 
-### Soluzioni {.panel-name}
+#### Soluzioni {.panel-name}
 
 + [~~02: Forma e tipologia~~]()
 + [~~03: Manipolazione~~]()
@@ -286,11 +193,9 @@ Il materiale sarà disponibile dal giorno del corso.
 
 
 
-\
 
 
-
-## Sondaggi
+### Sondaggi
 
 Ti chiederei di completare i seguenti sondaggi, uno prima di partecipare, dopo esserti iscritto, e l'altro una settimana dopo il corso.
 

@@ -1,7 +1,7 @@
 ---
 title: "Contatti"
 description: |
-  Alcuni link utili.
+  Se hai bisogno di contattare o avere ulteriori informazioni su di me o l'organizzatore del corso, qui dovresti trovare tutti i riferimenti che ti servono `r emo::ji("thumbs_up")`
 ---
 
 ```{r setup, include=FALSE}

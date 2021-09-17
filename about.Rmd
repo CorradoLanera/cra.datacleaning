@@ -1,28 +1,108 @@
 ---
-title: "Corrado Lanera, Ph.D."
-image: "images/profilo_CL.jpg"
-links:
-  - label: Website
-    url: "https://www.CorradoLanera.com"
-  - label: GitHub
-    url: "https://github.com/CorradoLanera"
-  - label: Twitter
-    url: "https://twitter.com/CorradoLanera"
-  - label: LinkedIn
-    url: "https://linkedin.com/CorradoLanera"
-  - label: Email
-    url: "mailto:CorradoLanera@email.com"
-output:
-  postcards::jolla_blue
+title: "Il corso"
+description: |
+  Qui puoi trovare i dettagli di chi e come ha progettato il corso che seguirai.
+output: 
+  distill::distill_article:
+    toc: true
+    toc_float: true
 ---
- 
-Sono un appassionato di [`r fontawesome::fa("r-project", fill = "red")`](https://www.r-project.org) e data scientist dal 2014, appassionato del [Tidyverse](https://www.tidyverse.org/) dal suo inizio. Attualmente, sono un post-doc presso [UBEP](http://www.unipd-ubep.it) (Unità di Biostatistica, Epidemiologia e Salute Pubblica) dell'Università di Padova. Lì, la mia attività di ricerca è diretta nell'area del machine learning e delle tecniche di phenomapping applicate a contesti clinici, con particolare attenzione alle analisi di dati di testo in linguaggio naturale e dati non strutturati per la classificazione automatica di:
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c(
+    "panelset", "clipboard"
+))
+```
+
+## Chi sono _io_
+
+```{r}
+knitr::include_graphics("images/profilo_CL.jpg")
+```
+
+Piacere! Sono Corrado Lanera, un appassionato di [`r fontawesome::fa("r-project", fill = "orange")`](https://www.r-project.org) e data scientist dal 2014, seguace del [Tidyverse](https://www.tidyverse.org/) fin dal suo esordio  `r emo::ji("star-struck")`. Attualmente, sono un post-doc presso [UBEP](http://www.unipd-ubep.it) (Unità di Biostatistica, Epidemiologia e Salute Pubblica) dell'[Università di Padova](https://www.unipd.it/). Lì, la mia attività di ricerca è principalmente diretta nell'area del machine learning e delle tecniche di phenomapping applicate a contesti clinici, con particolare attenzione alle analisi di dati di testo in linguaggio naturale e dati non strutturati per la classificazione automatica di:
 
 - outcome clinici
 - articoli scientifici per revisioni sistematiche
 - segnali cinetici di dispositivi indossabili
 
 
-Per la nostra unità, ho installato e gestisco i server [RStudio Server Pro](https://www.rstudio.com/products/rstudio/#rstudio-server) e [Shiny Server](https://www.rstudio.com/products/shiny/shiny-server/) per lo sviluppo e la distribuzione dei risultati, servizi e applicazioni che offriamo.
+Per la nostra unità, gestisco i server [RStudio Server Pro](https://www.rstudio.com/products/rstudio/#rstudio-server) e [Shiny Server](https://www.rstudio.com/products/shiny/shiny-server/) per lo sviluppo e la distribuzione dei risultati, dei servizi e delle applicazioni che offriamo come unità.
 
-Amo promuovere, insegnare ed essere un esempio di come creare codice ([`r fontawesome::fa("r-project", fill = "red")`](https://www.r-project.org), ma non solo) leggibile, riproducibile e robusto. Recentemente sono stato certificato come un [__RStudio Trainer__](https://education.rstudio.com/trainers/people/lanera+corrado/) per il [Tidyverse](https://www.tidyverse.org/).
+Amo promuovere, insegnare ed essere un esempio di come creare codice ([`r fontawesome::fa("r-project", fill = "red")`](https://www.r-project.org), ma non solo) leggibile, riproducibile e sopratutto robusto. Recentemente sono stato certificato come un [__RStudio Trainer__](https://education.rstudio.com/trainers/people/lanera+corrado/) per il [Tidyverse](https://www.tidyverse.org/).
+
+<aside>
+```{r}
+knitr::include_graphics("images/crst_cl_tidyverse.png")
+```
+</aside>
+
+
+## Chi sei _tu_
+
+Il corso è principalmente indirizzato a operatori della ricerca clinica, ovvero persone con esperienza lavorativa nell'ambito della ricercaa clinica o laureati che hanno seguito un corso di alta formazione in ricerca clinica.
+
+
+Non avendoti mai visto, nel preparare la lezione ho immaginato tu potessi essere...
+
+
+### Carla Clinica
+
+In breve, Carla è ...
+
+::::: {.panelset}
+
+::: {.panel}
+
+#### Background {.panel-name}
+
+:::
+
+::: {.panel}
+
+#### Competenze {.panel-name}
+
+Ambito | Statistica | Programmazione | `r fontawesome::fa("r-project", fill = "brown")`
+-------|------------|----------------|------------
+Expert^[Per sapere cosa rappresenta per me ciascuna _classe di competenza_ puoi fare riferimento a [queste note](https://www.rebeccawestburns.com/my-blog-3/notes/five-stages-of-acquiring-expertise-novice-to-expert) di [Rebecca West Burns](https://www.rebeccawestburns.com) (in inglese).] | Expert     | Expert         | Competent
+
+:::
+
+::: {.panel}
+
+#### Esigenze {.panel-name}
+
+:::
+
+::: {.panel}
+
+#### Extra {.panel-name}
+
+:::
+
+
+:::::
+
+
+## Che cosa faremo
+
+
+### Obiettivi del corso
+
+1. **Rivedere** 
+
+2. **Imparare** 
+
+3. **Applicare** 
+
+
+### In parole povere...
+
+Imparerai a ...
+
+
+## Mappa concettuale
