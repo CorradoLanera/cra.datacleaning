@@ -6,9 +6,9 @@ output_dir: "docs"
 creative_commons: CC BY-SA
 repository_url: https://github.com/CorradoLanera/cra.datacleaning
 navbar:
-  # logo:
-  #   image: CorradoLanera.it
-  #   href: https://CorradoLanera.it
+  logo:
+    image: images/CertifiedRstudioTrainer.png
+    href: https://CorradoLanera.it
   right:
     - text: "Inizio"
       href: index.html

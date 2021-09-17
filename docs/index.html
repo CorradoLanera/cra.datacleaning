@@ -2283,6 +2283,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
+<a class="logo" href="https://CorradoLanera.it">
+<img src="images/CertifiedRstudioTrainer.png" alt="Logo"/>
+</a>
 <a href="index.html" class="title">Data Cleaning per la Ricerca Clinica</a>
 </div>
 <div class="nav-right">
@@ -2318,19 +2321,25 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#informazioni-generali">Informazioni generali</a></li>
+<li><a href="#informazioni-generali">Informazioni generali</a>
+<ul>
+<li><a href="#chi-sono-io">Chi sono <strong>io</strong></a></li>
+<li><a href="#chi-sei-tu">Chi sei <strong>tu</strong></a></li>
+<li><a href="#che-cosa-faremo">Che cosa faremo</a></li>
+<li><a href="#dove">Dove</a></li>
+<li><a href="#quando">Quando</a></li>
+</ul></li>
 <li><a href="#operazioni-preliminari">Operazioni Preliminari</a>
 <ul>
 <li><a href="#essenziali">Essenziali</a></li>
 <li><a href="#opzionali">Opzionali</a></li>
 </ul></li>
-<li><a href="#data-e-ora">Data e ora</a></li>
 <li><a href="#link-utili">Link utili</a>
 <ul>
-<li><a href="#webinar">Webinar</a></li>
 <li><a href="#rs-cloud">Ambiente di lavoro remoto</a></li>
 </ul></li>
 <li><a href="#materiale">Materiale</a></li>
+<li><a href="#sondaggi">Sondaggi</a></li>
 </ul>
 </nav>
 </div>
@@ -2353,10 +2362,92 @@ Figure 1: Figure from <a href="https://commons.wikimedia.org/wiki/File:Procyon_l
 <aside>
 Il corso e tutto il materiale sono in lingua italiana.
 </aside>
-<p>Il corso sarà incentrato sull’introdurre le principali sfide, e le corrispondenti soluzioni (con esempi pratici in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>), per una corretta e fedele importazione di dati clinici; il tutto al fine di poterli analizzare, con la confidenza indispensabile rispetto la loro correttezza e consistenza, tramite programmi di analisi di dati e statistici.</p>
-<p>Introdurrò le principali problematiche in cui ci si può imbattere quando importiamo dati clinici (a partire da <em>come</em> ci vengono forniti, fino alla gestione della corretta tipologia di dato), analizzandone le cause, i possibili effetti indesiderati che si potrebbero verificare nel caso in cui tali problematiche non venissero gestite. Infine proporrò metodi pratici, sviluppati in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>, per poterli gestire al meglio.</p>
-<p>Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affrontare le principali problematiche legate al <em>data cleaning</em> nell’ambito della ricerca clinica. Potendole affrontare in modo robusto ed efficiente. In particolare, verrai a conoscenza delle funzionalità principali che ti potranno essere utili tra quelle offerte dai pacchetti <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>: <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a>, <a href="https://garthtarr.github.io/meatR/janitor.html"><code>{janitor}</code></a>, <a href="https://naniar.njtierney.com/"><code>{naniar}</code></a>, <a href="https://readr.tidyverse.org/"><code>{readr}</code></a>, <a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a>, <a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a>, e <a href="https://unheadr.liomys.mx/"><code>{unheadr}</code></a>.</p>
+<p>Il corso sarà incentrato sull’introdurre le principali sfide, e le corrispondenti soluzioni (con esempi pratici in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>), per una corretta e fedele importazione di dati clinici; il tutto al fine di poterli analizzare, con la confidenza indispensabile rispetto la loro correttezza e consistenza, tramite programmi di analisi di dati e statistici.</p>
+<p>Introdurrò le principali problematiche in cui ci si può imbattere quando importiamo dati clinici (a partire da <em>come</em> ci vengono forniti, fino alla gestione della corretta tipologia di dato), analizzandone le cause, i possibili effetti indesiderati che si potrebbero verificare nel caso in cui tali problematiche non venissero gestite. Infine proporrò metodi pratici, sviluppati in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>, per poterli gestire al meglio.</p>
+<p>Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affrontare le principali problematiche legate al <em>data cleaning</em> nell’ambito della ricerca clinica. Potendole affrontare in modo robusto ed efficiente. In particolare, verrai a conoscenza delle funzionalità principali che ti potranno essere utili tra quelle offerte dai pacchetti <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:pink;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>: <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a>, <a href="https://garthtarr.github.io/meatR/janitor.html"><code>{janitor}</code></a>, <a href="https://naniar.njtierney.com/"><code>{naniar}</code></a>, <a href="https://readr.tidyverse.org/"><code>{readr}</code></a>, <a href="https://stringr.tidyverse.org/"><code>{stringr}</code></a>, <a href="https://tidyr.tidyverse.org/"><code>{tidyr}</code></a>, e <a href="https://unheadr.liomys.mx/"><code>{unheadr}</code></a>.</p>
 <p>Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto questo sia certamente un limite, ci permetterà di poterlo registrare a beneficio futuro di quanti non avessero potuto partecipare in diretta. A garanzia della protezione della privacy di tutti i partecipanti, non potrai attivare la tua webcam né il microfono. La possibilità di porre (e rispondere a) domande in modo scritto e mediato ti sarà comunque garantita.</p>
+<h3 id="chi-sono-io">Chi sono <strong>io</strong></h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/profilo_CL.jpg" width="302" /></p>
+</div>
+<p>Piacere! Sono Corrado Lanera, un appassionato di <a href="https://www.r-project.org"><svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg></a> e data scientist dal 2014, seguace del <a href="https://www.tidyverse.org/">Tidyverse</a> fin dal suo esordio 🤩. Attualmente, sono un post-doc presso <a href="http://www.unipd-ubep.it">UBEP</a> (Unità di Biostatistica, Epidemiologia e Salute Pubblica) dell’<a href="https://www.unipd.it/">Università di Padova</a>. Lì, la mia attività di ricerca è principalmente diretta nell’area del machine learning e delle tecniche di phenomapping applicate a contesti clinici, con particolare attenzione alle analisi di dati di testo in linguaggio naturale e dati non strutturati per la classificazione automatica di:</p>
+<ul>
+<li>outcome clinici</li>
+<li>articoli scientifici per revisioni sistematiche</li>
+<li>segnali cinetici di dispositivi indossabili</li>
+</ul>
+<p>Per la nostra unità, gestisco i server <a href="https://www.rstudio.com/products/rstudio/#rstudio-server">RStudio Server Pro</a> e <a href="https://www.rstudio.com/products/shiny/shiny-server/">Shiny Server</a> per lo sviluppo e la distribuzione dei risultati, dei servizi e delle applicazioni che offriamo come unità.</p>
+<p>Amo promuovere, insegnare ed essere un esempio di come creare codice (<a href="https://www.r-project.org"><svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg></a>, ma non solo) leggibile, riproducibile e sopratutto robusto. Recentemente sono stato certificato come un <a href="https://education.rstudio.com/trainers/people/lanera+corrado/"><strong>RStudio Trainer</strong></a> per il <a href="https://www.tidyverse.org/">Tidyverse</a>.</p>
+<aside>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/crst_cl_tidyverse.png" width="480" /></p>
+</div>
+</aside>
+<h3 id="chi-sei-tu">Chi sei <strong>tu</strong></h3>
+<p>Il corso è principalmente indirizzato a operatori della ricerca clinica, ovvero persone con esperienza lavorativa nell’ambito della ricercaa clinica o laureati che hanno seguito un corso di alta formazione in ricerca clinica.</p>
+<p>Non avendoti mai visto, nel preparare la lezione ho immaginato tu potessi essere…</p>
+<h4 id="carla-clinica">Carla Clinica</h4>
+<p>In breve, Carla è …</p>
+<div class="panelset">
+<section id="background" class="panel-name panel">
+<h5 class="panel-name">Background</h5>
+</section>
+<section id="competenze" class="panel-name panel">
+<h5 class="panel-name">Competenze</h5>
+<table>
+<thead>
+<tr class="header">
+<th>Ambito</th>
+<th>Statistica</th>
+<th>Programmazione</th>
+<th><svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:brown;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Expert<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td>Expert</td>
+<td>Expert</td>
+<td>Competent</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="esigenze" class="panel-name panel">
+<h5 class="panel-name">Esigenze</h5>
+</section>
+<section id="extra" class="panel-name panel">
+<h5 class="panel-name">Extra</h5>
+</section>
+</div>
+<h3 id="che-cosa-faremo">Che cosa faremo</h3>
+<h4 id="obiettivi-del-corso">Obiettivi del corso</h4>
+<ol type="1">
+<li><p><strong>Rivedere</strong></p></li>
+<li><p><strong>Imparare</strong></p></li>
+<li><p><strong>Applicare</strong></p></li>
+</ol>
+<h4 id="in-parole-povere">In parole povere…</h4>
+<p>Imparerai a …</p>
+<h4 id="mappa-concettuale">Mappa concettuale</h4>
+<h3 id="dove">Dove</h3>
+<ul>
+<li><p><a href="https://formazionenelfarmaceutico.com/">Registrazione al corso</a></p></li>
+<li><p><a href=""><del>Stanza GoToWebinar del corso</del></a></p></li>
+</ul>
+<aside>
+Il link alla stanza del corso sarà inserito appena disponibile.
+</aside>
+<h3 id="quando">Quando</h3>
+<ul>
+<li><p><strong>Dal vivo</strong>: 13 Ottobre 2021 | 14:30–16:30 CEST/UTC+2</p></li>
+<li><p><strong>Video del corso</strong>: A seguire (dopo i necessari <em>tempi tecnici</em> per la messa on-line).</p></li>
+</ul>
+<aside>
+Se non sei in Italia, verifica <a href="https://www.timeanddate.com/worldclock/meetingdetails.html?year=2021&amp;month=10&amp;day=13&amp;hour=12&amp;min=30&amp;sec=0&amp;p1=215">l’orario del corso nella tua zona</a>.
+</aside>
+<p><br />
+</p>
 <h2 id="operazioni-preliminari">Operazioni Preliminari</h2>
 <h3 id="essenziali">Essenziali</h3>
 <ul>
@@ -2365,7 +2456,7 @@ Il corso e tutto il materiale sono in lingua italiana.
 <h3 id="opzionali">Opzionali</h3>
 <p>Per (e)seguire gli esempi e gli esercizi proposti localmente sul computer che utilizzerai, ti consiglio di aver installato in anticipo i seguenti software:</p>
 <ul>
-<li><p>Una versione recente di <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> (&gt;=4.0.0), scaricabile gratuitamente da <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
+<li><p>Una versione recente di <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:yellow;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> (&gt;=4.0.0), scaricabile gratuitamente da <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
 <li><p>Una versione recente di RStudio (&gt;=1.4.0), scaricabile gratuitamente da <a href="https://www.rstudio.com/download" class="uri">https://www.rstudio.com/download</a> (Licenza Open Source di RStudio Desktop)</p></li>
 <li><p>I pacchetti che utilizzeremo saranno quelli riportati di seguito, i quali possono essere installati, collegandosi a internet, aprendo RStudio, ed eseguendo la seguente riga di codice nella console:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(</span>
@@ -2377,25 +2468,7 @@ Il giorno del corso, attiverò un <a href="#rs-cloud">link</a> a un progetto <a 
 </aside>
 <p><br />
 </p>
-<h2 id="data-e-ora">Data e ora</h2>
-<ul>
-<li><p><strong>Dal vivo</strong>: 13 Ottobre 2021 | 14:30–16:30 CEST/UTC+2</p></li>
-<li><p><strong>Registrato</strong>: A seguire (post <em>tempi tecnici</em> di messa on-line)</p></li>
-</ul>
-<aside>
-Se non sei in Italia, verifica <a href="https://www.timeanddate.com/worldclock/meetingdetails.html?year=2021&amp;month=10&amp;day=13&amp;hour=12&amp;min=30&amp;sec=0&amp;p1=215">l’orario del corso nella tua zona</a>.
-</aside>
-<p><br />
-</p>
 <h2 id="link-utili">Link utili</h2>
-<h3 id="webinar">Webinar</h3>
-<ul>
-<li><a href="https://formazionenelfarmaceutico.com/">Registrazione al corso</a></li>
-<li><a href=""><del>Stanza GoToWebinar del corso</del></a></li>
-</ul>
-<aside>
-Il link alla stanza del corso sarà inserito appena disponibile.
-</aside>
 <h3 id="rs-cloud">Ambiente di lavoro remoto</h3>
 <ul>
 <li><a href="https://bit.ly/datacleaning-cra"><del>RStudio Cloud workspace</del></a></li>
@@ -2444,13 +2517,25 @@ Il materiale sarà disponibile dal giorno del corso.
 </aside>
 <p><br />
 </p>
-<!-- ## Sondaggi -->
-<!-- + [~~Pre-corso~~]() -->
-<!-- + [~~Post-corso~~]() -->
+<h2 id="sondaggi">Sondaggi</h2>
+<p>Ti chiederei di completare i seguenti sondaggi, uno prima di partecipare, dopo esserti iscritto, e l’altro una settimana dopo il corso.</p>
+<p>Il primo sondaggio mi servirà per eliminare dalla lezione tutto quello che conosci già molto bene, per non farti perdere tempo né annoiarti a raccontarti cose che non ti interessano e magari conosci meglio di me. Inoltre, mi permetterà di dare più attenzione alle parti che ti potranno essere davvero utili per migliorare, sfruttando al meglio il tempo che avremo a disposizione.</p>
+<aside>
+Il sondaggio pre-corso <strong>non</strong> è un esame per capire se hai le competenze per seguirlo. Non preoccuparti se non sai rispondere ad alcune domande: è previsto! Anzi, se rispondi a tutto… 😉
+</aside>
+<ul>
+<li><a href=""><del>Sondaggio pre-corso</del></a></li>
+</ul>
+<p>Il secondo sondaggio mi servirà per capire quanto sono stato efficace con la lezione che avrò tenuto, permettendomi di migliorare i corsi che potrò tenere in futuro. Potrà anche essere utile a te come ripasso di quanto abbiamo fatto.</p>
+<ul>
+<li><a href=""><del>Sondaggio post-corso</del></a></li>
+</ul>
+<p><br />
+</p>
 <p><strong>Ti aspetto al corso!!</strong> 🎉`</p>
 <p><strong>Corrado.</strong></p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="images/orsetto_lavatore-neuro74.png" alt="Figure from https://www.flickr.com/photos/neuro74/3015200493" width="341" class=external />
 <p class="caption">
 Figure 2: Figure from <a href="https://www.flickr.com/photos/neuro74/3015200493" class="uri">https://www.flickr.com/photos/neuro74/3015200493</a>
@@ -2458,6 +2543,12 @@ Figure 2: Figure from <a href="https://www.flickr.com/photos/neuro74/3015200493"
 </div>
 </div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Per sapere cosa rappresenta per me ciascuna <em>classe di competenza</em> puoi fare riferimento a <a href="https://www.rebeccawestburns.com/my-blog-3/notes/five-stages-of-acquiring-expertise-novice-to-expert">queste note</a> di <a href="https://www.rebeccawestburns.com">Rebecca West Burns</a> (in inglese).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

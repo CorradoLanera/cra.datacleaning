@@ -60,15 +60,132 @@ Grazie per aver deciso di partecipare a questo breve corso di un paio d'ore sul 
 knitr::include_url("slides/index.html")
 ```
 
-Il corso sarà incentrato sull'introdurre le principali sfide, e le corrispondenti soluzioni (con esempi pratici in `r fontawesome::fa("r-project", fill = "blue")`), per una corretta e fedele importazione di dati clinici; il tutto al fine di poterli analizzare, con la confidenza indispensabile rispetto la loro correttezza e consistenza, tramite programmi di analisi di dati e statistici.
+Il corso sarà incentrato sull'introdurre le principali sfide, e le corrispondenti soluzioni (con esempi pratici in `r fontawesome::fa("r-project", fill = "red")`), per una corretta e fedele importazione di dati clinici; il tutto al fine di poterli analizzare, con la confidenza indispensabile rispetto la loro correttezza e consistenza, tramite programmi di analisi di dati e statistici.
 
-Introdurrò le principali problematiche in cui ci si può imbattere quando importiamo dati clinici (a partire da _come_ ci vengono forniti, fino alla gestione della corretta tipologia di dato), analizzandone le cause, i possibili effetti indesiderati che si potrebbero verificare nel caso in cui tali problematiche non venissero gestite. Infine proporrò metodi pratici, sviluppati in `r fontawesome::fa("r-project", fill = "blue")`, per poterli gestire al meglio.
+Introdurrò le principali problematiche in cui ci si può imbattere quando importiamo dati clinici (a partire da _come_ ci vengono forniti, fino alla gestione della corretta tipologia di dato), analizzandone le cause, i possibili effetti indesiderati che si potrebbero verificare nel caso in cui tali problematiche non venissero gestite. Infine proporrò metodi pratici, sviluppati in `r fontawesome::fa("r-project", fill = "green")`, per poterli gestire al meglio.
 
-Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affrontare le principali problematiche legate al _data cleaning_ nell'ambito della ricerca clinica. Potendole affrontare in modo robusto ed efficiente. In particolare, verrai a conoscenza delle funzionalità principali che ti potranno essere utili tra quelle offerte dai pacchetti `r fontawesome::fa("r-project", fill = "blue")`: 
+Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affrontare le principali problematiche legate al _data cleaning_ nell'ambito della ricerca clinica. Potendole affrontare in modo robusto ed efficiente. In particolare, verrai a conoscenza delle funzionalità principali che ti potranno essere utili tra quelle offerte dai pacchetti `r fontawesome::fa("r-project", fill = "pink")`: 
 [`{dplyr}`](https://dplyr.tidyverse.org/), [`{janitor}`](https://garthtarr.github.io/meatR/janitor.html), [`{naniar}`](https://naniar.njtierney.com/), [`{readr}`](https://readr.tidyverse.org/), [`{stringr}`](https://stringr.tidyverse.org/), [`{tidyr}`](https://tidyr.tidyverse.org/), e [`{unheadr}`](https://unheadr.liomys.mx/).
 
 Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto questo sia certamente un limite, ci permetterà di poterlo registrare a beneficio futuro di quanti non avessero potuto partecipare in diretta. A garanzia della protezione della privacy di tutti i partecipanti, non potrai attivare la tua webcam né il microfono. La possibilità di porre (e rispondere a) domande in modo scritto e mediato ti sarà comunque garantita.
 
+
+
+
+### Chi sono __io__
+
+```{r}
+knitr::include_graphics("images/profilo_CL.jpg")
+```
+
+Piacere! Sono Corrado Lanera, un appassionato di [`r fontawesome::fa("r-project", fill = "orange")`](https://www.r-project.org) e data scientist dal 2014, seguace del [Tidyverse](https://www.tidyverse.org/) fin dal suo esordio  `r emo::ji("star-struck")`. Attualmente, sono un post-doc presso [UBEP](http://www.unipd-ubep.it) (Unità di Biostatistica, Epidemiologia e Salute Pubblica) dell'[Università di Padova](https://www.unipd.it/). Lì, la mia attività di ricerca è principalmente diretta nell'area del machine learning e delle tecniche di phenomapping applicate a contesti clinici, con particolare attenzione alle analisi di dati di testo in linguaggio naturale e dati non strutturati per la classificazione automatica di:
+
+- outcome clinici
+- articoli scientifici per revisioni sistematiche
+- segnali cinetici di dispositivi indossabili
+
+
+Per la nostra unità, gestisco i server [RStudio Server Pro](https://www.rstudio.com/products/rstudio/#rstudio-server) e [Shiny Server](https://www.rstudio.com/products/shiny/shiny-server/) per lo sviluppo e la distribuzione dei risultati, dei servizi e delle applicazioni che offriamo come unità.
+
+Amo promuovere, insegnare ed essere un esempio di come creare codice ([`r fontawesome::fa("r-project", fill = "red")`](https://www.r-project.org), ma non solo) leggibile, riproducibile e sopratutto robusto. Recentemente sono stato certificato come un [__RStudio Trainer__](https://education.rstudio.com/trainers/people/lanera+corrado/) per il [Tidyverse](https://www.tidyverse.org/).
+
+<aside>
+```{r}
+knitr::include_graphics("images/crst_cl_tidyverse.png")
+```
+</aside>
+
+
+### Chi sei __tu__
+
+Il corso è principalmente indirizzato a operatori della ricerca clinica, ovvero persone con esperienza lavorativa nell'ambito della ricercaa clinica o laureati che hanno seguito un corso di alta formazione in ricerca clinica.
+
+
+Non avendoti mai visto, nel preparare la lezione ho immaginato tu potessi essere...
+
+
+#### Carla Clinica
+
+In breve, Carla è ...
+
+::::: {.panelset}
+
+::: {.panel}
+
+##### Background {.panel-name}
+
+:::
+
+::: {.panel}
+
+##### Competenze {.panel-name}
+
+Ambito | Statistica | Programmazione | `r fontawesome::fa("r-project", fill = "brown")`
+-------|------------|----------------|------------
+Expert^[Per sapere cosa rappresenta per me ciascuna _classe di competenza_ puoi fare riferimento a [queste note](https://www.rebeccawestburns.com/my-blog-3/notes/five-stages-of-acquiring-expertise-novice-to-expert) di [Rebecca West Burns](https://www.rebeccawestburns.com) (in inglese).] | Expert     | Expert         | Competent
+
+:::
+
+::: {.panel}
+
+##### Esigenze {.panel-name}
+
+:::
+
+::: {.panel}
+
+##### Extra {.panel-name}
+
+:::
+
+
+:::::
+
+
+### Che cosa faremo
+
+
+#### Obiettivi del corso
+
+1. **Rivedere** 
+
+2. **Imparare** 
+
+3. **Applicare** 
+
+
+#### In parole povere...
+
+Imparerai a ...
+
+
+#### Mappa concettuale
+
+
+### Dove
+
+
+* [Registrazione al corso](https://formazionenelfarmaceutico.com/)
+
++ [~~Stanza GoToWebinar del corso~~]()
+
+<aside>
+Il link alla stanza del corso sarà inserito appena disponibile.
+</aside>
+
+
+### Quando
+
++ **Dal vivo**: 13 Ottobre 2021 | 14:30--16:30 CEST/UTC+2
+
++ **Video del corso**: A seguire (dopo i necessari _tempi tecnici_ per la messa on-line).
+
+<aside>
+Se non sei in Italia, verifica [l'orario del corso nella tua zona](https://www.timeanddate.com/worldclock/meetingdetails.html?year=2021&month=10&day=13&hour=12&min=30&sec=0&p1=215).
+</aside>
+
+
+\
 
 ## Operazioni Preliminari
 
@@ -82,7 +199,7 @@ Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto 
 
 Per (e)seguire gli esempi e gli esercizi proposti localmente sul computer che utilizzerai, ti consiglio di aver installato in anticipo i seguenti software:
 
-* Una versione recente di `r fontawesome::fa("r-project", fill = "blue")` (>=4.0.0), scaricabile gratuitamente da <https://cran.r-project.org/>
+* Una versione recente di `r fontawesome::fa("r-project", fill = "yellow")` (>=4.0.0), scaricabile gratuitamente da <https://cran.r-project.org/>
 
 * Una versione recente di RStudio (>=1.4.0), scaricabile gratuitamente da <https://www.rstudio.com/download> (Licenza Open Source di RStudio Desktop)
 
@@ -99,33 +216,11 @@ Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud
 </aside>
 
 
-\
-
-## Data e ora
-
-- **Dal vivo**: 13 Ottobre 2021 | 14:30--16:30 CEST/UTC+2
-
-- **Registrato**: A seguire (post _tempi tecnici_ di messa on-line)
-
-<aside>
-Se non sei in Italia, verifica [l'orario del corso nella tua zona](https://www.timeanddate.com/worldclock/meetingdetails.html?year=2021&month=10&day=13&hour=12&min=30&sec=0&p1=215).
-</aside>
-
 
 \
 
 
 ## Link utili
-
-### Webinar
-
-+ [Registrazione al corso](https://formazionenelfarmaceutico.com/)
-+ [~~Stanza GoToWebinar del corso~~]()
-
-<aside>
-Il link alla stanza del corso sarà inserito appena disponibile.
-</aside>
-
 
 
 ### Ambiente di lavoro remoto {#rs-cloud}
@@ -189,16 +284,32 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 Il materiale sarà disponibile dal giorno del corso.
 </aside>
 
+
+
 \
 
-<!-- ## Sondaggi -->
-
-<!-- + [~~Pre-corso~~]() -->
-
-<!-- + [~~Post-corso~~]() -->
 
 
+## Sondaggi
 
+Ti chiederei di completare i seguenti sondaggi, uno prima di partecipare, dopo esserti iscritto, e l'altro una settimana dopo il corso.
+
+Il primo sondaggio mi servirà per eliminare dalla lezione tutto quello che conosci già molto bene, per non farti perdere tempo né annoiarti a raccontarti cose che non ti interessano e magari conosci meglio di me. Inoltre, mi permetterà di dare più attenzione alle parti che ti potranno essere davvero utili per migliorare, sfruttando al meglio il tempo che avremo a disposizione.
+
+<aside>
+Il sondaggio pre-corso **non** è un esame per capire se hai le competenze per seguirlo. Non preoccuparti se non sai rispondere ad alcune domande: è previsto! Anzi, se rispondi a tutto... `r emo::ji("winking_face")`
+</aside>
+
++ [~~Sondaggio pre-corso~~]()
+
+
+Il secondo sondaggio mi servirà per capire quanto sono stato efficace con la lezione che avrò tenuto, permettendomi di migliorare i corsi che potrò tenere in futuro. Potrà anche essere utile a te come ripasso di quanto abbiamo fatto.
+
++ [~~Sondaggio post-corso~~]()
+
+
+
+\
 
 
 **Ti aspetto al corso!!** `r emo::ji("popper")``
