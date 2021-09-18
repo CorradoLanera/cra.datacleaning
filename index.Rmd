@@ -3,7 +3,7 @@ title: "Data Cleaning per la Ricerca Clinica"
 author:
   - name: Corrado Lanera, Ph.D.
     url: https://www.CorradoLanera.it
-    affiliation: Unit of Biostatistics, Epidemiology, and Public Health -- University of Padova (IT)
+    affiliation: Unità di Biostatistica, Epidemiologia, e Salute Pubblica -- University of Padova (IT)
     affiliation_url: http://www.unipd-ubep.it
     orcid_id: 0000-0002-0520-7428
 date: "`r Sys.Date()`"
@@ -60,7 +60,7 @@ Grazie per aver deciso di partecipare a questo breve corso di un paio d'ore sul 
 knitr::include_url("slides/index.html")
 ```
 
-Il corso sarà incentrato sull'introdurre le principali sfide, e le corrispondenti soluzioni (con esempi pratici in `r fontawesome::fa("r-project", fill = "red")`), per una corretta e fedele importazione di dati clinici; il tutto al fine di poterli analizzare, con la confidenza indispensabile rispetto la loro correttezza e consistenza, tramite programmi di analisi di dati e statistici.
+Il corso sarà incentrato nell'introdurti le principali sfide, e le corrispondenti soluzioni (con esempi pratici in `r fontawesome::fa("r-project", fill = "red")`), per una corretta e fedele importazione di dati clinici. Il tutto, per poterli poi analizzare sentendoti confidente sulla loro correttezza e consistenza.
 
 Introdurrò le principali problematiche in cui ci si può imbattere quando importiamo dati clinici (a partire da _come_ ci vengono forniti, fino alla gestione della corretta tipologia di dato), analizzandone le cause, i possibili effetti indesiderati che si potrebbero verificare nel caso in cui tali problematiche non venissero gestite. Infine proporrò metodi pratici, sviluppati in `r fontawesome::fa("r-project", fill = "green")`, per poterli gestire al meglio.
 
@@ -73,7 +73,7 @@ Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto 
 ### Dove `r emo::ji("pushpin")`
 
 
-+ Stanza [GoToWebinar](https://www.goto.com/it/webinar), accessibile previo registrazione al corso da effetture a [questa pagina](https://formazionenelfarmaceutico.com/).
++ Stanza [GoToWebinar](https://www.goto.com/it/webinar), accessibile previo registrazione al corso da effettuare a [questa pagina](https://formazionenelfarmaceutico.com/).
 
 <aside>
 Un link personalizzato alla stanza del corso sarà condiviso privatamente dall'organizzazione ai partecipanti registrati.
@@ -102,7 +102,7 @@ Per la partecipazione al corso dal vivo, così come per la visione della sua reg
 
 ### Essenziali
 
-+ La piattaforma utilizzata per il corso sarà [GoToWebinar](https://www.goto.com/it/webinar), assicurati per tempo che i tui computer, software e connessione soddisfino i [requisiti minimi di sistema](https://support.goto.com/it/webinar#Standard) per poter partecipare col minimo rischio di intoppi.
++ La piattaforma utilizzata per il corso sarà [GoToWebinar](https://www.goto.com/it/webinar), assicurati per tempo che i tuoi computer, software e connessione soddisfino i [requisiti minimi di sistema](https://support.goto.com/it/webinar#Standard) per poter partecipare col minimo rischio di intoppi.
 
 
 
@@ -123,7 +123,7 @@ Per (e)seguire gli esempi e gli esercizi proposti localmente sul computer che ut
   ```
 
 <aside>
-Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud](https://rstudio.cloud/) che conterrà tutto il materiale utile per il corso, oltre ad avere già installati tutti i pacchetti che useremo. Se tu preferissi (e)seguire gli esempi su tale piattaforma remota, invece che su un _tuo_ computer, è necessario (ma sufficiente) che tu abbia un account su [RStudio Cloud](https://rstudio.cloud/); se già non ce l'hai, puoi crearlo gratuitaemnte su <https://rstudio.cloud/>.
+Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud](https://rstudio.cloud/) che conterrà tutto il materiale utile per il corso, oltre ad avere già installati tutti i pacchetti che useremo. Se tu preferissi (e)seguire gli esempi su tale piattaforma remota, invece che su un _tuo_ computer, è necessario (ma sufficiente) che tu abbia un account su [RStudio Cloud](https://rstudio.cloud/); se già non ce l'hai, puoi crearlo gratuitamente su <https://rstudio.cloud/>.
 </aside>
 
 
@@ -235,7 +235,7 @@ Il secondo sondaggio mi servirà per capire quanto sono stato efficace con la le
 \
 
 
-**Ti aspetto al corso _Data Cleaning per la Ricerca Clinica_!!** `r emo::ji("popper")`
+**Ti aspetto 76 corso _Data Cleaning per la Ricerca Clinica_!!** `r emo::ji("popper")`
 
 
 **Corrado.**

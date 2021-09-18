@@ -44,7 +44,7 @@ knitr::include_graphics("images/crst_cl_tidyverse.png")
 
 ## Chi sei _tu_
 
-Il corso è principalmente indirizzato a operatori della ricerca clinica, ovvero persone con esperienza lavorativa nell'ambito della ricercaa clinica o laureati che hanno seguito un corso di alta formazione in ricerca clinica.
+Il corso è principalmente indirizzato a operatori della ricerca clinica, ovvero persone con esperienza lavorativa nell'ambito della ricerca clinica o laureati che hanno seguito un corso di alta formazione in ricerca clinica.
 
 
 Non avendoti mai visto, nel preparare la lezione ho immaginato tu potessi essere...
@@ -68,7 +68,7 @@ In breve, Carla è ...
 
 Ambito | Statistica | Programmazione | `r fontawesome::fa("r-project", fill = "brown")`
 -------|------------|----------------|------------
-Expert^[Per sapere cosa rappresenta per me ciascuna _classe di competenza_ puoi fare riferimento a [queste note](https://www.rebeccawestburns.com/my-blog-3/notes/five-stages-of-acquiring-expertise-novice-to-expert) di [Rebecca West Burns](https://www.rebeccawestburns.com) (in inglese).] | Expert     | Expert         | Competent
+Esperto^[Per sapere cosa rappresenta per me ciascuna _classe di competenza_ puoi fare riferimento a [queste note](https://www.rebeccawestburns.com/my-blog-3/notes/five-stages-of-acquiring-expertise-novice-to-expert) di [Rebecca West Burns](https://www.rebeccawestburns.com) (in inglese).] | Esperto     | Esperto         | Competente
 
 :::
 
