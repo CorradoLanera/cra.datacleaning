@@ -47,18 +47,23 @@ knitr::include_graphics("images/crst_cl_tidyverse.png")
 Il corso è principalmente indirizzato a operatori della ricerca clinica, ovvero persone con esperienza lavorativa nell'ambito della ricerca clinica o laureati che hanno seguito un corso di alta formazione in ricerca clinica.
 
 
-Non avendoti mai visto, nel preparare la lezione ho immaginato tu potessi essere...
+Non avendoti mai visto, nel preparare la lezione ho immaginato tu potessi essere una tra le seguenti persone.
 
 
 ### Carla Clinica
 
-In breve, Carla è ...
+In breve, Carla è un'intensivista cardiotoracica appassionata e informata di ricerca clinica, interessata a fare ricerca in autonomia conducendo da sé le analisi sui dati dei suoi studi e del suo reparto. Fin'ora ha sempre usato solo Excel per raccogliere e fare qualche analisi ma si rende conto che questo la limita e vorrebbe capire come sfruttare al meglio le potenzialità di software di analisi dedicati come R, di cui ha alcune basi.
+
 
 ::::: {.panelset}
 
 ::: {.panel}
 
 #### Background {.panel-name}
+
+Carla ha passato gli ultimi 6 anni a lavorare nell'unità di terapia intensiva cardiotoracica in un grande sistema ospedaliero. Ha letto molti articoli entusiasmanti sul _data science_, ed è entusiasta della prospettiva di imparare a farlo anche lei! Purtroppo, sembra che nulla abbia senso quando prova a impararlo da sola.
+
+Carla è sempre stata una brava studentessa e ha sempre eccelso nelle cose che ha cercato di imparare. Quando si impegna a imparare qualcosa di nuovo è molto dura con se stessa e preferirebbe dare la colpa alle lunghe ore di lavoro piuttosto che far sapere ai suoi colleghi che potrebbe servirle aiuto.
 
 :::
 
@@ -68,7 +73,11 @@ In breve, Carla è ...
 
 Ambito | Statistica | Programmazione | `r fontawesome::fa("r-project", fill = "brown")`
 -------|------------|----------------|------------
-Esperto^[Per sapere cosa rappresenta per me ciascuna _classe di competenza_ puoi fare riferimento a [queste note](https://www.rebeccawestburns.com/my-blog-3/notes/five-stages-of-acquiring-expertise-novice-to-expert) di [Rebecca West Burns](https://www.rebeccawestburns.com) (in inglese).] | Esperto     | Esperto         | Competente
+Esperta^[Per sapere cosa rappresenta per me ciascuna _classe di competenza_ puoi fare riferimento a [queste note](https://www.rebeccawestburns.com/my-blog-3/notes/five-stages-of-acquiring-expertise-novice-to-expert) di [Rebecca West Burns](https://www.rebeccawestburns.com) (in inglese).] | Esperto     | Competente         | Novizia
+
+
+Carla si tiene al passo con la ricerca medica, ma ha poca (o nessuna) esperienza nel farla. Usa Excel sia per compiti non legati ai dati (ad esempio, fare liste), che per inserire manualmente i dati dei pazienti in fogli di calcolo per la revisione delle cartelle. Vuole essere in grado di raccogliere e gestire i dati in modo efficiente riuscendo a importarli correttamente in software dedicati, così come imparare i processi e le tecniche di analisi, per eseguire un giorno le sue analisi e i propri studi in autonomia.
+
 
 :::
 
@@ -76,16 +85,102 @@ Esperto^[Per sapere cosa rappresenta per me ciascuna _classe di competenza_ puoi
 
 #### Esigenze {.panel-name}
 
+Carla predilige tutorial autodidattici con esercizi pratici, e forum dove può chiedere aiuto. Ha bisogno di brevi panoramiche per orientarsi e di tutorial introduttivi che includano video (o GIF animate) che mostrino esattamente come usare gli strumenti che studia, e che utilizzino serie di dati a cui possa far riferimento. 
+
+A Carla piacerebbe avere una comunità di altre persone nel campo medico che sono interessate a imparare come lavorare sui dati, in modo da poter imparare e fare domande in un gruppo cooperativo di interesse.
+
 :::
 
 ::: {.panel}
 
 #### Extra {.panel-name}
 
+Carla è un genitore single che si destreggia tra il tempo al lavoro e a casa e che ed è quindi sempre a corto di tempo per imparare nuove abilità, anche tra quelle che le interessano e la appassionano.
+
 :::
 
 
 :::::
+
+
+
+
+
+
+
+### Peter Programmer
+
+
+
+
+::::: {.panelset}
+
+::: {.panel}
+
+#### Background {.panel-name}
+
+Peter si è da poco laureato in statistica ma è sempre stato appassionato di ricerca clinica, e infatti, sta seguendo un corso in materia. Appassionato di computer e conosce e sa programmare piuttosto bene in diversi linguaggi come Python, ed R; i problemi principali che riscontra con le analisi del "mondo reale" sono legati ai dati che gli arrivano, raccolti sembra senza alcun criterio che sia utile ad analizzarli. 
+
+Peter è una persona che divaga, esplora, e cerca di approfondire i temi che di volta in volta lo appassionano. Predilige corsi on-line piuttosto che in presenza, trovando questi ultimi spesso dispersivi. Apprezzando la possibilità di rivedere le lezioni che segue sia mentre studia che successivamente.
+
+
+:::
+
+::: {.panel}
+
+#### Competenze {.panel-name}
+
+Ambito     | Statistica | Programmazione | `r fontawesome::fa("r-project", fill = "brown")`
+-----------|------------|----------------|------------
+Competente | Esperto    | Esperto        | Esperto
+
+
+
+
+<!-- Carla si tiene al passo con la ricerca medica, ma ha poca (o nessuna) esperienza nel farla. Usa Excel sia per compiti non legati ai dati (ad esempio, fare liste), che per inserire manualmente i dati dei pazienti in fogli di calcolo per la revisione delle cartelle. Vuole essere in grado di raccogliere e gestire i dati in modo efficiente riuscendo a importarli correttamente in software dedicati, così come imparare i processi e le tecniche di analisi, per eseguire un giorno le sue analisi e i propri studi in autonomia. -->
+
+
+:::
+
+::: {.panel}
+
+#### Esigenze {.panel-name}
+
+<!-- Carla predilige tutorial autodidattici con esercizi pratici, e forum dove può chiedere aiuto. Ha bisogno di brevi panoramiche per orientarsi e di tutorial introduttivi che includano video (o GIF animate) che mostrino esattamente come usare gli strumenti che studia, e che utilizzino serie di dati a cui possa far riferimento.  -->
+
+<!-- A Carla piacerebbe avere una comunità di altre persone nel campo medico che sono interessate a imparare come lavorare sui dati, in modo da poter imparare e fare domande in un gruppo cooperativo di interesse. -->
+
+:::
+
+::: {.panel}
+
+#### Extra {.panel-name}
+
+<!-- Carla è un genitore single che si destreggia tra il tempo al lavoro e a casa e che ed è quindi sempre a corto di tempo per imparare nuove abilità, anche tra quelle che le interessano e la appassionano. -->
+
+:::
+
+
+:::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Che cosa faremo
