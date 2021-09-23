@@ -235,7 +235,7 @@ Il secondo sondaggio mi servirà per capire quanto sono stato efficace con la le
 \
 
 
-**Ti aspetto 76 corso _Data Cleaning per la Ricerca Clinica_!!** `r emo::ji("popper")`
+**Ti aspetto al corso _Data Cleaning per la Ricerca Clinica_!!** `r emo::ji("popper")`
 
 
 **Corrado.**
