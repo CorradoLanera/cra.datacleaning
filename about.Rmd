@@ -208,11 +208,11 @@ Peter sta cercando di lavorare con la ricerca clinica e al momento non ha molti 
 
 ### In parole povere...
 
-Imparerai a importare correttamente una base di dati dal mondo esterno dividendo, aggregando, estraendo, trasformando, lei stessa o il suo contenuto fino ad arrivare a una forma e completezza utile alle analisi; il tutto, operando solo tramite codice (R) riproducibile senza alcuna manipolazione diretta del contenuto del file sorgente.
+Imparerai a importare correttamente una base di dati dal mondo esterno dividendo, aggregando, estraendo, trasformando, lei stessa o il suo contenuto fino ad arrivare a forma, coerenza e completezza utili alle analisi; il tutto, operando solo tramite codice (R), riproducibile e senza (possibilmente) alcuna manipolazione diretta del contenuto del file sorgente da parte tua.
 
 
-## ~~Mappa concettuale~~
+## Mappa concettuale
 
 ```{r, layout="l-body-outset"}
-knitr::include_graphics("images/concept_map.png")
+knitr::include_graphics("images/data-cleaning_ita.png")
 ```
