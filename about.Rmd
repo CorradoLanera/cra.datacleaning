@@ -188,27 +188,29 @@ Peter sta cercando di lavorare con la ricerca clinica e al momento non ha molti 
 ### Obiettivi del corso
 
 1. **Rivedere** 
-  - La distinzione tra le tipologie di dati in cui ci si può imbattere nella ricerca clinica
-  - I principali tipi di dati gestiti da R, inclusi per i dati mancanti
+  - le principali tipologie di dati utilizzati nella ricerca clinica
+  - i tipi di dati usati da R
+  - le caratteristiche che possono avere file di dati clinici
+  - le caratteristiche che devono avere oggetti coi dati da analizzare
   
 
-2. **Imparare** 
-  - Definire le caratteristiche di un dataset finalizzato all'analisi di dati (cosiddetto __tidy__)
-  - Cercare, estrarre, rimuovere informazioni strutturate, definite nei dati tramite testo
-  - Manipolare e trasformare basi di dati globalmente in forma o localmente nel contenuto
-  - Risolvere i problemi più comuni in cui ci si imbatte quando si importano dati raccolti su fogli di calcolo (Excel)
+2. **Imparare a** 
+  - Manipolare dati di tipo testuale (espressioni regolari)
+  - Manipolare i dati grezzi per estrarne informazioni analizzabili
+  - Trasmutare dati grezzi in __tidy-data__
+  - In generale, importare correttamente basi di dati grezzi dai corrispondenti file sorgenti (Excel/CSV).
 
-3. **Applicare** 
-  - il pacchetto `{readr}` (e `{readxl}`) per importare i dati
-  - il pacchetto `{janitor}` per uniformare i metadati principali di una base di dati (nomi delle variabili) e rimuovere righe/colonne prive di contenuto
-  - il pacchetto `{tidyr}` e `{dplyr}` per manipolarli rispettivamente globalmente e localmente
-  - il pacchetto `{stringr}` e le espressioni regolari per gestire informazioni codificate dentro al testo
-  - il pacchetto `{unheadr}` per risolvere problemi comuni di importazione dati dai fogli di calcolo
+3. **Esplorare e ottenere una panoramica dei pacchetti R** 
+  - `{readr}` (e `{readxl}`) per importare i dati
+  - `{janitor}` per uniformare i metadati principali di una base di dati  e rimuovere righe/colonne prive di contenuto
+  - `{tidyr}` e `{dplyr}` per la manipolazione di basi di dati rispettivamente globalmente e puntualmente
+  - `{stringr}`, e le espressioni regolari, per la gestione di informazioni testuali
+  - `{unheadr}` per risolvere i problemi comuni di importazione da fogli di calcolo
 
 
 ### In parole povere...
 
-Imparerai a importare correttamente una base di dati dal mondo esterno dividendo, aggregando, estraendo, trasformando, lei stessa o il suo contenuto fino ad arrivare a forma, coerenza e completezza utili alle analisi; il tutto, operando solo tramite codice (R), riproducibile e senza (possibilmente) alcuna manipolazione diretta del contenuto del file sorgente da parte tua.
+Imparerai a importare correttamente una base di dati dal mondo esterno dividendo, aggregando, estraendo, trasformando, lei stessa o il suo contenuto fino ad arrivare a forma, coerenza e completezza utili per le tue analisi; il tutto, operando solo tramite codice (R), riproducibile e senza (possibilmente) alcuna manipolazione diretta del contenuto del file sorgente (Excel/csv) da parte tua!
 
 
 ## Mappa concettuale
