@@ -65,7 +65,7 @@ Il corso sarà incentrato nell'introdurti le principali sfide, e le corrisponden
 Introdurrò le principali problematiche in cui ci si può imbattere quando importiamo dati clinici (a partire da _come_ ci vengono forniti, fino alla gestione della corretta tipologia di dato), analizzandone le cause, i possibili effetti indesiderati che si potrebbero verificare nel caso in cui tali problematiche non venissero gestite. Infine proporrò metodi pratici, sviluppati in `r fontawesome::fa("r-project", fill = "green")`, per poterli gestire al meglio.
 
 Partecipando al corso, sarai quindi in grado di prevedere, individuare, e affrontare le principali problematiche legate al _data cleaning_ nell'ambito della ricerca clinica. Potendole affrontare in modo robusto ed efficiente. In particolare, verrai a conoscenza delle funzionalità principali che ti potranno essere utili tra quelle offerte dai pacchetti `r fontawesome::fa("r-project", fill = "pink")`: 
-[`{dplyr}`](https://dplyr.tidyverse.org/), [`{janitor}`](https://garthtarr.github.io/meatR/janitor.html), [`{naniar}`](https://naniar.njtierney.com/), [`{readr}`](https://readr.tidyverse.org/), [`{stringr}`](https://stringr.tidyverse.org/), [`{tidyr}`](https://tidyr.tidyverse.org/), e [`{unheadr}`](https://unheadr.liomys.mx/).
+[`{dplyr}`](https://dplyr.tidyverse.org/), [`{janitor}`](https://garthtarr.github.io/meatR/janitor.html), [`{readr}`](https://readr.tidyverse.org/), [`{readxl}`](https://readxl.tidyverse.org/) [`{stringr}`](https://stringr.tidyverse.org/), [`{tidyr}`](https://tidyr.tidyverse.org/), e [`{unheadr}`](https://unheadr.liomys.mx/).
 
 Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto questo sia certamente un limite, ci permetterà di poterlo registrare a beneficio futuro di quanti non avessero potuto partecipare in diretta. A garanzia della protezione della privacy di tutti i partecipanti, non potrai attivare la tua webcam né il microfono. La possibilità di porre (e rispondere a) domande in modo scritto e mediato ti sarà comunque garantita.
 
@@ -95,6 +95,12 @@ Se non sei in Italia, verifica [l'orario del corso nella tua zona](https://www.t
 
 Per la partecipazione al corso dal vivo, così come per la visione della sua registrazione in futuro, è richiesto che tu [ti registri](https://formazionenelfarmaceutico.com/). La registrazione, sia per partecipare al corso sia per poter accedere alla sua registrazione, è offerta gratuitamente a chiunque da [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/).
 
+\
+
+## Codice di Condotta
+
+Tutti coloro che partecipano alle attività legate a questo corso (inclusi ma non limitatamente a organizzatori, istruttori, e partecipanti) sono tenuti a rispettare il [Codice di Condotta](code_of_conduct.html). Questo documento descrive anche come segnalare un incidente, se necessario.
+
 
 \
 
@@ -117,10 +123,15 @@ Per (e)seguire gli esempi e gli esercizi proposti localmente sul computer che ut
 * I pacchetti che utilizzeremo saranno quelli riportati di seguito, i quali possono essere installati, collegandosi a internet, aprendo RStudio, ed eseguendo la seguente riga di codice nella console:
   
   ``` r
-  install.packages(c(
-    "janitor", "naniar", "tidyverse", "unheadr"
-  ))
+  install.packages(c("janitor", "tidyverse", "unheadr", "usethis"))
   ```
+* ~~I dati, le slide e le soluzioni degli esercizi potrai recuperarli tramite l'esecuzione del seguente codice:~~
+
+  ``` r
+  usethis::use_course("CorradoLanera/corso-cra-dc",
+                      destdir = <path progetto RStudio del corso>)
+  ```
+
 
 <aside>
 Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud](https://rstudio.cloud/) che conterrà tutto il materiale utile per il corso, oltre ad avere già installati tutti i pacchetti che useremo. Se tu preferissi (e)seguire gli esempi su tale piattaforma remota, invece che su un _tuo_ computer, è necessario (ma sufficiente) che tu abbia un account su [RStudio Cloud](https://rstudio.cloud/); se già non ce l'hai, puoi crearlo gratuitamente su <https://rstudio.cloud/>.
@@ -136,7 +147,7 @@ Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud
 --------:|:-------------------------------
  _Prima_ | [~~Sondaggio pre-corso~~]()
   14:00  | _Benvenuti_ dall'organizzazione
-  14:10  | Corso
+  14:10  | ~~Corso~~
   15:40  | Domande, dubbi, curiosità
   16:00  | [~~Sondaggio post-corso~~]()
   16:10  | FINE
@@ -170,7 +181,7 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 + [~~03: Manipolazione~~]()
 + [~~04: Stringhe~~]()
 + [~~05: Problemi comuni~~]()
-+ [~~06: Caso studio~~]()
++ [~~06: Caso studio/finale~~]()
 
 :::
 
