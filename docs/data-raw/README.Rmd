@@ -1,0 +1,5 @@
+---
+title: Messy dataset
+---
+
+Il foglio Excel [data-raw/messy_aoe.xlsx](data-raw/messy_aoe.xlsx) è una modificazione manuale opportunamente eseguita da [me](www.CorradoLanera.it) per enfatizzare ulteriori problematiche rispetto all'originale base di dati `data("AOEunits_raw", package = "unheadr")`. L'esportazione è stata effettuate tramite lo script [data-raw/dataset.R](data-raw/dataset.R).

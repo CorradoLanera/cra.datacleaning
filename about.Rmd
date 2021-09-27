@@ -24,7 +24,7 @@ xaringanExtra::use_xaringan_extra(c(
 knitr::include_graphics("images/profilo_CL.jpg")
 ```
 
-Piacere! Sono Corrado Lanera, un appassionato di [`r fontawesome::fa("r-project", fill = "orange")`](https://www.r-project.org) e data scientist dal 2014, seguace del [Tidyverse](https://www.tidyverse.org/) fin dal suo esordio  `r emo::ji("star-struck")`. Attualmente, sono un post-doc presso [UBEP](http://www.unipd-ubep.it) (Unità di Biostatistica, Epidemiologia e Salute Pubblica) dell'[Università di Padova](https://www.unipd.it/). Lì, la mia attività di ricerca è principalmente diretta nell'area del machine learning e delle tecniche di phenomapping applicate a contesti clinici, con particolare attenzione alle analisi di dati di testo in linguaggio naturale e dati non strutturati per la classificazione automatica di:
+Piacere! Sono Corrado Lanera, un appassionato di [`r fontawesome::fa("r-project", fill = "orange")`](https://www.r-project.org) e data scientist dal 2014, _seguace_ del [Tidyverse](https://www.tidyverse.org/) fin dal suo esordio  `r emo::ji("star-struck")`. Attualmente, sono un post-doc presso [UBEP](http://www.unipd-ubep.it) (Unità di Biostatistica, Epidemiologia e Salute Pubblica) dell'[Università di Padova](https://www.unipd.it/). Lì, la mia attività di ricerca è principalmente diretta nell'area del machine learning e delle tecniche di phenomapping applicate a contesti clinici, con particolare attenzione alle analisi di dati di testo in linguaggio naturale e dati non strutturati per la classificazione automatica di:
 
 - outcome clinici
 - articoli scientifici per revisioni sistematiche
@@ -33,7 +33,7 @@ Piacere! Sono Corrado Lanera, un appassionato di [`r fontawesome::fa("r-project"
 
 Per la nostra unità, gestisco i server [RStudio Server Pro](https://www.rstudio.com/products/rstudio/#rstudio-server) e [Shiny Server](https://www.rstudio.com/products/shiny/shiny-server/) per lo sviluppo e la distribuzione dei risultati, dei servizi e delle applicazioni che offriamo come unità.
 
-Amo promuovere, insegnare ed essere un esempio di come creare codice ([`r fontawesome::fa("r-project", fill = "red")`](https://www.r-project.org), ma non solo) leggibile, riproducibile e sopratutto robusto. Recentemente sono stato certificato come un [__RStudio Trainer__](https://education.rstudio.com/trainers/people/lanera+corrado/) per il [Tidyverse](https://www.tidyverse.org/).
+Amo promuovere, insegnare ed essere un esempio di come creare codice ([`r fontawesome::fa("r-project", fill = "red")`](https://www.r-project.org), ma non solo) leggibile, riproducibile e sopratutto robusto. Recentemente sono stato certificato come un [_RStudio Trainer_](https://education.rstudio.com/trainers/people/lanera+corrado/) per il [Tidyverse](https://www.tidyverse.org/).
 
 <aside>
 ```{r}
@@ -199,7 +199,7 @@ Peter sta cercando di lavorare con la ricerca clinica e al momento non ha molti 
   - Importare in R file di basi di dati rettangolari (es. CSV o Excel)
   - Manipolare dati di tipo testuale (espressioni regolari)
   - Gestire problematiche strutturali di importazione (es. intestazioni/valori su più righe, sottotitoli di raggruppamento nei dati, o campi reputi implicitamente)
-  - Trasmutare dati grezzi in __tidy-data__ (es. separando valori, o __ruotantoli__ in lungo e in largo)
+  - Trasmutare dati grezzi in _tidy-data_ (es. separando valori, o _ruotantoli_ in lungo e in largo)
   - Estrarre e convertire valori numerici misti o dentro a testo
 
 3. **Esplorare e ottenere una panoramica dei pacchetti R** 
