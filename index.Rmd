@@ -147,10 +147,18 @@ Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud
 --------:|:-------------------------------
  _Prima_ | [~~Sondaggio pre-corso~~]()
   14:00  | _Benvenuti_ dall'organizzazione
-  14:10  | ~~Corso~~
+  14:10  | Introduzione, motivazione, presentazione caso studio
+  14:20  | Importazione dati dall'esterno e primi accorgimenti
+  14:30  | Manipolazione di stringhe: le espressioni regolari
+  14:40  | Problemi nelle intestazioni
+  14:50  | Problemi nei valori
+  15:00  | **COFFEE BREAK**
+  15:10  | Sotto-intestazioni (raggruppamenti) tra i valori
+  15:20  | Riempimento, separazione, espansione, e contrazione
+  15:30  | Numeri e finalizzazione
   15:40  | Domande, dubbi, curiosità
   16:00  | [~~Sondaggio post-corso~~]()
-  16:10  | FINE
+  16:10  | **FINE**
   
 
 \
@@ -160,7 +168,8 @@ Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud
 
 ### Ambiente di lavoro remoto {#rs-cloud}
 
-+ [~~RStudio Cloud workspace~~](https://bit.ly/datacleaning-cra)
++ [~~RStudio Cloud workspace~~]()
+<!-- https://bit.ly/datacleaning-cra -->
 
 <aside>
 Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà attivo durante il corso.
@@ -176,12 +185,12 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 
 #### Slide {.panel-name}
 
-+ [~~01: Introduzione~~]()
-+ [~~02: Forma e tipologia~~]()
-+ [~~03: Manipolazione~~]()
-+ [~~04: Stringhe~~]()
-+ [~~05: Problemi comuni~~]()
-+ [~~06: Caso studio/finale~~]()
++ [~~01: Intro~~]()
++ [~~02: Import~~]()
++ [~~03: RegExp~~]()
++ [~~04: {unheadr}~~]()
++ [~~05: Tidy-data~~]()
++ [~~06: Numeri~~]()
 
 :::
 
@@ -189,12 +198,23 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 
 #### Sfide {.panel-name}
 
-+ [~~02: Forma e tipologia~~]()
-+ [~~03: Manipolazione~~]()
-+ [~~04: Stringhe~~]()
-+ [~~05: Problemi comuni~~]()
++ [~~02a: Dati mancanti~~]()
++ [~~02b: Strutture mancanti~~]()
++ [~~02c: Nomi utili~~]()
++ [~~03a: Regexp: modificare~~]()
++ [~~03b: Regexp: compattare~~]()
++ [~~03c: Regexp: grafia delle lettere~~]()
++ [~~04a: intestazioni raggruppate e spezzate~~]()
++ [~~04b: valori spezzati~~]()
++ [~~04c: raggruppamenti nei dati~~]()
++ [~~05a: ridondanza implicita~~]()
++ [~~05b: valori nelle intestazioni~~]()
++ [~~05c: valori multipli assemblati~~]()
++ [~~06a: punti, e virgole~~]()
++ [~~06b: percentuali~~]()
++ [~~06c: numeri o testo~~]()
 
-+ [~~Sfida finale~~]()
++ [~~Caso studio completo~~]()
 
 :::
 
@@ -202,13 +222,23 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 
 #### Soluzioni {.panel-name}
 
-+ [~~02: Forma e tipologia~~]()
-+ [~~03: Manipolazione~~]()
-+ [~~04: Stringhe~~]()
-+ [~~05: Problemi comuni~~]()
++ [~~02a: Dati mancanti~~]()
++ [~~02b: Strutture mancanti~~]()
++ [~~02c: Nomi utili~~]()
++ [~~03a: Regexp: modificare~~]()
++ [~~03b: Regexp: compattare~~]()
++ [~~03c: Regexp: grafia delle lettere~~]()
++ [~~04a: intestazioni raggruppate e spezzate~~]()
++ [~~04b: valori spezzati~~]()
++ [~~04c: raggruppamenti nei dati~~]()
++ [~~05a: ridondanza implicita~~]()
++ [~~05b: valori nelle intestazioni~~]()
++ [~~05c: valori multipli assemblati~~]()
++ [~~06a: punti, e virgole~~]()
++ [~~06b: percentuali~~]()
++ [~~06c: numeri o testo~~]()
 
-+ [~~Sfida finale~~]()
-
++ [~~Caso studio completo~~]()
 :::
 
 :::::

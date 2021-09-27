@@ -189,16 +189,18 @@ Peter sta cercando di lavorare con la ricerca clinica e al momento non ha molti 
 
 1. **Rivedere** 
   - le principali tipologie di dati utilizzati nella ricerca clinica
-  - i tipi di dati usati da R
   - le caratteristiche che possono avere file di dati clinici
-  - le caratteristiche che devono avere oggetti coi dati da analizzare
+  - i tipi di dati usati da R
+  - le caratteristiche strutturali utili delle basi di dati da analizzare
+  - principi, consigli, e strumenti base per analisi riproducibili
   
 
 2. **Imparare a** 
+  - Importare in R file di basi di dati rettangolari (es. CSV o Excel)
   - Manipolare dati di tipo testuale (espressioni regolari)
-  - Manipolare i dati grezzi per estrarne informazioni analizzabili
-  - Trasmutare dati grezzi in __tidy-data__
-  - In generale, importare correttamente basi di dati grezzi dai corrispondenti file sorgenti (Excel/CSV).
+  - Gestire problematiche strutturali di importazione (es. intestazioni/valori su più righe, sottotitoli di raggruppamento nei dati, o campi reputi implicitamente)
+  - Trasmutare dati grezzi in __tidy-data__ (es. separando valori, o __ruotantoli__ in lungo e in largo)
+  - Estrarre e convertire valori numerici misti o dentro a testo
 
 3. **Esplorare e ottenere una panoramica dei pacchetti R** 
   - `{readr}` (e `{readxl}`) per importare i dati
@@ -210,8 +212,10 @@ Peter sta cercando di lavorare con la ricerca clinica e al momento non ha molti 
 
 ### In parole povere...
 
-Imparerai a importare correttamente una base di dati dal mondo esterno dividendo, aggregando, estraendo, trasformando, lei stessa o il suo contenuto fino ad arrivare a forma, coerenza e completezza utili per le tue analisi; il tutto, operando solo tramite codice (R), riproducibile e senza (possibilmente) alcuna manipolazione diretta del contenuto del file sorgente (Excel/csv) da parte tua!
-
+Imparerai a importare correttamente una base di dati dal mondo esterno dividendo, aggregando, estraendo, trasformando, lei stessa o il suo contenuto fino ad arrivare a forma, struttura, coerenza e completezza utili per le tue analisi; il tutto, operando solo tramite codice (R), riproducibile e senza alcuna manipolazione diretta del contenuto del file sorgente (Excel/csv) da parte tua!
+<aside>
+La responsabilità di manipolare il file sorgente originale dovrebbe essere sempre esclusiva e responsabilità di chi fornisce i dati, non di chi li deve analizzare.
+</aside>
 
 ## Mappa concettuale
 
