@@ -44,7 +44,11 @@ knitr::include_graphics("images/crst_cl_tidyverse.png")
 
 ## Chi sei _tu_
 
-Il corso è principalmente indirizzato a operatori della ricerca clinica, ovvero persone con esperienza lavorativa nell'ambito della ricerca clinica o laureati che hanno seguito un corso di alta formazione in ricerca clinica.
+### Prerequisiti
+
+Il corso è principalmente indirizzato a operatori della ricerca clinica, ovvero persone con esperienza lavorativa nell'ambito della ricerca clinica o laureati che hanno seguito un corso di alta formazione in ricerca clinica. Se non hai alcuna esperienza di ricerca clinica, e di come (anche sommariamente) possono essere fatti i dati di cui si occupa, è possibile che il corso ti dia degli strumenti che potrebbero non esserti direttamente utili.
+
+Il corso sarà svolto scrivendo, eseguendo e sfruttando codice [`r fontawesome::fa("r-project", fill = "grey")`](https://www.r-project.org), presuppongo quindi che tu riesca a capirlo e abbia scritto del codice o delle analisi con tale linguaggio: per quanto introdurremo pacchetti e funzioni, non è tra gli obiettivi insegnarti il linguaggio base, il quale lo considererò come un prerequisito noto.
 
 
 Non avendoti mai visto, nel preparare la lezione ho immaginato tu potessi essere una tra le seguenti persone.
@@ -130,7 +134,7 @@ Peter è una persona che divaga, esplora, e cerca di approfondire i temi che di 
 
 #### Competenze {.panel-name}
 
-Ambito     | Statistica | Programmazione | `r fontawesome::fa("r-project", fill = "brown")`
+Ambito     | Statistica | Programmazione | `r fontawesome::fa("r-project", fill = "ocra")`
 -----------|------------|----------------|------------
 Competente | Competente | Esperto        | Esperto
 

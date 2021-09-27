@@ -1,0 +1,208 @@
+---
+title: "Sondaggio (anonimo) pre-workshop"
+output: html_document
+---
+
+## Preambolo
+
+> **NOTA BENE**: Il seguente non è, e non vuole essere, un esame. Anzi!
+  Se rispondi a tutto "non ne ho nessuna" va benissimo, del resto, se rispondi a tutto "potrei farlo senza sforzo", allora vorrebbe dire che puoi risparmiare due ore del tuo tempo e fare qualcosa di sicuramente meno noioso per te, che non seguire questa lezione! All'interno di questi due estremi, le vostre risposte mi saranno utili per evitare di annoiarvi con concetti che potreste sapere bene già quasi tutti, e potermi invece focalizzare su quanto la maggioranza di voi avrà segnalato le maggiori difficoltà, per arrivare a trasmettere nel modo più efficiente che posso i contenuti più rilevanti per voi.
+
+1. Per cortesia crea in identificativo univoco che possa in modo anonimo permettermi di collegare le tue risposte a questo sondaggio pre-workshop a quelle che ti chiederò nel sondaggio post-workshop.
+
+Per crearlo scrivi uno di seguito all'altro :
+
+    Il numero di fratelli e sorelle che hai (come cifra) +
+    Le prime due lettere della città in cui sei nato (minuscole) +
+    Le prime tre lettere della strada in cui vivi attualmente (minuscole).
+
+ 
+Per esempio: Mario Rossi ha 1 sorella, è nato a Roma, e vive in via Maggiore - `1romag`
+
+
+2. In quale personaggio ti identifichi maggiormente?
+ - **Carla Clinica**: un'intensivista cardiotoracica appassionata e informata di ricerca clinica, interessata a fare ricerca in autonomia conducendo da sé le analisi sui dati dei suoi studi e del suo reparto. Usa Excel per raccogliere i dati dei pazienti assieme ad alcuni dei suoi colleghi; per le analisi ha iniziato a usare R e vorrebbe capire come sfruttarlo al meglio.
+ - **Peter Programmer**: un ragazzo giovane, neolaureato, con poca disponibilità economica ma tanta competenza informatica e passione per la ricerca clinica. Non gli piace, e non vuole, perdere tempo in chiacchiere né in cose non direttamente applicabili. Sta formando una rete di collaborazioni con clinici e biostatistici per poter a breve vivere facendo analisi e collaborando in progetti di ricerca clinica. Ha ancora diversi problemi comunicativi con il mondo clinico, sopratutto nel capire perché raccolgono i dati in un modo tanto bizzarro e difficile da utilizzare.
+
+## Sondaggio
+
+
+1. **Come descriveresti la tua esperienza con la programmazione in generale?**
+
+  - Non ne ho nessuna.
+  - Ho scritto qualche riga di tanto in tanto.
+  - Ho scritto programmi per uso personale che sono lunghi un paio di pagine.
+  - Ho scritto e mantenuto pezzi di software più grandi.
+
+
+2. **Come descriveresti la tua esperienza con la programmazione in R?**
+  - Non ne ho nessuna.
+  - Ho scritto qualche riga di tanto in tanto.
+  - Ho scritto programmi per uso personale che sono lunghi un paio di pagine.
+  - Ho scritto e mantenuto pezzi di software più grandi.
+
+
+3. **Come descriveresti quanto facilmente potresti scrivere un programma in qualsiasi linguaggio per trovare il numero più grande in una lista?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+4. **Come descriveresti quanto facilmente potresti scrivere un programma R per mettere in maiuscolo tutti i nomi delle variabili in un data frame?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+5. **Come descriveresti quanto facilmente potresti descrivere il funzionamento base/intuitivo dell'operatore _pipe_ (`%>%`) in R?**
+  - Non saprei da dove cominciare.
+  - Lo uso di tanto in tanto, ma non saprei come descrivere facilmente il suo funzionamento, se non facendo prima delle ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+6. **Come descriveresti quanto facilmente potresti importare in R un file `.xlsx` (foglio di calcolo Excel)?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+7. **Come descriveresti quanto facilmente potresti scrivere un programma in R, o in un qualunque altro linguaggio a tua scelta, per trovare tutte gli elementi di un vettore di caratteri che iniziano con una una parentesi tonda aperta?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+8. **Come descriveresti quanto facilmente potresti scrivere un programma R per trovare e mettere in maiuscolo tutti i nomi delle variabili in un data frame?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+9. **Come descriveresti quanto facilmente potresti scrivere un programma R per selezionare tutte e sole le osservazioni di un data frame per cui la variabile `altezza` (ipotizzando sia presente) raggiunge un valore di almeno 165?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+10. **Come descriveresti quanto facilmente potresti scrivere un programma R per estrarre da un data frame tutte le righe contenenti dati mancanti ovunque tranne che in una determinata colonna?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+11. **Come descriveresti quanto facilmente potresti importare un foglio di calcolo con le intestazioni di colonna divise/raggruppate su più di una riga (senza modificarlo manualmente)?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+12. **Come descriveresti quanto facilmente potresti sistemare dati in un foglio di calcolo spezzati su più righe (senza modificarlo manualmente)?**
+
+ovvero mutare 
+
+nome        | valore 
+:----------:|:-----:
+  Tim Oti   |   1   
+  Mario     |   2
+  Rossi     |      
+  Gian Luis |   3   
+
+in
+ 
+nome          | valore 
+:------------:|:-----:
+  Tim Oti     |   1   
+  Mario Rossi |   2
+  Gian Luis   |   3   
+
+
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+
+
+13. **Come descriveresti quanto facilmente potresti completare tutti i valori mancanti di una variabile implicitamente ridondante in un data frame (ovvero per cui sia riportata solo la prima occorrenza)?**
+
+ovvero mutare 
+
+ id | centro | tempo 
+:--:| :-----:|:-----:
+  1 |   1    |   1   
+  2 |        |   2   
+  3 |        |   3   
+  4 |   2    |   1   
+  5 |        |   2   
+  6 |        |   3   
+  7 |        |   4   
+
+in
+ 
+ id | centro | tempo 
+:--:| :-----:|:-----:
+  1 |   1    |   1   
+  2 |   1    |   2   
+  3 |   1    |   3   
+  4 |   2    |   1   
+  5 |   2    |   2   
+  6 |   2    |   3   
+  7 |   2    |   4   
+
+
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+14. **Come descriveresti quanto facilmente potresti separare in due variabili una coppia di valori riportati in una sola variabile (per esempio: trasformare la variabile "peso" contenente valori del tipo "7 kg", "3500 g", "2 kg"; nelle corrispondenti due variabili "peso" e "peso_unit")?**
+
+ovvero mutare 
+ 
+id | peso 
+:-:|:------:
+1  | 1 kg 
+2  | 3000 g 
+
+in
+ 
+id | peso | peso_unit
+:-:|:----:|:--------:
+1  |   1  |   kg
+2  | 3000 |   g
+
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+
+
+15. **Come descriveresti quanto facilmente potresti scrivere un programma R per riportare in una unica colonna (allungando il data frame) i valori di due colonne (es., "tempo 1" e "tempo 2") riportando in una seconda colonna "tempo" i corrispondenti valori?**
+ 
+ovvero mutare 
+ 
+id | t1 | t2
+:-:|:--:|:-:
+1  | 1  | 2
+2  | 3  | 4
+ 
+in
+ 
+id | tempo | valore
+:-:|:-----:|:-----:
+1  |   1   |   1
+1  |   2   |   2
+2  |   1   |   3
+2  |   2   |   4
+ 
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+
+16. **Cosa spereresti diimparare durante questo workshop?**
+
+
+17. **Cosa vuoi assolutamente sapere o essere in grado di fare dopo questo corso che non sai o non puoi fare adesso?**
