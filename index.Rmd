@@ -30,7 +30,7 @@ meta() %>%
   meta_viewport() %>% 
   meta_social(
     title = "Data Cleaning per la Ricerca Clinica",
-    url = "",
+    url = "https://cra-datacleaning.netlify.app/",
     image = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Procyon_lotor%28Gollibolli%291.JPG/2560px-Procyon_lotor%28Gollibolli%291.JPG",
     image_alt = "Procyon lotor by Matthias Barby",
     og_type = "website",
@@ -69,11 +69,9 @@ Il corso è pensato con un livello di interazione piuttosto ridotto. Per quanto 
 ### Dove `r emo::ji("pushpin")`
 
 
-+ Stanza [GoToWebinar](https://www.goto.com/it/webinar), accessibile previo registrazione al corso da effettuare a [questa pagina](https://formazionenelfarmaceutico.com/).
++ **Dal vivo**: meeting [GoToWebinar](https://attendee.gotowebinar.com/register/3102460492127285776). Per ottenre il certificato di partecipazione, registrati tramite [questa pagina](https://formazionenelfarmaceutico.com/p/data-cleaning-per-la-ricerca-clinica/).
 
-<aside>
-Un link personalizzato alla stanza del corso sarà condiviso privatamente dall'organizzazione ai partecipanti registrati.
-</aside>
++ **Video del corso**: accessibile dalla piattaforma [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/) previo registrazione a [questa pagina](https://formazionenelfarmaceutico.com/p/data-cleaning-per-la-ricerca-clinica/)
 
 
 ### Quando `r emo::ji("clock")`
@@ -89,7 +87,7 @@ Se non sei in Italia, verifica [l'orario del corso nella tua zona](https://www.t
 
 ### Quanto `r emo::ji("money_mouth_face")`
 
-Per la partecipazione al corso dal vivo, così come per la visione della sua registrazione in futuro, è richiesto che tu [ti registri](https://formazionenelfarmaceutico.com/) (adesso o in futuro) al workshop. La registrazione, sia per partecipare al corso sia per poter accedere alla sua registrazione, è offerta gratuitamente a chiunque da [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/).
+Per la partecipazione al corso dal vivo, così come per la visione della sua registrazione in futuro, è richiesto che tu [ti registri](https://formazionenelfarmaceutico.com/p/data-cleaning-per-la-ricerca-clinica/) (adesso o in futuro) al workshop. La registrazione, sia per partecipare al corso sia per poter accedere alla sua registrazione, è offerta gratuitamente a chiunque da [FormazioneNelFarmaceutico](https://formazionenelfarmaceutico.com/).
 
 \
 
@@ -121,11 +119,11 @@ Per (e)seguire gli esempi e gli esercizi proposti localmente sul computer che ut
   ``` r
   install.packages(c("janitor", "tidyverse", "unheadr", "usethis"))
   ```
-* ~~I dati, le slide e le soluzioni degli esercizi potrai recuperarli tramite l'esecuzione del seguente codice:~~
+* Dal giorno del corso in poi, i dati, le slide e le soluzioni degli esercizi potrai recuperarli tramite l'esecuzione del seguente codice:
 
   ``` r
   usethis::use_course("CorradoLanera/corso-cra-dc",
-                      destdir = <path repository del corso>)
+                      destdir = "<tuo path di progetto del corso>")
   ```
 
 
@@ -182,11 +180,12 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 #### Slide {.panel-name}
 
 + [~~01: Intro~~]()
-+ [~~02: Import~~]()
-+ [~~03: RegExp~~]()
++ [~~02: Importazione~~]()
++ [~~03: Espressioni Regolari~~]()
 + [~~04: {unheadr}~~]()
 + [~~05: Tidy-data~~]()
 + [~~06: Numeri~~]()
++ [~~07: Outro~~]()
 
 :::
 
@@ -200,15 +199,15 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 + [~~03a: Regexp: modificare~~]()
 + [~~03b: Regexp: compattare~~]()
 + [~~03c: Regexp: grafia delle lettere~~]()
-+ [~~04a: intestazioni raggruppate e spezzate~~]()
-+ [~~04b: valori spezzati~~]()
-+ [~~04c: raggruppamenti nei dati~~]()
-+ [~~05a: ridondanza implicita~~]()
-+ [~~05b: valori nelle intestazioni~~]()
-+ [~~05c: valori multipli assemblati~~]()
-+ [~~06a: punti, e virgole~~]()
-+ [~~06b: percentuali~~]()
-+ [~~06c: numeri o testo~~]()
++ [~~04a: Intestazioni raggruppate e spezzate~~]()
++ [~~04b: Valori spezzati~~]()
++ [~~04c: Raggruppamenti nei dati~~]()
++ [~~05a: Ridondanza implicita~~]()
++ [~~05b: Valori nelle intestazioni~~]()
++ [~~05c: Valori multipli assemblati~~]()
++ [~~06a: Punti, e virgole~~]()
++ [~~06b: Percentuali~~]()
++ [~~06c: Numeri o testo~~]()
 
 + [~~Caso studio completo~~]()
 
@@ -224,15 +223,15 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 + [~~03a: Regexp: modificare~~]()
 + [~~03b: Regexp: compattare~~]()
 + [~~03c: Regexp: grafia delle lettere~~]()
-+ [~~04a: intestazioni raggruppate e spezzate~~]()
-+ [~~04b: valori spezzati~~]()
-+ [~~04c: raggruppamenti nei dati~~]()
-+ [~~05a: ridondanza implicita~~]()
-+ [~~05b: valori nelle intestazioni~~]()
-+ [~~05c: valori multipli assemblati~~]()
-+ [~~06a: punti, e virgole~~]()
-+ [~~06b: percentuali~~]()
-+ [~~06c: numeri o testo~~]()
++ [~~04a: Intestazioni raggruppate e spezzate~~]()
++ [~~04b: Valori spezzati~~]()
++ [~~04c: Raggruppamenti nei dati~~]()
++ [~~05a: Ridondanza implicita~~]()
++ [~~05b: Valori nelle intestazioni~~]()
++ [~~05c: Valori multipli assemblati~~]()
++ [~~06a: Punti, e virgole~~]()
++ [~~06b: Percentuali~~]()
++ [~~06c: Numeri o testo~~]()
 
 + [~~Caso studio completo~~]()
 :::
@@ -240,7 +239,7 @@ Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà atti
 :::::
 
 <aside>
-Il materiale sarà reso disponibile prima del corso.
+Il materiale sarà reso disponibile dal giorno del corso.
 </aside>
 
 
@@ -257,13 +256,18 @@ Ti chiederei di completare i seguenti sondaggi: uno prima dell'inizio del corso 
 Il primo sondaggio mi servirà principalmente per conoscere meglio le tue esigenze specifiche, e poter eliminare quindi dalla lezione tutto quanto conosci già molto bene, così da non farti perdere tempo né annoiarti con cose che non ti interessano e magari conosci anche meglio di me `r emo::ji("winking_face_with_tongue")`. Inoltre, mi permetterà di dare più attenzione alle parti che ti potranno essere davvero utili per migliorare, sfruttando al meglio il tempo che avremo a disposizione `r emo::ji("flexed_biceps")`.
 
 <aside>
-Il sondaggio pre-corso **non** è un esame per capire se hai le competenze per seguirlo. Non preoccuparti se non sai rispondere ad alcune domande: è previsto! Anzi, se rispondi a tutto... `r emo::ji("winking_face")`
+Il sondaggio pre-corso **non** è un esame per capire se hai le competenze per seguire il corso. Non preoccuparti se non sai rispondere ad alcune domande: è previsto! Anzi, se rispondi a tutto... `r emo::ji("winking_face")`
 </aside>
 
 + [Sondaggio pre-corso](https://forms.gle/iWBP75A2SJTFY3Ju9)
 
 
 Il secondo sondaggio mi servirà per capire quanto sono stato efficace con la lezione che avrò tenuto, permettendomi di migliorare i corsi che potrò tenere in futuro. Potrà anche essere utile a te come ripasso di quanto abbiamo fatto.
+
+
+<aside>
+Nemmeno il sondaggio post-corso è un esame, anzi: le tue risposte mi saranno _solo_ utilissime a capire in quali punti ho il maggior margine per migliorare la le mie future lezioni.
+</aside>
 
 + [Sondaggio post-corso](https://forms.gle/uRJ8yYwZ6YzweSKa8)
 
