@@ -19,7 +19,7 @@ background-size: cover
 # Data Cleaning per la Ricerca Clinica
 <img src="http://bit.ly/arm-greens" width="150px"/>
 
-### Con esempi in R
+### With examples in R
 
 .large[.white[
   Corrado Lanera | Clinical Research Academy | 13 Oct 2021

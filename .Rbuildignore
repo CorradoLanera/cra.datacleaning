@@ -1,0 +1,10 @@
+^renv$
+^renv\.lock$
+^LICENSE\.md$
+^README\.Rmd$
+^.*\.Rproj$
+^\.Rproj\.user$
+^CODE_OF_CONDUCT\.md$
+^code_of_conduct\.Rmd$
+^code_of_conduct\.html$
+^docs$

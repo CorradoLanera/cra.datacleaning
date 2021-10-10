@@ -1,0 +1,214 @@
+---
+title: "Data Cleaning per la Ricerca Clinica"
+subtitle: "Verifiche formative rapide"
+description: "Tutorial per sperimentarsi sull'utilizzo degli strumenti descritti durante il corso _**Data cleaning per la ricerca clinica**_ per una corretta e completa importazione di basi di dati in R da fonti esterne (principalmente file `.csv` o fogli Excel)."
+author: "Corrado Lanera"
+output:
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+library(tidyverse)
+
+knitr::opts_chunk$set(echo = FALSE)
+gradethis::gradethis_setup(
+    pass.praise = TRUE,
+    fail.encourage = TRUE,
+    fail.hint = TRUE
+)
+```
+
+
+
+## Importazione
+
+Rispondi alle seguenti domande.
+
+### A
+
+```{r import}
+quiz(caption = "XXX-quiz",
+  question("q",
+           
+    answer("a",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("b",
+           message = ""),
+    
+    answer("c",
+           message = ""),
+    
+    answer("d",
+           message = ""),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+
+
+## Espressioni regolari
+
+Rispondi alle seguenti domande.
+
+
+
+
+## `{unheadr}`
+
+Rispondi alle seguenti domande.
+
+
+
+
+## Tidy data
+
+Rispondi alle seguenti domande.
+
+
+
+
+## Numeri
+
+Rispondi alle seguenti domande.
+
+
+### A
+
+```{r numbers}
+quiz(caption = "XXX-quiz",
+  question("q",
+           
+    answer("a",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("b",
+           message = ""),
+    
+    answer("c",
+           message = ""),
+    
+    answer("d",
+           message = ""),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+
+
+### Ce l'hai fatta!!!
+
+###
+
+Hai risposto a tutto e quindi ora padroneggi:
+
+- a
+
+- b
+
+- c
+  
+
+Congratulazioni!!
+  
+
+Grazie mille per aver partecipato a questo corso!
+
+___\@CorradoLanera___
+
+
+
+
+
+
+```{r quiz-template, eval=FALSE, include=FALSE}
+quiz(caption = "XXX-quiz",
+  question("q",
+           
+    answer("a",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("b",
+           message = ""),
+    
+    answer("c",
+           message = ""),
+    
+    answer("d",
+           message = ""),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+<!-- * Submit `1+1` to receive a correct grade. -->
+<!-- ```{r ex-template-code, include = FALSE, exercise = TRUE, eval=FALSE, exercise.lines = 3} -->
+
+<!-- ``` -->
+
+
+```{r ex-template-code-hint-1, eval=FALSE, include = FALSE}
+# start typing
+1
+```
+
+```{r ex-template-code-hint-2, eval=FALSE, include = FALSE}
+# next
+1 + 
+```
+
+```{r ex-template-code-solution, eval=FALSE, include = FALSE}
+1 + 1
+```
+
+
+```{r ex-template-check, eval=FALSE, include=FALSE}
+grade_result(pass_if(~{
+  ref <- 2
+  identical(.result, ref)
+  
+}), incorrect = "Wrong answer.")
+```
+
+
+
+
+
+
+
+<!-- ```{r blank, exercise = TRUE, exercise.blanks = "___+", eval = FALSE, include = FALSE} -->
+<!-- 1 + ____ -->
+<!-- ``` -->
+
+
+
+```{r blank-solution, eval = FALSE, include = FALSE}
+1 + 3
+```
+
+```{r blank-code-check, eval = FALSE, include = FALSE}
+grade_code()
+```
+
