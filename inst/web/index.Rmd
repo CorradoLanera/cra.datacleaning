@@ -139,8 +139,7 @@ Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud
 
  **Ora** | **Tema**
 --------:|:-------------------------------
- _Prima_ | [Sondaggio pre-corso](https://forms.gle/iWBP75A2SJTFY3Ju9)
-  14:00  | _Benvenuti_ dall'organizzazione
+  14:00  | _Benvenuti_ dall'organizzazione e [Sondaggio pre-corso](https://forms.gle/iWBP75A2SJTFY3Ju9)
   14:10  | Introduzione, motivazione, presentazione caso studio
   14:20  | Importazione dati dall'esterno e primi accorgimenti
   14:30  | Manipolazione di stringhe: le espressioni regolari

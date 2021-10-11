@@ -17,12 +17,14 @@ background-image: url(http://bit.ly/arm-greens)
 background-size: cover
 
 # Data Cleaning per la Ricerca Clinica
-<img src="http://bit.ly/arm-greens" width="150px"/>
+<img src="https://raw.githubusercontent.com/CorradoLanera/cra.datacleaning/develop/inst/web/images/orsetto_lavatore-neuro74.png?token=ABRMPU2YXTRVGQTDBA3GOA3BNSOVE" width="150px"/>
 
-### Con esempi in R
+### Con esempi in `r fontawesome::fa("r-project", fill = "blue")`
 
 .large[.white[
-  Corrado Lanera | Clinical Research Academy | 13 Oct 2021
+  Corrado Lanera | Clinical Research Academy | 13 ottobre 2021
+  
+  https://cra-datacleaning.netlify.app/
 ]]
 
 
@@ -47,21 +49,21 @@ pastel_orange <- "#F97B64"
 blu_gray <- "#1F4257"
 
 style_duo_accent(
-    primary_color = pastel_orange,
-    secondary_color = blu_gray,
-    colors = c(
-        red = red,
-        purple = purple,
-        orange = orange,
-        green = green,
-        white = white,
-        pastel_orange = pastel_orange,
-        blu_gray = blu_gray
-    )
+    # primary_color = pastel_orange
+    # secondary_color = purple,
+    # colors = c(
+    #     red = red,
+    #     purple = purple,
+    #     orange = orange,
+    #     green = green,
+    #     white = white,
+    #     pastel_orange = pastel_orange,
+    #     blu_gray = blu_gray
+    # )
 )
 ```
 
-```{r xaringanExtra, echo=FALSE}
+```{r xaringanExtra, include=FALSE}
 xaringanExtra::use_xaringan_extra(c(
   "tileview",
   "animate_css",
@@ -73,133 +75,226 @@ xaringanExtra::use_xaringan_extra(c(
   "freezeframe",
   "share_again"
 ))
-
-xaringanExtra::use_logo(
-  image_url = "https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/xaringan.png",
-  link_url = "http://slides.yihui.name/xaringan",
-  position = xaringanExtra::css_position(top = "1em", right = "1em")
-)
-
 ```
 
-```{r countdown, echo = FALSE}
+```{r countdown, echo = FALSE, include = FALSE}
 library(countdown)
 # countdown(minutes = 0, seconds = 15)
 ```
 
 ---
+
+name: whoami
+class: inverse, bottom, right
+
+
+```{r, echo=FALSE, out.width = "40%"}
+knitr::include_graphics("../images/profilo_CL.jpg")
+```
+
+# Dove trovarmi...
+
+
+<br>
+
+
+[`r fontawesome::fa("link")`](https://www.CorradoLanera.it) [**www.CorradoLanera.it**](https://www.CorradoLanera.it)
+
+[`r fontawesome::fa("mail-bulk")`](mailto:Corrado.Lanera@ubep.unipd.it) [**Corrado.Lanera@ubep.unipd.it**](mailto:Corrado.Lanera@ubep.unipd.it)
+
+[`r fontawesome::fa("mail-bulk")`](mailto:Corrado.Lanera@gmail.com) [**Corrado.Lanera@gmail.com**](mailto:Corrado.Lanera@gmail.com)
+
+[`r fontawesome::fa("github")`](https://github.com/corradolanera)
+[`r fontawesome::fa("twitter")`](https://twitter.com/corradolanera)
+[`r fontawesome::fa("telegram-plane")`](https://telegram.me/CorradoLanera)
+@CorradoLanera
+
+[`r fontawesome::fa("telegram-plane")`](https://telegram.me/puffrbacco)
+[puffRbacco](https://telegram.me/puffrbacco)
+
+[`r fontawesome::fa("calendar-check")` ](https://calendly.com/corradolanera) [calendly.com/corradolanera](https://calendly.com/corradolanera)
+
+<br>
+
+
+---
+name: intro-what
 class: inverse, middle, center
 
-# let's start!
----
+# Introduzione
 
-name: intro
-
-
-
-# Introduce yourself!
-
-> My name is Corrado and I am a Post-doc researcher at the Univerity of Padova at the Unit of Biostatistics, Epidemiology, and Public Health within the department of Cardiac, Thoracic, Vascular Sciences, and Public Health. I am an RStudio Instructor in the Tidyverse, and I love R. I 
-live a little arround Italy and Europe, from Udine (my family home), Padova (my Job office), Paris (my spouse work), and any other possible place along the way.
-
-**foo**
+### --> Cosa vedremo <--
 
 
 ---
-name: findmeat
+name: motivation-1
+
+## Data cleaning per la ricerca clinica
 
 
-# Find me at...
-All the details...
+> Un generico processo capace di garantire, con una certa soglia di affidabilità, la correttezza di una grande quantità di dati. [...] tale procedimento precede l'effettiva estrazione [...] di quantità di informazione potenzialmente utile [...] al fine di produrre conoscenza.
+
+.right[.small[
+  [https://it.wikipedia.org/wiki/Data_cleaning](https://it.wikipedia.org/wiki/Data_cleaning)
+]]
+
+<br>
+<br>
+
+--
+
+- **processo**: oggetto --> _tecniche_ --> oggetto (**trasformato**).
+
+--
+
+- **affidabilità**: garanzia di **riproducibilità**
+
+--
+
+- **correttezza**: risultato (e tecniche) **testate**
+
+--
+
+- **precede la produzione di consocenza** --> analisi **direttamente eseguibili**
+
+
+---
+name: motivation-1-bis
+
+## Data cleaning (per la ricerca clinica)
+
+
+> Un generico processo capace di garantire, con una certa soglia di affidabilità, la correttezza di una grande quantità di dati. [...] tale procedimento precede l'effettiva estrazione [...] di quantità di informazione potenzialmente utile [...] al fine di produrre conoscenza.
+
+.right[.small[
+  [https://it.wikipedia.org/wiki/Data_cleaning](https://it.wikipedia.org/wiki/Data_cleaning)
+]]
+
+<br>
+<br>
+
+- **processo**: oggetto --> _tecniche_ --> oggetto (**trasformato**).
+
+- **affidabilità**: garanzia di **riproducibilità**
+
+- ~~**correttezza**: risultato (e tecniche) **testate**~~ .footnote[1: Servirebbe un corso a sé, per oggi ci limiteremo a "vedere" che i risultati sono _giusti_.]
+
+- **precede la produzione di consocenza** --> analisi **direttamente eseguibili**
+
 
 
 
 
 ---
+name: motivation-2
 
-[goto somewhere](#somewhere) -> hop to somewhere
-
-???
-
-click **goto**
+## (Data cleaning per la) ricerca clinica
 
 
----
-name: somewhere
-class: center, middle
+> La ricerca clinica è una branca della scienza sanitaria che determina la sicurezza e l'efficacia di farmaci, dispositivi, prodotti diagnostici e regimi di trattamento destinati all'uso umano. [...] nella ricerca clinica si raccolgono prove [...]. 
 
-# This is really something!
-
-.left[words]
-.center[words]
-.right[words]
+.right[.small[
+  [https://en.wikipedia.org/wiki/Clinical_research](https://en.wikipedia.org/wiki/Clinical_research) <br> ... tradotto in italiano con [www.DeepL.com/Translator](www.DeepL.com/Translator) (versione gratuita)
+]]
 
 
----
-name: images
-class: center, middle
+--
 
-Hello ![Image of Momtocat](http://bit.ly/momtocat)
+- **farmaci, dispositivi, prodotti, trattamenti**: tipologie **molteplici** di dati
 
+--
+
+- **raccolta**: ottimizzazione **non per l'utilizzo**!
 
 ---
-.pull-left[
-![Image of Momtocat](http://bit.ly/momtocat)
-]
-.pull-right[
-![Image of Poptocat](http://bit.ly/poptocat)
-]
+name: motivation-3
 
+## Data cleaning per la ricerca clinica
 
----
-name: code
-
-```{r, eval=FALSE, highlight.output = TRUE}
-foo
-bar  #<<
-baz
+```{r, echo=FALSE, out.width = "100%"}
+knitr::include_graphics("../images/messy_aoe.PNG")
 ```
 
-```{r, highlight.output = TRUE}
-1+1
-```
-
-```{r, highlight.output = c(1, 3)}
-1+1
-2+2
-3+3
-```
+> Dataset modificato, rispetto all'originale `data("AOEunits_raw", package = "unheadr")`, per enfatizzare ulteriori problematiche comuni in fogli di raccolta dati clinici.
 
 ---
+name: r
 
-.pull-left[
-```{r plot-first, echo = FALSE}
-ggplot2::quickplot(
-    mtcars[[1]],  #<<
-    mtcars[[2]]
-)
+## Perché `r fontawesome::fa("r-project", fill = "blue")`
+
+
+
+- Garantisce la **`r fontawesome::fa("r-project", fill = "red")`iproducibilità**
+
+- Ampiamente diffuso tra gli operatori della **`r fontawesome::fa("r-project", fill = "green")`icerca** (clinica)
+
+- **Espanso** e **ve`r fontawesome::fa("r-project", fill = "brown")`ificato** in modo **comunita`r fontawesome::fa("r-project", fill = "orange")`io**
+
+- È **g`r fontawesome::fa("r-project", fill = "pink")`atis** e **ape`r fontawesome::fa("r-project", fill = "purple")`to**!
+
+
+```{r, echo=FALSE, out.width = "100%", fig.cap="Figure from https://github.com/allisonhorst/stats-illustrations"}
+knitr::include_graphics("https://github.com/allisonhorst/stats-illustrations/raw/master/rstats-artwork/monster_support.jpg")
 ```
-]
-.pull-right[
-```{r ref.label = 'plot-first', eval = FALSE}
-```
-]
+<br>
 
 
 ---
-background-image: url(http://bit.ly/arm-greens)
+name: intro-how
+class: inverse, middle, center
+
+# Introduzione
+
+### --> Come lo vedremo <--
+
 
 ---
-background-image: url(http://bit.ly/arm-greens)
-background-size: cover
+name: website
 
----
-background-image: url(http://bit.ly/arm-greens)
-background-size: contain
+# Course Website
 
----
 
-```{r out.width = '50%'}
-# url
-knitr::include_graphics("http://bit.ly/arm-greens")
+```{r, echo=FALSE, out.width = "100%", fig.cap='<a href="https://cra-datacleaning.netlify.app/">https://cra-datacleaning.netlify.app/</a>'}
+knitr::include_url("https://cra-datacleaning.netlify.app/")
 ```
+
+---
+name: rscloud
+
+# RStudio Cloud
+
+[https://bit.ly/datacleaning-cra](https://bit.ly/datacleaning-cra)
+
+
+---
+name: outline
+
+## Programma
+
+ **Ora** | **Tema**
+--------:|:-------------------------------
+  14:00  | _Benvenuti_ dall'organizzazione e [Sondaggio pre-corso](https://forms.gle/iWBP75A2SJTFY3Ju9)
+  14:10  | Introduzione, motivazione, presentazione caso studio
+  14:20  | Importazione dati dall'esterno e primi accorgimenti
+  14:30  | Manipolazione di stringhe: le espressioni regolari
+  14:40  | Problemi nelle intestazioni
+  14:50  | Problemi nei valori
+  15:00  | **COFFEE BREAK**
+  15:10  | Sotto-intestazioni (raggruppamenti) tra i valori
+  15:20  | Riempimento, separazione, espansione, e contrazione
+  15:30  | Numeri e finalizzazione
+  15:40  | Domande, dubbi, curiosità
+  16:00  | [Sondaggio post-corso](https://forms.gle/uRJ8yYwZ6YzweSKa8)
+  16:10  | **FINE**
+  
+
+
+---
+name: intro-next
+class: inverse, middle, center
+
+# Introduzione
+
+### --> Fine <--
+
+### Prossimo argomento: [importare dati in `r fontawesome::fa("r-project", fill = "purple")`](02-importazione.html) 
