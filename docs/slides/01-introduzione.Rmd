@@ -123,7 +123,7 @@ class: inverse, middle, center
 
 # Introduzione
 
-### --> Cosa vedremo <--
+### Cosa vedremo
 
 
 ---
@@ -245,7 +245,7 @@ class: inverse, middle, center
 
 # Introduzione
 
-### --> Come lo vedremo <--
+### Materiale
 
 
 ---
@@ -289,13 +289,12 @@ name: outline
   
 
 
-
 ---
 name: intro-next
 class: inverse, middle, center
 
 # Introduzione
 
-### --> Fine <--
+### Fine
 
-### Prossimo argomento: [importare dati in `r fontawesome::fa("r-project", fill = "purple")`]() 
+### Prossimo argomento: [importare dati in `r fontawesome::fa("r-project", fill = "purple")`](02-importazione.html) 

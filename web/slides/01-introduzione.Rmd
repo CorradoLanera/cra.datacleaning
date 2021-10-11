@@ -17,7 +17,7 @@ background-image: url(http://bit.ly/arm-greens)
 background-size: cover
 
 # Data Cleaning per la Ricerca Clinica
-<img src="https://raw.githubusercontent.com/CorradoLanera/cra.datacleaning/develop/inst/web/images/orsetto_lavatore-neuro74.png?token=ABRMPU2YXTRVGQTDBA3GOA3BNSOVE" width="150px"/>
+<img src="../images/orsetto_lavatore-neuro74.png" width="150px"/>
 
 ### Con esempi in `r fontawesome::fa("r-project", fill = "blue")`
 
@@ -51,15 +51,15 @@ blu_gray <- "#1F4257"
 style_duo_accent(
     # primary_color = pastel_orange
     # secondary_color = purple,
-    # colors = c(
-    #     red = red,
-    #     purple = purple,
-    #     orange = orange,
-    #     green = green,
-    #     white = white,
-    #     pastel_orange = pastel_orange,
-    #     blu_gray = blu_gray
-    # )
+    colors = c(
+        red = red,
+        purple = purple,
+        orange = orange,
+        green = green,
+        white = white,
+        pastel_orange = pastel_orange,
+        blu_gray = blu_gray
+    )
 )
 ```
 
@@ -95,8 +95,7 @@ knitr::include_graphics("../images/profilo_CL.jpg")
 # Dove trovarmi...
 
 
-<br>
-
+[`r fontawesome::fa("link")`](https://www.unipd-ubep.it/) [**www.unipd-ubep.it**](https://www.unipd-ubep.it/)
 
 [`r fontawesome::fa("link")`](https://www.CorradoLanera.it) [**www.CorradoLanera.it**](https://www.CorradoLanera.it)
 
@@ -107,14 +106,13 @@ knitr::include_graphics("../images/profilo_CL.jpg")
 [`r fontawesome::fa("github")`](https://github.com/corradolanera)
 [`r fontawesome::fa("twitter")`](https://twitter.com/corradolanera)
 [`r fontawesome::fa("telegram-plane")`](https://telegram.me/CorradoLanera)
-@CorradoLanera
+**@CorradoLanera**
 
 [`r fontawesome::fa("telegram-plane")`](https://telegram.me/puffrbacco)
-[puffRbacco](https://telegram.me/puffrbacco)
+[**puffRbacco**](https://telegram.me/puffrbacco)
 
-[`r fontawesome::fa("calendar-check")` ](https://calendly.com/corradolanera) [calendly.com/corradolanera](https://calendly.com/corradolanera)
+[`r fontawesome::fa("calendar-check")` ](https://calendly.com/corradolanera) [**calendly.com/corradolanera**](https://calendly.com/corradolanera)
 
-<br>
 
 
 ---
@@ -123,13 +121,13 @@ class: inverse, middle, center
 
 # Introduzione
 
-### --> Cosa vedremo <--
+### Cosa vedremo
 
 
 ---
 name: motivation-1
 
-## Data cleaning per la ricerca clinica
+## Data cleaning (per la ricerca clinica)
 
 
 > Un generico processo capace di garantire, con una certa soglia di affidabilità, la correttezza di una grande quantità di dati. [...] tale procedimento precede l'effettiva estrazione [...] di quantità di informazione potenzialmente utile [...] al fine di produrre conoscenza.
@@ -217,6 +215,36 @@ knitr::include_graphics("../images/messy_aoe.PNG")
 
 > Dataset modificato, rispetto all'originale `data("AOEunits_raw", package = "unheadr")`, per enfatizzare ulteriori problematiche comuni in fogli di raccolta dati clinici.
 
+
+---
+name: issues
+
+## Problematiche
+
+### Nei dati
+
+- Codifica disomogenea dei dati mancanti
+- Forma dei caratteri inconsistente
+- Spazi ridondanti (non facilmente visibili)
+- Valori multipli su una stessa cella
+- Valori spezzati su più righe
+- Valori impliciti
+- Numeri memorizzati come testo (con notazioni testuali)
+
+### Nei meta-dati
+
+- Nomi di variabili non utilizzabili
+- Nomi delle variabili su più righe
+- Nomi di variabili di raggruppamento su colonne unite
+- Nomi di variabili di raggruppamento su righe miste ai dati
+
+
+### Nel formato
+
+- Righe o colonne vuote
+- Variabili memorizzate tra i nomi delle colonne
+
+
 ---
 name: r
 
@@ -245,7 +273,7 @@ class: inverse, middle, center
 
 # Introduzione
 
-### --> Come lo vedremo <--
+### Materiale
 
 
 ---
@@ -295,6 +323,6 @@ class: inverse, middle, center
 
 # Introduzione
 
-### --> Fine <--
+### Fine
 
 ### Prossimo argomento: [importare dati in `r fontawesome::fa("r-project", fill = "purple")`](02-importazione.html) 

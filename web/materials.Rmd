@@ -1,0 +1,99 @@
+---
+title: "Materiale"
+description: |
+  Qui puoi trovare tutto il materiale utile per il corso.
+output: 
+  distill::distill_article:
+    toc: true
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c(
+    "panelset", "clipboard"
+))
+```
+
+## Ambiente di lavoro remoto {#rs-cloud}
+
++ [~~RStudio Cloud workspace~~]()
+<!-- https://bit.ly/datacleaning-cra -->
+
+<aside>
+Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà attivo durante il corso.
+</aside>
+
+
+## Materiale
+
+
+<aside>
+Il materiale sarà reso disponibile dal giorno del corso.
+</aside>
+
+
+### Slides
+
+
+#### [Introduzione](slides/01-introduzione.html)
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/01-introduzione.html")
+```
+
++ [~~02: Importazione~~]()
++ [~~03: Espressioni Regolari~~]()
++ [~~04: {unheadr}~~]()
++ [~~05: Tidy-data~~]()
++ [~~06: Numeri~~]()
++ [~~07: Outro~~]()
+
+
+### Sfide
+
++ [~~02a: Dati mancanti~~]()
++ [~~02b: Strutture mancanti~~]()
++ [~~02c: Nomi utili~~]()
++ [~~03a: Regexp: modificare~~]()
++ [~~03b: Regexp: compattare~~]()
++ [~~03c: Regexp: grafia delle lettere~~]()
++ [~~04a: Intestazioni raggruppate e spezzate~~]()
++ [~~04b: Valori spezzati~~]()
++ [~~04c: Raggruppamenti nei dati~~]()
++ [~~05a: Ridondanza implicita~~]()
++ [~~05b: Valori nelle intestazioni~~]()
++ [~~05c: Valori multipli assemblati~~]()
++ [~~06a: Punti, e virgole~~]()
++ [~~06b: Percentuali~~]()
+
++ [~~Caso studio completo~~]()
+
+### Soluzioni
+
++ [~~02a: Dati mancanti~~]()
++ [~~02b: Strutture mancanti~~]()
++ [~~02c: Nomi utili~~]()
++ [~~03a: Regexp: modificare~~]()
++ [~~03b: Regexp: compattare~~]()
++ [~~03c: Regexp: grafia delle lettere~~]()
++ [~~04a: Intestazioni raggruppate e spezzate~~]()
++ [~~04b: Valori spezzati~~]()
++ [~~04c: Raggruppamenti nei dati~~]()
++ [~~05a: Ridondanza implicita~~]()
++ [~~05b: Valori nelle intestazioni~~]()
++ [~~05c: Valori multipli assemblati~~]()
++ [~~06a: Punti, e virgole~~]()
++ [~~06b: Percentuali~~]()
+
++ [~~Caso studio completo~~]()
+
+
+
+<!-- ### Note collaborative -->
+
+<!-- Durante il corso, useremo [questo pad](https://etherpad.wikimedia.org/p/20211013-datacleaning_cra) collaborativo per chattare e prendere appunti, oltre che per poter condividere link o piccoli blocchetti di codice.^[Il pad collaborativo è messo a disposizione gratuitamente da [Wikimedia](https://www.wikimedia.org/) attraverso l'editor collaborativo [Etherpad](https://etherpad.org/).] -->

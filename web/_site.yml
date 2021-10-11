@@ -15,7 +15,7 @@ navbar:
     - text: "Il corso"
       href: about.html
     - text: "Materiale"
-      href: index.html#materiale
+      href: materials.html
     - text: "CdC"
       href: code_of_conduct.html
     - text: "Contatti"
