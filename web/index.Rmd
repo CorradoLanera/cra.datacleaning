@@ -122,7 +122,7 @@ Per (e)seguire gli esempi e gli esercizi proposti localmente sul computer che ut
 * Dal giorno del corso in poi, i dati, le slide e le soluzioni degli esercizi potrai recuperarli tramite l'esecuzione del seguente codice:
 
   ``` r
-  usethis::use_course("CorradoLanera/corso-cra-dc",
+  usethis::use_course("CorradoLanera/cra.datacleaning/web/esercizi",
                       destdir = "<tuo path di progetto del corso>")
   ```
 

@@ -29,24 +29,36 @@ gradethis::gradethis_setup(
 
 Rispondi alle seguenti domande.
 
-### A
+### Dati mancanti
 
-```{r import}
-quiz(caption = "XXX-quiz",
-  question("q",
+```{r missing}
+quiz(caption = "Come segnalare alle funzioni di import come sono codificati nel file sorgente i dati mancanti.",
+  question('
+Se tra le celle di un file Excel troviamo sia campi vuoti che alcuni riempiti con il simbolo `-`, cosa (se) dobbiamo passare all\'argomento
+riportato qui sotto con `___` per fare in modo che entrambi vengano correttamente importati come `NA`?
+
+ ```r
+library(tidyverse)
+library(readxl)
+
+db <- read_excel("<path/to/file.xlsx>", na = ___)
+ ```
+
+
+',
            
-    answer("a",
+    answer('`c("", "-")`',
            correct = TRUE,
            message = random_praise()),
     
-    answer("b",
-           message = ""),
+    answer('`c("-")`',
+           message = "Attribuendo un valore di al paramentro `na = ` sostituiamo, e non _aggiungiamo_, quanto definizmo noi al/ai valori già presenti di default per tale argomento."),
     
-    answer("c",
-           message = ""),
+    answer('Nulla, va bene il/i valore/i di default',
+           message = 'Il valore di default è il campo vuoto, che lo rappresentiamo con una stringa vuota: `""`'),
     
-    answer("d",
-           message = ""),
+    answer('`NA`',
+           message = "`NA` è il valore che vogliamo inserire per codificare i dati mancanti, non quello che 'leggiamo' nei dati sorgente"),
     
     try_again = random_encouragement(),
     allow_retry = TRUE,
@@ -55,6 +67,11 @@ quiz(caption = "XXX-quiz",
 )
 ```
 
+
+### Righe e colonne mancanti
+
+
+### Uniformità nomi colonne
 
 
 

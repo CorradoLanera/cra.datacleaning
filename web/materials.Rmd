@@ -21,8 +21,7 @@ xaringanExtra::use_xaringan_extra(c(
 
 ## Ambiente di lavoro remoto {#rs-cloud}
 
-+ [~~RStudio Cloud workspace~~]()
-<!-- https://bit.ly/datacleaning-cra -->
++ [RStudio Cloud workspace](https://bit.ly/datacleaning-cra)
 
 <aside>
 Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà attivo durante il corso.
@@ -42,11 +41,16 @@ Il materiale sarà reso disponibile dal giorno del corso.
 
 #### [Introduzione](slides/01-introduzione.html)
 
-```{r embed-xaringan, echo=FALSE}
+```{r embed-intro, echo=FALSE}
 xaringanExtra::embed_xaringan("slides/01-introduzione.html")
 ```
 
-+ [~~02: Importazione~~]()
+#### [Importazione](slides/02-importazione.html)
+
+```{r embed-import, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/02-importazione.html")
+```
+
 + [~~03: Espressioni Regolari~~]()
 + [~~04: {unheadr}~~]()
 + [~~05: Tidy-data~~]()
@@ -56,9 +60,8 @@ xaringanExtra::embed_xaringan("slides/01-introduzione.html")
 
 ### Sfide
 
-+ [~~02a: Dati mancanti~~]()
-+ [~~02b: Strutture mancanti~~]()
-+ [~~02c: Nomi utili~~]()
++ [02: Importazione](esercizi/02_ex-importazione.R)
+
 + [~~03a: Regexp: modificare~~]()
 + [~~03b: Regexp: compattare~~]()
 + [~~03c: Regexp: grafia delle lettere~~]()
@@ -71,13 +74,12 @@ xaringanExtra::embed_xaringan("slides/01-introduzione.html")
 + [~~06a: Punti, e virgole~~]()
 + [~~06b: Percentuali~~]()
 
-+ [~~Caso studio completo~~]()
++ [Caso studio completo](esercizi/caso-studio-completo.R)
 
-### Soluzioni
+### Soluzioni proposte
 
-+ [~~02a: Dati mancanti~~]()
-+ [~~02b: Strutture mancanti~~]()
-+ [~~02c: Nomi utili~~]()
++ [02: Importazione](esercizi/soluzioni/02_sol-importazione.R)
+
 + [~~03a: Regexp: modificare~~]()
 + [~~03b: Regexp: compattare~~]()
 + [~~03c: Regexp: grafia delle lettere~~]()
@@ -90,7 +92,7 @@ xaringanExtra::embed_xaringan("slides/01-introduzione.html")
 + [~~06a: Punti, e virgole~~]()
 + [~~06b: Percentuali~~]()
 
-+ [~~Caso studio completo~~]()
++ [Caso studio completo](esercizi/soluzioni/soluzione_caso-studio-completo.R)
 
 
 

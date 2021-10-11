@@ -1,0 +1,209 @@
+---
+title: "Sondaggio (anonimo) post-workshop"
+output: html_document
+---
+
+## Preambolo
+
+> **NOTA BENE**: Come il sondaggio pre-workshop, nemmeno il seguente è, né vuole essere, un esame. Anzi! Il confronto tra le vostre risposte date al pre-workshop, con quelle che mi darai adesso (più le risposte a qualche domanda aggiuntiva che ti farò) mi saranno utilissime a capire in quali punti ho il maggior margine per migliorare la le mie future lezioni. Ti sarei quindi davvero grato se rispondessi anche a questo sondaggio con sincerità e senza timore di venir giudicato.
+
+Per cortesia reinserisci lo stesso identificativo univoco creato nel pre-workshop, che possa quindi in modo anonimo permettermi di collegare le tue risposte a questo sondaggio post-workshop a quelle che mi hai dato nel sondaggio pre-workshop.
+
+Per crearlo avevi scritto uno di seguito all'altro :
+
+    Il numero di fratelli e sorelle che hai (come cifra) +
+    Le prime due lettere della città in cui sei nato (minuscole) +
+    Le prime tre lettere della strada in cui vivi attualmente (minuscole).
+
+ 
+Per esempio: Mario Rossi ha 1 sorella, è nato a Roma, e vive in via Maggiore - `1romag`
+
+
+## Sondaggio
+1. **Quanto ti sei sentito a tuo agio a partecipare al workshop per come è stato condotto?**
+  - per niente
+  - poco
+  - abbastanza
+  - moltissimo
+
+
+2. **Pensi di poter applicare direttamente e da subito quanto hai appreso durante il workshop?**
+  - per niente
+  - poco
+  - abbastanza
+  - moltissimo
+
+
+3. L'istruttore era preparato sugli argomenti del workshop?
+  - per niente
+  - poco
+  - abbastanza
+  - moltissimo
+
+
+4. Hai avuto problemi di accessibilità per partecipare al workshop?
+  - si
+  - no
+  
+5. Se hai risposto si, potresti descriverli?
+
+
+6. **Come descriveresti quanto facilmente potresti importare in R un file `.xlsx` (foglio di calcolo Excel)?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+7. **Come descriveresti quanto facilmente potresti scrivere un programma in R, o in un qualunque altro linguaggio a tua scelta, per trovare tutte gli elementi di un vettore di caratteri che iniziano con una una parentesi tonda aperta?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+8. **Come descriveresti quanto facilmente potresti scrivere un programma R per trovare e mettere in maiuscolo tutti i nomi delle variabili in un data frame?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+9. **Come descriveresti quanto facilmente potresti scrivere un programma R per selezionare tutte e sole le osservazioni di un data frame per cui la variabile `altezza` (ipotizzando sia presente) raggiunge un valore di almeno 165?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+10. **Come descriveresti quanto facilmente potresti scrivere un programma R per estrarre da un data frame tutte le righe contenenti dati mancanti ovunque tranne che in una determinata colonna?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+11. **Come descriveresti quanto facilmente potresti importare un foglio di calcolo con le intestazioni di colonna divise/raggruppate su più di una riga (senza modificarlo manualmente)?**
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+12. **Come descriveresti quanto facilmente potresti sistemare dati in un foglio di calcolo spezzati su più righe (senza modificarlo manualmente)?**
+
+ovvero mutare 
+
+nome        | valore 
+:----------:|:-----:
+  Tim Oti   |   1   
+  Mario     |   2
+  Rossi     |      
+  Gian Luis |   3   
+
+in
+ 
+nome          | valore 
+:------------:|:-----:
+  Tim Oti     |   1   
+  Mario Rossi |   2
+  Gian Luis   |   3   
+
+
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+
+
+13. **Come descriveresti quanto facilmente potresti completare tutti i valori mancanti di una variabile implicitamente ridondante in un data frame (ovvero per cui sia riportata solo la prima occorrenza)?**
+
+ovvero mutare 
+
+ id | centro | tempo 
+:--:| :-----:|:-----:
+  1 |   1    |   1   
+  2 |        |   2   
+  3 |        |   3   
+  4 |   2    |   1   
+  5 |        |   2   
+  6 |        |   3   
+  7 |        |   4   
+
+in
+ 
+ id | centro | tempo 
+:--:| :-----:|:-----:
+  1 |   1    |   1   
+  2 |   1    |   2   
+  3 |   1    |   3   
+  4 |   2    |   1   
+  5 |   2    |   2   
+  6 |   2    |   3   
+  7 |   2    |   4   
+
+
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+14. **Come descriveresti quanto facilmente potresti separare in due variabili una coppia di valori riportati in una sola variabile (per esempio: trasformare la variabile "peso" contenente valori del tipo "7 kg", "3500 g", "2 kg"; nelle corrispondenti due variabili "peso" e "peso_unit")?**
+
+ovvero mutare 
+ 
+id | peso 
+:-:|:------:
+1  | 1 kg 
+2  | 3000 g 
+
+in
+ 
+id | peso | peso_unit
+:-:|:----:|:--------:
+1  |   1  |   kg
+2  | 3000 |   g
+
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+
+
+15. **Come descriveresti quanto facilmente potresti scrivere un programma R per riportare in una unica colonna (allungando il data frame) i valori di due colonne (es., "tempo 1" e "tempo 2") riportando in una seconda colonna "tempo" i corrispondenti valori?**
+ 
+ovvero mutare 
+ 
+id | t1 | t2
+:-:|:--:|:-:
+1  | 1  | 2
+2  | 3  | 4
+ 
+in
+ 
+id | tempo | valore
+:-:|:-----:|:-----:
+1  |   1   |   1
+1  |   2   |   2
+2  |   1   |   3
+2  |   2   |   4
+ 
+  - Non saprei da dove cominciare.
+  - Potrei arrancare per tentativi ed errori con molte ricerche sul web.
+  - Potrei farlo velocemente con poco o nessun uso di aiuto esterno.
+
+
+
+
+16. **Cosa sai o sei in grado di fare dopo questo corso che non eri o non potevi fare prima?**
+
+
+
+17. **Che argomento avresti voluto trattare o approfondire che non è stato trattato o approfondito a sufficienza per te?**
+
+
+18. **Quale singolo argomento tra quelli trattati elimineresti (o gli toglieresti tempo e concentrazione sufficienti) per poter dare spazio a quanto risposto nella domanda precedente?**
+
+
+
+19. **Quale singolo argomento tra quelli trattati vorresti non venisse eliminato per nessun motivo?**
+
+
+20. **Qual'è il più importante singolo aspetto del workshop che secondo te porterebbe il maggior beneficio se migliorato/modificato? (Se per caso hai in mente anche un suggerimento su come fare, scrivilo pure.)**
+

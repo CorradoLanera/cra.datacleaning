@@ -219,30 +219,66 @@ knitr::include_graphics("../images/messy_aoe.PNG")
 ---
 name: issues
 
-## Problematiche
+## Problematiche principali
 
-### Nei dati
+.panelset[
 
-- Codifica disomogenea dei dati mancanti
+.panel[.panel-name[Nei dati]
+
+.pull-left[
+- Codifica dati mancanti
 - Forma dei caratteri inconsistente
-- Spazi ridondanti (non facilmente visibili)
+- Spazi ridondanti
 - Valori multipli su una stessa cella
 - Valori spezzati su più righe
-- Valori impliciti
-- Numeri memorizzati come testo (con notazioni testuali)
+- Numeri memorizzati come testo
+]
 
-### Nei meta-dati
+.pull-right[
+```{r, echo=FALSE, out.width = "100%"}
+knitr::include_graphics("../images/messy_data.jpg")
+```
+]
+
+]
+
+.panel[.panel-name[Nei meta-dati]
+.pull-left[
 
 - Nomi di variabili non utilizzabili
-- Nomi delle variabili su più righe
-- Nomi di variabili di raggruppamento su colonne unite
-- Nomi di variabili di raggruppamento su righe miste ai dati
+- Nomi di variabili su più righe
+- Nomi di variabili su colonne unite
+- Variabili memorizzate tra i nomi delle colonne
+]
 
+.pull-right[
+```{r, echo=FALSE, out.width = "100%"}
+knitr::include_graphics("../images/messy_headers.jpg")
+```
+]
 
-### Nel formato
+]
+
+.panel[.panel-name[Nel formato]
+.pull-left[
 
 - Righe o colonne vuote
-- Variabili memorizzate tra i nomi delle colonne
+- Raggruppamenti nei dati
+- Valori impliciti
+
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width = "100%"}
+knitr::include_graphics("../images/messy_groups.jpg")
+```
+]
+
+
+]
+
+]
+
 
 
 ---
@@ -273,25 +309,7 @@ class: inverse, middle, center
 
 # Introduzione
 
-### Materiale
-
-
----
-name: website
-
-# Course Website
-
-
-```{r, echo=FALSE, out.width = "100%", fig.cap='<a href="https://cra-datacleaning.netlify.app/">https://cra-datacleaning.netlify.app/</a>'}
-knitr::include_url("https://cra-datacleaning.netlify.app/")
-```
-
----
-name: rscloud
-
-# RStudio Cloud
-
-[https://bit.ly/datacleaning-cra](https://bit.ly/datacleaning-cra)
+### Organizzazione
 
 
 ---
@@ -318,11 +336,31 @@ name: outline
 
 
 ---
+name: website
+
+# Course Website
+
+
+```{r, echo=FALSE, out.width = "100%", fig.cap='<a href="https://cra-datacleaning.netlify.app/">https://cra-datacleaning.netlify.app/</a>'}
+knitr::include_url("https://cra-datacleaning.netlify.app/")
+```
+
+---
+name: rscloud
+
+# RStudio Cloud
+
+```{r, echo=FALSE, out.width = "100%", fig.cap='Ambiente per il corso: <a href="https://bit.ly/datacleaning-cra">https://bit.ly/datacleaning-cra</a>'}
+knitr::include_url("https://rstudio.cloud")
+```
+
+
+---
 name: intro-next
 class: inverse, middle, center
 
 # Introduzione
 
-### Fine
+### Fine. <br> Ovvero... cominciamo!!
 
 ### Prossimo argomento: [importare dati in `r fontawesome::fa("r-project", fill = "purple")`](02-importazione.html) 
