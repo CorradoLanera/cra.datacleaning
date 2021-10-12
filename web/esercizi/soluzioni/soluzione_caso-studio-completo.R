@@ -23,21 +23,6 @@ header_db <- raw_db %>%
     mash_colnames(4, keep_names = FALSE, sliding_headers = TRUE) %>%
     clean_names()
 
-
-# main_header <- names(raw_db) %>%
-#     str_replace("^\\.", NA_character_) %>%
-#     as_tibble() %>%
-#     fill(value) %>%
-#     mutate(value = replace_na(value, "")) %>%
-#     pull(value)
-#
-# main_header
-#
-# names(raw_db) <- main_header
-# header_db <- raw_db %>%
-#     unheadr::mash_colnames(3) %>%
-#     clean_names()
-
 correct_names <- names(header_db) %>%
     str_replace("t1_line_of_sigth", "t1_line_of_sight")
 names(header_db) <- correct_names

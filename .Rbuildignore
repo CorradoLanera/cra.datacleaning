@@ -8,3 +8,6 @@
 ^code_of_conduct\.Rmd$
 ^code_of_conduct\.html$
 ^docs$
+^web$
+^data-raw$
+^development$

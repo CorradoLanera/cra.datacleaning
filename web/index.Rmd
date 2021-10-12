@@ -117,7 +117,9 @@ Per (e)seguire gli esempi e gli esercizi proposti localmente sul computer che ut
 * I pacchetti che utilizzeremo saranno quelli riportati di seguito, i quali possono essere installati, collegandosi a internet, aprendo RStudio, ed eseguendo la seguente riga di codice nella console:
   
   ``` r
-  install.packages(c("janitor", "tidyverse", "unheadr", "usethis"))
+  install.packages(c(
+    "here", "janitor", "tidyverse", "unheadr", "usethis"
+  ))
   ```
 * Dal giorno del corso in poi, i dati, le slide e le soluzioni degli esercizi potrai recuperarli tramite l'esecuzione del seguente codice:
 

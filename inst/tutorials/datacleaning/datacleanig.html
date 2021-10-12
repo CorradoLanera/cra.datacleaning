@@ -124,14 +124,40 @@ if (window.hljs) {
 </div>
 <div id="section-righe-e-colonne-mancanti" class="section level3">
 <h3>Righe e colonne mancanti</h3>
+<p>&lt; da aggiungere in futuro &gt;</p>
 </div>
 <div id="section-uniformità-nomi-colonne" class="section level3">
 <h3>Uniformità nomi colonne</h3>
+<p>&lt; da aggiungere in futuro &gt;</p>
 </div>
 </div>
 <div id="section-espressioni-regolari" class="section level2">
 <h2>Espressioni regolari</h2>
 <p>Rispondi alle seguenti domande.</p>
+<div id="section-carattere-jolly" class="section level3">
+<h3>Carattere Jolly</h3>
+<p><div class="panel-heading tutorial-quiz-title">Il punto <code>.</code> nelle espressioni regolari rappresenta un generico carattere, ma come lo sfruttiamo e come si differenzia tra l&#39;espressione e il testo?</div></p>
+<div class="panel panel-default">
+<div data-label="jolly-1" class="tutorial-question panel-body">
+<div id="jolly-1-answer_container" class="shiny-html-output"></div>
+<div id="jolly-1-message_container" class="shiny-html-output"></div>
+<div id="jolly-1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+</div>
+<div id="section-scorciatoie" class="section level3">
+<h3>Scorciatoie</h3>
+<p><div class="panel-heading tutorial-quiz-title">Nel pacchetto <code>{stringr}</code> sono presenti numerose funzioni utili come scorciatoie per non scrivere ogni volta (rischiando quindi anche di sbagliare) espressioni regolari complesse ma per assolvere compiti comuni. Vediamone qualcuna.</div></p>
+<div class="panel panel-default">
+<div data-label="scorciatoie-1" class="tutorial-question panel-body">
+<div id="scorciatoie-1-answer_container" class="shiny-html-output"></div>
+<div id="scorciatoie-1-message_container" class="shiny-html-output"></div>
+<div id="scorciatoie-1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+</div>
 </div>
 <div id="section-unheadr" class="section level2">
 <h2><code>{unheadr}</code></h2>
@@ -210,62 +236,127 @@ session$onSessionEnded(function() {
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "missing-1", question = structure("Se tra le celle di un file Excel troviamo sia campi vuoti che alcuni riempiti con il simbolo <code>-<\u002fcode>, cosa (se) dobbiamo passare all&#39;argomento\nriportato qui sotto con <code>___<\u002fcode> per fare in modo che entrambi vengano correttamente importati come <code>NA<\u002fcode>?<\u002fp>\n\n<pre><code class=\"r\">library(tidyverse)\nlibrary(readxl)\n\ndb &lt;- read_excel(&quot;&lt;path/to/file.xlsx&gt;&quot;, na = ___)\n<\u002fcode><\u002fpre>\n", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_aaa70bb", 
+"character")), answers = list(structure(list(id = "lnr_ans_4279ff5", 
     option = "`c(\"\", \"-\")`", value = "`c(\"\", \"-\")`", 
     label = structure("<code>c(&quot;&quot;, &quot;-&quot;)<\u002fcode>", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = structure("Magnificent!", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure("Terrific!", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_a3af173", option = "`c(\"-\")`", 
+)), structure(list(id = "lnr_ans_c1cfdf7", option = "`c(\"-\")`", 
     value = "`c(\"-\")`", label = structure("<code>c(&quot;-&quot;)<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Attribuendo un valore di al paramentro <code>na =<\u002fcode> sostituiamo, e non <em>aggiungiamo<\u002fem>, quanto definizmo noi al/ai valori già presenti di default per tale argomento.", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_bcf0922", option = "Nulla, va bene il/i valore/i di default", 
+)), structure(list(id = "lnr_ans_fa1adc", option = "Nulla, va bene il/i valore/i di default", 
     value = "Nulla, va bene il/i valore/i di default", label = structure("Nulla, va bene il/i valore/i di default", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Il valore di default è il campo vuoto, che lo rappresentiamo con una stringa vuota: <code>&quot;&quot;<\u002fcode>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_f55abbd", option = "`NA`", value = "`NA`", 
+)), structure(list(id = "lnr_ans_c570ff", option = "`NA`", value = "`NA`", 
     label = structure("<code>NA<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("<code>NA<\u002fcode> è il valore che vogliamo inserire per codificare i dati mancanti, non quello che &#39;leggiamo&#39; nei dati sorgente", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
 ))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
 "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
 "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-"character")), try_again = structure("Let&#39;s try it again.", html = TRUE, class = c("html", 
+"character")), try_again = structure("But no need to fret, try it again.", html = TRUE, class = c("html", 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "missing-1-answer", question = "missing-1"), loading = structure("<strong>Loading:<\u002fstrong> <\u002fp>\n\n<p>Se tra le celle di un file Excel troviamo sia campi vuoti che alcuni riempiti con il simbolo <code>-<\u002fcode>, cosa (se) dobbiamo passare all&#39;argomento\nriportato qui sotto con <code>___<\u002fcode> per fare in modo che entrambi vengano correttamente importati come <code>NA<\u002fcode>?<\u002fp>\n\n<pre><code class=\"r\">library(tidyverse)\nlibrary(readxl)\n\ndb &lt;- read_excel(&quot;&lt;path/to/file.xlsx&gt;&quot;, na = ___)\n<\u002fcode><\u002fpre>\n\n<p><br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1183243853.94901, options = list()), class = c("learnr_radio", 
+    seed = 1453494137.82316, options = list()), class = c("learnr_radio", 
+"tutorial_question")), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "jolly-1", question = structure("Che stringa restituisce la chiamata seguente?<\u002fp>\n\n<pre><code class=\"r\">  library(stringr)\n\n  str_replace(&quot;pun.to&quot;, &quot;.&quot;, &quot;o&quot;)\n<\u002fcode><\u002fpre>\n", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_d32676", 
+    option = "\"oun.to\"", value = "\"oun.to\"", label = structure("&quot;oun.to&quot;", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure("Excellent!", html = TRUE, class = c("html", 
+    "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
+)), structure(list(id = "lnr_ans_c807593", option = "\"punoto\"", 
+    value = "\"punoto\"", label = structure("&quot;punoto&quot;", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Il punto nell&#39;espressione regolare è un giolli che rappresenta un carattere qualsiasi e non un &#39;vero&#39; punto, se vuoi cercare un &#39;vero&#39; punto, devi anteporre, nell&#39;espressione regolare un backslash (in R quindi due), per esempio: <code>str_replace(&quot;pun.to&quot;, &quot;\\\\.&quot;, &quot;o&quot;)<\u002fcode>", html = TRUE, class = c("html", 
+    "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
+)), structure(list(id = "lnr_ans_8a5283d", option = "\"oooooo\"", 
+    value = "\"oooooo\"", label = structure("&quot;oooooo&quot;", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("<code>str_replace<\u002fcode> trova solo la prima occorrenza che soddisfa il pattern descritto dall&#39;espressione regolare, e non tutte.", html = TRUE, class = c("html", 
+    "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
+)), structure(list(id = "lnr_ans_567cff7", option = "\"pun.t.\"", 
+    value = "\"pun.t.\"", label = structure("&quot;pun.t.&quot;", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Il secondo argomento di <code>str_replace<\u002fcode> è il pattern e il terzo la stringa da usare per sostiuire la porzione corrispondente a quella descritta dall&#39;espressione regolare; non viceversa.", html = TRUE, class = c("html", 
+    "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
+))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Try it again. I have a good feeling about this.", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "jolly-1-answer", question = "jolly-1"), loading = structure("<strong>Loading:<\u002fstrong> \nChe stringa restituisce la chiamata seguente?<\u002fp>\n\n<pre><code class=\"r\">  library(stringr)\n\n  str_replace(&quot;pun.to&quot;, &quot;.&quot;, &quot;o&quot;)\n<\u002fcode><\u002fpre>\n\n<p><br/><br/><br/>", html = TRUE, class = c("html", 
+"character")), random_answer_order = TRUE, allow_retry = TRUE, 
+    seed = 1682038421.21674, options = list()), class = c("learnr_radio", 
+"tutorial_question")), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "scorciatoie-1", 
+    question = structure("Come possiamo eliminare gli spazi in eccesso nella stringa:<\u002fp>\n\n<pre><code class=\"r\">  s &lt;- &quot;  Espressioni  Regolari  &quot;\n\n<\u002fcode><\u002fpre>\n", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_badeb4d", 
+        option = "`str_squish(s)`", value = "`str_squish(s)`", 
+        label = structure("<code>str_squish(s)<\u002fcode>", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Lovely job!", html = TRUE, class = c("html", 
+        "character"))), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b6b3793", 
+        option = "`str_trim(s)`", value = "`str_trim(s)`", label = structure("<code>str_trim(s)<\u002fcode>", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("<code>str_trim<\u002fcode> elimina solo gli spazi all&#39;inizio e alla fine, non anche quelli in eccesso ridondanti in mezzo al testo", html = TRUE, class = c("html", 
+        "character"))), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_bf7ffc4", 
+        option = "`str_replace(s, \" \", \"\")`", value = "`str_replace(s, \" \", \"\")`", 
+        label = structure("<code>str_replace(s, &quot; &quot;, &quot;&quot;)<\u002fcode>", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("In questo modo eliminiamo solo (e sempre) il primo spazio (se presente), potrebbe non essere uno spazio ridondante né superfluo.", html = TRUE, class = c("html", 
+        "character"))), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3050b8e", 
+        option = "`str_replace_all(s, \" \", \"\")`", value = "`str_replace_all(s, \" \", \"\")`", 
+        label = structure("<code>str_replace_all(s, &quot; &quot;, &quot;&quot;)<\u002fcode>", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("In questo modo eliminiamo tutti gli spazi presenti nella stringa, indipendentemente dal fatto che siano o meno ridondanti.", html = TRUE, class = c("html", 
+        "character"))), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+    "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+    "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+    "character")), try_again = structure("That&#39;s okay: you learn more from mistakes than successes. Let&#39;s do it one more time.", html = TRUE, class = c("html", 
+    "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+    "character")), message = NULL, post_message = NULL), ids = list(
+        answer = "scorciatoie-1-answer", question = "scorciatoie-1"), 
+    loading = structure("<strong>Loading:<\u002fstrong> \nCome possiamo eliminare gli spazi in eccesso nella stringa:<\u002fp>\n\n<pre><code class=\"r\">  s &lt;- &quot;  Espressioni  Regolari  &quot;\n\n<\u002fcode><\u002fpre>\n\n<p><br/><br/><br/>", html = TRUE, class = c("html", 
+    "character")), random_answer_order = TRUE, allow_retry = TRUE, 
+    seed = 1309485184.39022, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "numbers-1", question = structure("q", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_d55cb8d", 
+"character")), answers = list(structure(list(id = "lnr_ans_af8f90c", 
     option = "a", value = "a", label = structure("a", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = structure("Terrific!", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure("Superb work!", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_3dc80b7", option = "b", value = "b", 
+)), structure(list(id = "lnr_ans_6b2cafd", option = "b", value = "b", 
     label = structure("b", html = TRUE, class = c("html", "character"
     )), correct = FALSE, message = structure("", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_2961280", option = "c", value = "c", 
+)), structure(list(id = "lnr_ans_fa47a55", option = "c", value = "c", 
     label = structure("c", html = TRUE, class = c("html", "character"
     )), correct = FALSE, message = structure("", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_28a071e", option = "d", value = "d", 
+)), structure(list(id = "lnr_ans_472a3da", option = "d", value = "d", 
     label = structure("d", html = TRUE, class = c("html", "character"
     )), correct = FALSE, message = structure("", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
 ))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
 "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
 "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-"character")), try_again = structure("Please try again.", html = TRUE, class = c("html", 
+"character")), try_again = structure("Try it again. You get better each time.", html = TRUE, class = c("html", 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "numbers-1-answer", question = "numbers-1"), loading = structure("<strong>Loading:<\u002fstrong> \nq\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 72862257.4660709, options = list()), class = c("learnr_radio", 
+    seed = 609643875.716112, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  <!--html_preserve-->

@@ -70,8 +70,14 @@ db <- read_excel("<path/to/file.xlsx>", na = ___)
 
 ### Righe e colonne mancanti
 
+< da aggiungere in futuro >
+
+
+
 
 ### Uniformità nomi colonne
+
+< da aggiungere in futuro >
 
 
 
@@ -80,7 +86,70 @@ db <- read_excel("<path/to/file.xlsx>", na = ___)
 Rispondi alle seguenti domande.
 
 
+### Carattere Jolly
 
+```{r jolly}
+quiz(caption = "Il punto `.` nelle espressioni regolari rappresenta un generico carattere, ma come lo sfruttiamo e come si differenzia tra l\'espressione e il testo?",
+  question('Che stringa restituisce la chiamata seguente?
+
+  ```r
+  library(stringr)
+  
+  str_replace("pun.to", ".", "o")
+  ```
+',
+           
+    answer('"oun.to"',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('"punoto"',
+           message = "Il punto nell'espressione regolare è un giolli che rappresenta un carattere qualsiasi e non un 'vero' punto, se vuoi cercare un 'vero' punto, devi anteporre, nell'espressione regolare un backslash (in R quindi due), per esempio: `str_replace(\"pun.to\", \"\\\\.\", \"o\")`"),
+    
+    answer('"oooooo"',
+           message = '`str_replace` trova solo la prima occorrenza che soddisfa il pattern descritto dall\'espressione regolare, e non tutte.'),
+    
+    answer('"pun.t."',
+           message = "Il secondo argomento di `str_replace` è il pattern e il terzo la stringa da usare per sostiuire la porzione corrispondente a quella descritta dall'espressione regolare; non viceversa."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+### Scorciatoie
+
+```{r scorciatoie}
+quiz(caption = "Nel pacchetto `{stringr}` sono presenti numerose funzioni utili come scorciatoie per non scrivere ogni volta (rischiando quindi anche di sbagliare) espressioni regolari complesse ma per assolvere compiti comuni. Vediamone qualcuna.",
+  question('Come possiamo eliminare gli spazi in eccesso nella stringa:
+
+  ```r
+  s <- "  Espressioni  Regolari  "
+  
+  ```
+',
+           
+    answer('`str_squish(s)`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`str_trim(s)`',
+           message = "`str_trim` elimina solo gli spazi all'inizio e alla fine, non anche quelli in eccesso ridondanti in mezzo al testo"),
+    
+    answer('`str_replace(s, " ", "")`',
+           message = 'In questo modo eliminiamo solo (e sempre) il primo spazio (se presente), potrebbe non essere uno spazio ridondante né superfluo.'),
+    
+    answer('`str_replace_all(s, " ", "")`',
+           message = "In questo modo eliminiamo tutti gli spazi presenti nella stringa, indipendentemente dal fatto che siano o meno ridondanti."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
 
 ## `{unheadr}`
 

@@ -76,6 +76,7 @@ library(countdown)
 
 ---
 
+`r fontawesome::fa("r-project", fill = "orange")`
 
 ---
 
@@ -89,18 +90,37 @@ class: center middle inverse
 
 ---
 
-name: you
+name: you-3
 class: center middle inverse
 
 # Tocca a te
 
-< quiz >
+.left[
 
+
+.pull-left[
+
+A. ""
+
+B. ""
+
+]
+
+.pull-right[
+
+C. ""
+
+D. ""
+
+]
+]
 .right[
 ```{r, echo = FALSE}
-countdown(minutes = 1, seconds = 0)
+countdown(minutes = 0, seconds = 30)
 ```
 ]
+
+
 
 ---
 name: unheadr-next

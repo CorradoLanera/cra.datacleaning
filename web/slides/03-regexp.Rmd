@@ -16,7 +16,7 @@ class: inverse, middle, center
 
 # Espressioni regolari
 
-### XXXX
+### Tipi di dati
 
 
 
@@ -25,7 +25,8 @@ knitr::opts_chunk$set(
   fig.retina = 3,
   warning = FALSE,
   message = FALSE,
-  comment = ""
+  comment = "#>",
+  collapse = TRUE
 )
 ```
 
@@ -75,16 +76,177 @@ library(countdown)
 ```
 
 ---
+name: tipi
+
+## Tipi di dati principali (in `r fontawesome::fa("r-project", fill = "orange")`)
+
+
+In generale possiamo avere le seguenti tipologie di dati:
+
+1. Booleano  (`TRUE`/`FALSE`)
+2. Intero    (0, 1, -1, 2, -2, 3, ...)
+3. Continuo  (0, 0.1, $\pi$, $\sqrt{2}$)
+4. Stringhe di caratteri ("Accende la candela e dice buonasera!")
+
+--
+
+> Ordinati secondo la relazione "**può essere visto come...**", ovvero: Booleano < Intero < Continuo < Carattere.
+
+Infatti:
+- Ogni booleano "può essere visto come" un intero (VERO --> 1 / FALSE --> 0)
+- Ogni intero "può essere visto come" un continuo (1 --> 1)
+- Ogni continuo "può essere visto come" una stringa di caratteri ( $\pi$ --> " $\pi$ " )
+
+
+---
+name: operazioni
+
+## Operazioni
+
+Operare con booleani o oggetti numerici siamo capaci a farlo... e con qualche accortezza, anche in `r fontawesome::fa("r-project", fill = "blue")` è abbastanza semplice
+
+```{r}
+!TRUE
+
+TRUE & FALSE
+
+(5 + 4 - 3) * 2 / 1
+5 + 4 - 3 * 2 / 1
+
+sqrt(pi)
+```
+
+
+--
+
+Ma con le stringhe?
+
+
+---
+name: operazioni-stringhe
+
+## Operazioni con le stringhe
+
+
+- Aggiunta, rimozione
+
+- Estrazione, sostituzione
+
+--
+
+> Ricerca!
+
+
+--
+
+## Espressioni Regolari
+
+> Stringhe di sequenze di caratteri che codificano, o __esprimono__, uno schema __regolare__ da trovare all'interno di altre stringhe.
+
+--
+
+Una _lingua_ per descrivere in modo estremamente sintetico, ed efficiente quello che vogliamo cercare. 
+
+> Nota: implementata in `r fontawesome::fa("r-project", fill = "green")`, ma esterna, e quindi indipendente, dal linguaggio utilizzato!
+
+
+
+---
+name: stringr
+
+## Pacchetto `{stringr}`
+
+
+In `r fontawesome::fa("r-project", fill = "brown")` possiamo usare il pacchetto `{stringr}` per sfruttare le espressioni regolari, e altre funzionalità:
+
+<br>
+
+> Il pacchetto `{stringr}` è incluso nel **Tidyverse**: basta quindi
+
+```{r, eval = FALSE}
+library(tidyverse)
+```
+
+<br>
+
+> senza chiamata esplicita a:
+
+
+```{r, results='hide'}
+library(stringr)
+```
+
+
+
+---
+name: stringr-funs
+
+## Funzioni utili di `{stringr}`
+
+- `str_detect(string, pattern, negate = FALSE)`
+- `str_extract(string, pattern)`
+
+```{r}
+gatta <- "   acCenDe la CANdela     e dIce    buooooona sera.  "
+gatta
+str_detect(gatta, "candela")
+str_extract(gatta, "ANde")
+```
+
+
+--
+
+- `str_replace(string, pattern, replacement)`
+- `str_remove(string, pattern)`
+
+
+
+```{r}
+str_replace(gatta, "C", "c")
+str_replace_all(gatta, "C", "c")
+str_remove(gatta, "oooo")
+```
+
+
+---
+name: check
+
+## Visualizzazione dello schema trovato
+
+- `str_view(string, pattern)`
+
+<br>
+
+
+.left[
+```{r}
+gatta
+str_view(gatta, "e")
+```
+]
+
+--
+<br>
+
+.left[
+```{r}
+str_view_all(gatta, "  ")
+```
+]
+
 
 ---
 
-name: me
-class: center middle inverse
+name: codifiche
 
+## Jolly
+- `.`: un qualunque carattere!
 
-# Vediamolo da vivo!
+```{r}
+gatta
+str_view_all(gatta, "e.")
+```
 
-< script >
 
 ---
 
@@ -93,11 +255,279 @@ class: center middle inverse
 
 # Tocca a te
 
-< quiz >
+.left[
+Che stringa restituisce la chiamata seguente?
 
+```
+library(stringr)
+
+str_replace("pun.to", ".", "o")
+```
+
+.pull-left[
+
+A. "punoto"
+
+B. "oun.to"
+
+]
+
+.pull-right[
+
+C. "oooooo"
+
+D. "pun.t."
+
+]
+]
 .right[
 ```{r, echo = FALSE}
-countdown(minutes = 1, seconds = 0)
+countdown(minutes = 0, seconds = 30)
+```
+]
+
+---
+name: codifiche
+
+## Ripetizioni
+
+Riferiti al carattere (o gruppo)immediatamente precedente
+
+- `?` : "nessuna o al massimo una volta"
+.left[
+```{r}
+gatta
+str_view_all(gatta, "o?")
+```
+]
+
+--
+
+- `*` : "nessuna o più volte"
+.left[
+```{r}
+str_view_all(gatta, "CA*")
+```
+]
+
+--
+
+- `+` : "una o più volte"
+.left[
+```{r}
+str_view_all(gatta, "CA+")
+```
+]
+
+---
+name: gruppi
+
+## Raggruppamento
+
+- `()` : raggruppamento semplice
+
+.left[
+```{r}
+gatta
+str_view_all(gatta, "(oo)+")
+```
+]
+
+
+---
+name: alternative
+
+## Alternative
+
+- `[]` : caratteri alternativi
+.left[
+```{r}
+str_view_all(gatta, "[cC]e")
+```
+]
+
+--
+
+- `-` : range (solo tra le alternative di caratteri)
+.left[
+```{r}
+str_view_all(gatta, "[a-fs]e")
+```
+]
+
+- `^` : negazione (solo per primo, subito dopo `[`, dentro un'alternativa di caratteri)
+.left[
+```{r}
+str_view_all(gatta, "[^cC ]")
+```
+]
+
+
+---
+name: gruppi-2
+
+## Alternative
+
+
+- `|` : alternativa globale ("oppure")
+.left[
+```{r}
+gatta
+str_view_all(gatta, "([a-cA-C]e)|sera")
+```
+]
+
+
+
+---
+name: ancoraggi
+
+## Ancoraggi
+
+- `^` : inizio della stringa
+.left[
+```{r}
+str_view_all(gatta, "^( +)")
+```
+]
+
+
+- `$` : fine della stringa
+.left[
+```{r}
+str_view_all(gatta, " $")
+```
+]
+
+
+---
+name: ancoraggi
+
+## Escape
+
+
+- `\`: permette di usare i caratteri speciali come normali
+.left[
+```{r}
+gatta
+str_view_all(gatta, "\\.")
+```
+]
+
+--
+
+> NOTA: anche in `r fontawesome::fa("r-project", fill = "purple")` il backslash `\` è un carattere speciale che serve da _escape_, quindi per fare un backslash dentro una stringa di `r fontawesome::fa("r-project", fill = "pink")` bisogna metterne due di fila (che all'interno di una espressione regolare diventa il carattere di _escape_ per loro)
+
+.center[
+```{r, echo=FALSE, out.width = "70%", fig.cap="Figure from https://xkcd.com/1638"}
+knitr::include_graphics("https://imgs.xkcd.com/comics/backslashes.png")
+```
+]
+
+---
+name: wrapper
+
+## Scorciatoie
+
+
+#### Rimozione spazi
+
+- `str_trim(string, side = c("both", "left", "right"))`
+- `str_squish(string)`
+
+```{r}
+gatta
+str_trim(gatta)
+str_squish(gatta)
+```
+
+--
+
+#### Conversioni per la capitalizzazione
+
+```{r, collapse = TRUE}
+str_to_upper(gatta)
+str_to_lower(gatta)
+str_to_title(gatta)
+str_to_sentence(gatta)
+```
+
+---
+
+name: you-2
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+Come possiamo eliminare gli spazi in eccesso nella stringa:
+
+```{r}
+s <- "  Espressioni  Regolari  "
+
+```
+
+
+.pull-left[
+
+A. `str_squish(s)`
+
+B. `str_trim(s)`
+
+]
+
+.pull-right[
+
+C. `str_replace(s, " ", "")`
+
+D. `str_replace_all(s, " ", "")`
+
+]
+]
+.right[
+```{r, echo = FALSE}
+countdown(minutes = 0, seconds = 30)
+```
+]
+
+
+---
+
+name: you-3
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+Cosa restituisce la seguente istruzione?
+
+```{r}
+library(stringr)
+
+str_to_lower("BMI-Score")
+
+```
+
+
+.pull-left[
+
+A. "bMI-Score"
+
+B. "bmi-score"
+
+]
+
+.pull-right[
+
+C. "bmi_score"
+
+D. Un errore per la presenza di un carattere non alfabetico.
+
+]
+]
+.right[
+```{r, echo = FALSE}
+countdown(minutes = 0, seconds = 30)
 ```
 ]
 
@@ -108,6 +538,6 @@ class: inverse, middle, center
 
 # Espressioni regolari
 
-### Fine.
+### Fine. (Esempi concreti in tutto il seguito)
 
 ### Prossimo argomento: [{unheadr}](04-unheadr.html) 
