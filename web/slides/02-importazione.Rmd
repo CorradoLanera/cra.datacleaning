@@ -491,9 +491,9 @@ name: me
 class: center middle inverse
 
 
-# Vediamolo tutto da vivo!
+# Vediamolo tutto dal vivo!
 
-< script >
+`02_ex-importazione.R`
 
 
 

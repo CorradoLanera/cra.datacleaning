@@ -425,15 +425,13 @@ knitr::include_graphics("https://imgs.xkcd.com/comics/backslashes.png")
 ]
 
 ---
-name: wrapper
+name: squish
 
-## Scorciatoie
-
-
-#### Rimozione spazi
-
-- `str_trim(string, side = c("both", "left", "right"))`
-- `str_squish(string)`
+.center[
+```{r, echo=FALSE, out.width = "80%"}
+knitr::include_graphics("../images/str_squish.png")
+```
+]
 
 ```{r}
 gatta
@@ -441,9 +439,16 @@ str_trim(gatta)
 str_squish(gatta)
 ```
 
---
+---
 
-#### Conversioni per la capitalizzazione
+name: snake
+
+
+.center[
+```{r, echo=FALSE, out.width = "80%"}
+knitr::include_graphics("../images/coding_cases.png")
+```
+]
 
 ```{r, collapse = TRUE}
 str_to_upper(gatta)

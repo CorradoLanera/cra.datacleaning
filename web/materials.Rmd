@@ -57,7 +57,12 @@ xaringanExtra::embed_xaringan("slides/02-importazione.html")
 xaringanExtra::embed_xaringan("slides/03-regexp.html")
 ```
 
-+ [~~04: {unheadr}~~]()
+#### [{unheadr}](slides/04-unheadr.html)
+
+```{r embed-unheadr, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/04-unheadr.html")
+```
+
 + [~~05: Tidy-data~~]()
 + [~~06: Numeri~~]()
 + [~~07: Outro~~]()
@@ -66,10 +71,9 @@ xaringanExtra::embed_xaringan("slides/03-regexp.html")
 ### Sfide
 
 + [02: Importazione](esercizi/02_ex-importazione.R)
++ [04a: Intestazioni raggruppate e spezzate](esercizi/04a_ex-unheadr-headers.R)
++ [04b: Valori e osservazioni raggruppate e spezzate](esercizi/04b_ex-unheadr-mash.R)
 
-+ [~~04a: Intestazioni raggruppate e spezzate~~]()
-+ [~~04b: Valori spezzati~~]()
-+ [~~04c: Raggruppamenti nei dati~~]()
 + [~~05a: Ridondanza implicita~~]()
 + [~~05b: Valori nelle intestazioni~~]()
 + [~~05c: Valori multipli assemblati~~]()
@@ -81,10 +85,9 @@ xaringanExtra::embed_xaringan("slides/03-regexp.html")
 ### Soluzioni proposte
 
 + [02: Importazione](esercizi/soluzioni/02_sol-importazione.R)
++ [04a: Intestazioni raggruppate e spezzate](esercizi/soluzioni/04a_sol-unheadr-headers.R)
++ [04b: Valori e osservazioni raggruppate e spezzate](esercizi/soluzioni/04b_sol-unheadr-mash.R)
 
-+ [~~04a: Intestazioni raggruppate e spezzate~~]()
-+ [~~04b: Valori spezzati~~]()
-+ [~~04c: Raggruppamenti nei dati~~]()
 + [~~05a: Ridondanza implicita~~]()
 + [~~05b: Valori nelle intestazioni~~]()
 + [~~05c: Valori multipli assemblati~~]()

@@ -324,10 +324,10 @@ name: outline
   14:20  | Importazione dati dall'esterno e primi accorgimenti
   14:30  | Manipolazione di stringhe: le espressioni regolari
   14:40  | Problemi nelle intestazioni
-  14:50  | Problemi nei valori
-  15:00  | **COFFEE BREAK**
+  14:50  | **COFFEE BREAK**
+  15:00  | Problemi nei valori
   15:10  | Sotto-intestazioni (raggruppamenti) tra i valori
-  15:20  | Riempimento, separazione, espansione, e contrazione
+  15:20  | Riempimento, separazione, allungamento, e contrazione
   15:30  | Numeri e finalizzazione
   15:40  | Domande, dubbi, curiosità
   16:00  | [Sondaggio post-corso](https://forms.gle/uRJ8yYwZ6YzweSKa8)

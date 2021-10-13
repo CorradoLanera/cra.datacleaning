@@ -155,7 +155,167 @@ quiz(caption = "Nel pacchetto `{stringr}` sono presenti numerose funzioni utili 
 
 Rispondi alle seguenti domande.
 
+### Intestazioni
 
+```{r header}
+quiz(caption = "Nel pacchetto `{unheadr}` sono presenti funzioni utili per \"aggiustare\" problematiche legate alle intestazioni (raggruppate o spezzate su più righe).",
+  question('Come possiamo importare correttamente la seguente tabella?
+
+  ID | Peso | Altezza
+  ---|------|--------
+     | (KG) | (KG)
+  1  |    70| 170
+  2  |    80| 180
+
+
+',
+           
+    answer('`read_xlsx("test.xlsx") |> mash_colnames(1)`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`read_xlsx("test.xlsx") |> mash_colnames(2)`',
+           message = "La riga di intestazione non viene contata da `mash_colnames` tra quelle da comprimere (anche se viene compressa anch'essa)"),
+    
+    answer('`read_xlsx("test.xlsx") |> unbreak_vals("\\(", B) |> unbreak_vals("\\(", C)`',
+           message = 'Facendo collassare i valori collassiamo una colonna per volta, mettendo a `NA` tutto il resto.'),
+    
+    answer('`read_xlsx("test.xlsx", skip=1)`',
+           message = "se evitiamo di importare la prima riga, non possiamo più utilizzarla."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+
+### Valori spezzati e raggruppati
+
+```{r valori}
+quiz(caption = "Nel pacchetto `{unheadr}` sono presenti funzioni utili per \"aggiustare\" anche problematiche legate ai dati (raggruppati tra le righe o con valori spezzati tra più righe).",
+  question('Come possiamo riattaccare i valori "very" e "bed" nella seguente tabella (ipotizzando sia memorizzata in una variabile `df`)?
+
+  A     |  B
+  ------|-----
+  "good"| 1
+  "bad" | 2
+  "very"| 3
+  "bad" | NA
+
+',
+           
+    answer('`unbreak_rows(df, "very", A)`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`unbreak_rows(df, "very", "A")`',
+           message = "La colonna identificata accetta solo la notazione senza virgolette"),
+    
+    answer('`unbreak_rows(df, "bad", A)`',
+           message = '`unbreak_rows` riunisce valori spezzatti a partire dalle righe identificate dall\'espressione regolare a scendere.'),
+    
+    answer('`unbreak_vals(df, "bad", A, AA)`',
+           message = "In questo modo riattacchiamo ai valori della riga superiore tute le righe che contengono \"bad\" nella colonna identificata"),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  question('Come possiamo riattaccare i valori delle misure con le loro unità (ipotizzando sia memorizzata in una variabile `df`)?
+
+  ID |Peso| Altezza
+  ---|----|--------
+  1  |"70"| "170"
+  NA |"kg"| "cm"
+  2  |"80"| "180"
+  NA |"kg"| "cm"
+
+
+',
+           
+    answer('`unbreak_rows(df, "^[0-9]", Peso)`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`unbreak_vals(df, "^[a-z]", Peso, Peso_fixed)`',
+           message = "Facendo risalre solo il valore, le unità relartive all\'altezza si perdono."),
+    
+    answer('`unbreak_rows(df, "^[a-z]", Peso)`',
+           message = '`unbreak_rows` identifica la prima riga da cui partire per l\'unione delle celle.'),
+    
+    answer('`unbreak_rows(df, "kg", "Peso")`',
+           message = "La colonna identificata va riportata solo senza virgolette."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+    question('Come possiamo riattaccare i valori dei pazienti con i loro ID (ipotizzando sia memorizzata in una variabile `df`)?
+
+  ID         |Peso|Altezza
+  -----------|----|-------
+  "1a"       |"70"|"170"  
+  "(Judy)"   |NA  |NA     
+  "b2"       |"80"|"180"
+  "(Mark)"   |NA  |NA   
+  "3c (jade)"|"90"|"190"
+  
+
+',
+           
+    answer('`unbreak_vals(df, "^\\(", ID, id_name)`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`unbreak_vals(df, "^[a-zA-Z0-9]", ID, id_name)`',
+           message = "In questo modo vengono alzate tutte le righe qui riportate in posizione dispari (prima terza e quinta) su quella superiore (non presente per la prima riga)"),
+    
+    answer('`unbreak_rows(df, "^[a-zA-Z0-9]", ID)`',
+           message = '`L\'ultima cella riporta un numero iniziale nella colonna identificata e quindi si sta chiedendo in questo modo di unirla alla riga sottostante... che noon c\'è.'),
+    
+    answer('`unbreak_vals(df, "^[a-zA-Z]", ID, id_name)`',
+           message = "`unbreak_vals` identifica la parte terminale dei valori spezzati, non quella nella prima riga di questi."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+    question('Come possiamo rendere espliciti i raggruppamenti effettuati tra i dati della seguente tabella (ipotizzando sia memorizzata in una variabile `df`)?
+
+  ID           |Peso | Altezza
+  -------------|-----|--------
+  "Placebo"    |NA   |NA
+  "1"          |"60" |"160"
+  "2"          |"70" |"170"
+  "Trattamento"|NA   |NA
+  "1"          |"80" |"180"
+  "2"          |"90" |"190"
+
+
+',
+           
+    answer('`unbreak_vals(d`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`unbreak_rows(df, "Placebo|Trattamento", ID)`',
+           message = "In questo modo solleviamo i valori del primo paziente sotto al gruppo a riempire le celle mancanti superiori, noi vogliamo eliminare i gruppi così riportati e metterli in una loro propria colonna."),
+    
+    answer('`unbreak_vals(df, "Placebo|Trattamento", ID, Braccio)`',
+           message = 'I nomi dei gruppi non sono spezzati su più righe, ma ci sono più gruppi ciascuno riportato in una riga in mezzo ai dati, noi vogliamo eliminare i gruppi così riportati e metterli in una loro propria colonna.'),
+    
+    answer('`untangle2(df, "^[0-9]", ID, "Braccio")`',
+           message = "I numeri rappresentano gli id dei pazienti in ciascun gruppo, e non i gruppi in cui sono suddivisi."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
 
 
 ## Tidy data

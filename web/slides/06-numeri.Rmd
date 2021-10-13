@@ -14,7 +14,7 @@ output:
 name: tidy-intro
 class: inverse, middle, center
 
-# Tidy data
+# Numeri
 
 ### XXXX
 
@@ -102,13 +102,12 @@ countdown(minutes = 1, seconds = 0)
 ]
 
 
-
 ---
-name: tidy-next
+name: numeri-next
 class: inverse, middle, center
 
-# Tidy data
+# Numeri
 
 ### Fine.
 
-### Prossimo argomento: [numeri](06-numeri.html) 
+### Prossimo argomento: [Outro (... abbiamo finito!](07-outro.html) 
