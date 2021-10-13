@@ -82,6 +82,16 @@ library(countdown)
 [www.cra-datacleaning.netlify.app](www.cra-datacleaning.netlify.app)
 
 
+-- 
+
+### Esercizi e soluzioni proposte
+
+```{r, eval = FALSE}
+# install.packages("usethis")
+usethis::use_course("CorradoLanera/cra.datacleaning/web/esercizi")
+
+```
+
 --
 
 ### RStudio cloud

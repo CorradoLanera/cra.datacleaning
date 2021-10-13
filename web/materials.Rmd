@@ -63,9 +63,18 @@ xaringanExtra::embed_xaringan("slides/03-regexp.html")
 xaringanExtra::embed_xaringan("slides/04-unheadr.html")
 ```
 
-+ [~~05: Tidy-data~~]()
-+ [~~06: Numeri~~]()
-+ [~~07: Outro~~]()
+
+#### [Tidy data](slides/05-tidy.html)
+
+```{r embed-tidy, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/05-tidy.html")
+```
+
+#### [Outro](slides/07-outro.html)
+
+```{r embed-outro, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/07-outro.html")
+```
 
 
 ### Sfide
