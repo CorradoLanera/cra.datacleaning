@@ -323,12 +323,13 @@ quiz(caption = "Nel pacchetto `{unheadr}` sono presenti funzioni utili per \"agg
 Rispondi alle seguenti domande.
 
 
-
+< da aggiungere in futuro >
 
 ## Numeri
 
 Rispondi alle seguenti domande.
 
+< da aggiungere in futuro >
 
 ### A
 

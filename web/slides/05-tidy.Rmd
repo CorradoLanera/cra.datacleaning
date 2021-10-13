@@ -233,7 +233,7 @@ knitr::kable(tribble(
 
 A.
 
-`fill(df, Arm)`
+`df |> with_groups(Arm, mutate, Arm = Arm[[1]])`
 
 B.
 
@@ -249,7 +249,7 @@ C.
 
 D. 
 
-`df |> with_groups(Arm, mutate, Arm = Arm[[1]])`
+`fill(df, Arm)`
 
 <br>
 <br>
@@ -276,18 +276,113 @@ name: separazione
 
 ## Valori multipli nella stessa colonna
 
-Possiamo trovare valori molteplici nella medesima colonna
+Sempre dal pacchetto `{tidyr}` (incluso nel Tidyverse) prendiamo
 
 
+- `separate`: separa valori molteplici nella medesima colonna in corrispondenti altre colonne passando:
+  1. il dataframe (**`data`**)
+  2. la colonna da separare (**col**)
+  3. i nomi (vettore di caratteri tra virgolette) delle colonne in cui separare le informazioni (**into**)
+  4. opzionalmente il separatore come espressione regolare (di default qualunque carattere non alfanumerico)
+  
+  
+.pull-left[
+```{r, eval=FALSE}
+library(tidyverse)
+
+df <- tribble(
+  ~id, ~peso,
+   1, "5 kg",
+   3, "1700 g"
+)
+
+
+df |> 
+  separate(peso,  #<<
+    c("peso", "peso_misura"))  #<< 
+```
+
+]
+
+
+.pull-right[
+```{r, echo=FALSE}
+library(tidyverse)
+
+df <- tribble(
+  ~id, ~peso,
+   1, "5 kg",
+   3, "1700 g"
+)
+
+
+df |> 
+  separate(peso,  #<<
+    c("peso", "peso_misura"))  #<< 
+```
+
+]
+
+
+  
+
+---
+
+name: me
+class: center middle inverse
+
+
+# Vediamolo da vivo!
+
+`05_ex_tidy.R` ("completamento" e "separazione")
 
 
 ---
 
 name: allungamento
 
----
+## Valori di variabili inseriti tra le colonne
 
-name: contrazione
+
+.center[
+```{r, echo=FALSE, out.width = "100%"}
+knitr::include_graphics("../images/messy_headers.jpg")
+```
+]
+
+---
+name: pivoting
+
+## Rotazioni 
+
+Sempre dal pacchetto `{tidyr}` (incluso nel Tidyverse) prendiamo quindi
+
+
+- `pivot_longer`: raccoglie informazioni multiple tra i nomi delle colonne e le dispone tra le righe :
+  - colonne da considerare (**`cols`**)
+  - nome della variabile che conterrà i nuovi nomi (le intestazioni di colonna attuali) (**`names_to`**)
+  - nome della variabile che conterrà i nuovi valori (ridistribuiti) (**`values_to`**)
+
+
+- `pivot_wider`: raccoglie informazioni dalle righe di alcune colonne e le usa corrispondentemente per creare (da una) i nomi delle nuove variabili e (dalle altre) i valori con cui riempirle:
+ - colonne che identificano univocamente le osservazioni (gli id) (**id_cols**)
+ - la variabile da cui prendere i nomi delle nuove variabili (**`names_from`**)
+ - la variabile da cui prendere i valori da disporre nelle corrispondenti variabili appena create (**`values_from`**)
+
+
+---
+class: center middle
+name: pivot_gif
+
+
+
+```{r, echo=FALSE, out.width = "30%", fig.cap="Figure from https://github.com/gadenbuie/tidyexplain"}
+knitr::include_graphics("../images/tidyr-longer-wider.gif")
+```
+
+
+
+
 
 
 
@@ -301,23 +396,9 @@ class: center middle inverse
 
 # Vediamolo da vivo!
 
-< script >
+`05_ex_tidy.R` ("longer")
 
 ---
-
-name: you
-class: center middle inverse
-
-# Tocca a te
-
-< quiz >
-
-.right[
-```{r, echo = FALSE}
-countdown(minutes = 1, seconds = 0)
-```
-]
-
 
 
 ---
@@ -328,4 +409,4 @@ class: inverse, middle, center
 
 ### Fine.
 
-### Prossimo argomento: [numeri](06-numeri.html) 
+### Prossimo argomento: [Outro (... abbiamo finito!](07-outro.html)

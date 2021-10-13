@@ -14,9 +14,8 @@ output:
 name: tidy-intro
 class: inverse, middle, center
 
-# Tidy data
+# Materiale aggiuntivo
 
-### XXXX
 
 
 
@@ -74,16 +73,76 @@ library(countdown)
 # countdown(minutes = 0, seconds = 15)
 ```
 
----
-
-
 
 ---
-name: tidy-next
-class: inverse, middle, center
 
-# Tidy data
 
-### Fine.
+### Materiale (tutto)
 
-### Prossimo argomento: [numeri](06-numeri.html) 
+[www.cra-datacleaning.netlify.app](www.cra-datacleaning.netlify.app)
+
+
+--
+
+### RStudio cloud
+
+[https://bit.ly/datacleaning-cra](https://bit.ly/datacleaning-cra)
+
+
+--
+
+### Pacchetto con tutorial
+
+```{r, eval = FALSE}
+# install.packages("remotes")
+
+remotes::install_github("CorradoLanera/cra.datacleaning")
+
+```
+
+
+> esercizio completo: `caso-studio-completo.R`
+
+> soluzione completa proposta:
+ `soluzioni/soluzione_caso-studio-completo.R`
+
+
+
+--- 
+
+class: inverse, bottom, right
+
+
+# Grazie pepr l'attenzione e congratulazioni!
+
+---
+name: whoami
+class: inverse, bottom, right
+
+
+
+```{r, echo=FALSE, out.width = "40%"}
+knitr::include_graphics("../images/profilo_CL.jpg")
+```
+
+# Dove trovarmi...
+
+
+[`r fontawesome::fa("link")`](https://www.unipd-ubep.it/) [**www.unipd-ubep.it**](https://www.unipd-ubep.it/)
+
+[`r fontawesome::fa("link")`](https://www.CorradoLanera.it) [**www.CorradoLanera.it**](https://www.CorradoLanera.it)
+
+[`r fontawesome::fa("mail-bulk")`](mailto:Corrado.Lanera@ubep.unipd.it) [**Corrado.Lanera@ubep.unipd.it**](mailto:Corrado.Lanera@ubep.unipd.it)
+
+[`r fontawesome::fa("mail-bulk")`](mailto:Corrado.Lanera@gmail.com) [**Corrado.Lanera@gmail.com**](mailto:Corrado.Lanera@gmail.com)
+
+[`r fontawesome::fa("github")`](https://github.com/corradolanera)
+[`r fontawesome::fa("twitter")`](https://twitter.com/corradolanera)
+[`r fontawesome::fa("telegram-plane")`](https://telegram.me/CorradoLanera)
+**@CorradoLanera**
+
+[`r fontawesome::fa("telegram-plane")`](https://telegram.me/puffrbacco)
+[**puffRbacco**](https://telegram.me/puffrbacco)
+
+[`r fontawesome::fa("calendar-check")` ](https://calendly.com/corradolanera) [**calendly.com/corradolanera**](https://calendly.com/corradolanera)
+

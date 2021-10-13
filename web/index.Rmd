@@ -150,7 +150,6 @@ Il giorno del corso, attiverò un [link](#rs-cloud) a un progetto [RStudio Cloud
   15:00  | Problemi nei valori
   15:10  | Sotto-intestazioni (raggruppamenti) tra i valori
   15:20  | Riempimento, separazione, allungamento, e contrazione
-  15:30  | Numeri e finalizzazione
   15:40  | Domande, dubbi, curiosità
   16:00  | [Sondaggio post-corso](https://forms.gle/uRJ8yYwZ6YzweSKa8)
   16:10  | **FINE**

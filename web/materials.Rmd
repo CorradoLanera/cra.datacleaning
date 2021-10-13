@@ -73,12 +73,8 @@ xaringanExtra::embed_xaringan("slides/04-unheadr.html")
 + [02: Importazione](esercizi/02_ex-importazione.R)
 + [04a: Intestazioni raggruppate e spezzate](esercizi/04a_ex-unheadr-headers.R)
 + [04b: Valori e osservazioni raggruppate e spezzate](esercizi/04b_ex-unheadr-mash.R)
++ [05: Tidy data](esercizi/05_ex-tidy.R)
 
-+ [~~05a: Ridondanza implicita~~]()
-+ [~~05b: Valori nelle intestazioni~~]()
-+ [~~05c: Valori multipli assemblati~~]()
-+ [~~06a: Punti, e virgole~~]()
-+ [~~06b: Percentuali~~]()
 
 + [Caso studio completo](esercizi/caso-studio-completo.R)
 
@@ -87,11 +83,6 @@ xaringanExtra::embed_xaringan("slides/04-unheadr.html")
 + [02: Importazione](esercizi/soluzioni/02_sol-importazione.R)
 + [04a: Intestazioni raggruppate e spezzate](esercizi/soluzioni/04a_sol-unheadr-headers.R)
 + [04b: Valori e osservazioni raggruppate e spezzate](esercizi/soluzioni/04b_sol-unheadr-mash.R)
-
-+ [~~05a: Ridondanza implicita~~]()
-+ [~~05b: Valori nelle intestazioni~~]()
-+ [~~05c: Valori multipli assemblati~~]()
-+ [~~06a: Punti, e virgole~~]()
-+ [~~06b: Percentuali~~]()
++ [05: Tidy data](esercizi/soluzioni/05_sol-tidy.R)
 
 + [Caso studio completo](esercizi/soluzioni/soluzione_caso-studio-completo.R)
