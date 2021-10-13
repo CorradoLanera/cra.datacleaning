@@ -9,7 +9,7 @@
     <link href="02-importazione_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
     <link href="02-importazione_files/panelset-0.2.6/panelset.css" rel="stylesheet" />
     <script src="02-importazione_files/panelset-0.2.6/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x85c3357eb62447f98ab7a1be094b9a2","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x65a5fb793aa4b49985e7b71d531114d","expires":14}</script>
     <script src="02-importazione_files/himalaya-1.1.0/himalaya.js"></script>
     <script src="02-importazione_files/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="02-importazione_files/editable-0.2.6/editable.css" rel="stylesheet" />
@@ -27,213 +27,499 @@
     <script src="02-importazione_files/freezeframe-5.0.2/freezeframe.min.js"></script>
     <script src="02-importazione_files/xaringanExtra-freezeframe-0.0.1/freezeframe-init.js"></script>
     <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <link href="02-importazione_files/countdown-0.3.5/countdown.css" rel="stylesheet" />
+    <script src="02-importazione_files/countdown-0.3.5/countdown.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 
-name: title
-class: center, middle
-background-image: url(http://bit.ly/arm-greens)
-background-size: cover
-
-# Data Cleaning per la Ricerca Clinica
-&lt;img src="http://bit.ly/arm-greens" width="150px"/&gt;
-
-### With examples in R
-
-.large[.white[
-  Corrado Lanera | Clinical Research Academy | 13 Oct 2021
-]]
-
-
-
-
-
-
-<div>
-<style type="text/css">.xaringan-extra-logo {
-width: 110px;
-height: 128px;
-z-index: 0;
-background-image: url(https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/xaringan.png);
-background-size: contain;
-background-repeat: no-repeat;
-position: absolute;
-top:1em;right:1em;
-}
-</style>
-<script>(function () {
-  let tries = 0
-  function addLogo () {
-    if (typeof slideshow === 'undefined') {
-      tries += 1
-      if (tries < 10) {
-        setTimeout(addLogo, 100)
-      }
-    } else {
-      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
-        .forEach(function (slide) {
-          const logo = document.createElement('a')
-          logo.classList = 'xaringan-extra-logo'
-          logo.href = 'http://slides.yihui.name/xaringan'
-          slide.appendChild(logo)
-        })
-    }
-  }
-  document.addEventListener('DOMContentLoaded', addLogo)
-})()</script>
-</div>
-
-
-
----
+name: intro
 class: inverse, middle, center
 
-# let's start!
----
+# Importazione
 
-name: intro
-
+### Tipi di file
 
 
-# Introduce yourself!
-
-&gt; My name is Corrado and I am a Post-doc researcher at the Univerity of Padova at the Unit of Biostatistics, Epidemiology, and Public Health within the department of Cardiac, Thoracic, Vascular Sciences, and Public Health. I am an RStudio Instructor in the Tidyverse, and I love R. I 
-live a little arround Italy and Europe, from Udine (my family home), Padova (my Job office), Paris (my spouse work), and any other possible place along the way.
-
-**foo**
 
 
----
-name: findmeat
 
 
-# Find me at...
-All the details...
+
+
+
 
 
 
 
 ---
+name: struttura
 
-[goto somewhere](#somewhere) -&gt; hop to somewhere
+## Ipotesi
 
-???
+- Dati rettangolari
 
-click **goto**
+  - ogni riga e ogni colonna hanno lo stesso numero di celle
+  - ... allineate in una tabella
+
+--
+
+- Prassi clinica
+
+  - Informazioni (dette anche variabili, o _features_) disposte per colonna
+  - Intestazioni delle colonne nominano le informazioni sottostanti
+  - Osservazioni (come informazioni su pazienti, dispositivi, o rilevazioni) disposte per riga
+
+.center[
+&lt;div class="figure"&gt;
+&lt;img src="../images/tidydata_2.jpg" alt="Figure from https://github.com/allisonhorst/stats-illustrations" width="50%" /&gt;
+&lt;p class="caption"&gt;Figure from https://github.com/allisonhorst/stats-illustrations&lt;/p&gt;
+&lt;/div&gt;
+]
+
+---
+name: formati
+
+## Formati comuni
+
+.panelset[
+  .panel[.panel-name[`CSV`]
+  _Comma-Separated Value_: valori separati da virgola
+  
+  - testo puro (creabile/leggibile con qualsiasi editor di testo)
+  - un file codifica una (singola) tabella
+  - ogni riga del file è una riga della tabella
+  - ogni virgola nel file indica il limite di una colonna
+
+  - possiamo importarlo in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> con
+    
+    ```r
+    *library(tidyverse)
+    
+    db &lt;- read_csv("&lt;path/to/file.csv&gt;")
+    ```
+  
+  ]
+  .panel[.panel-name[`CSV2`]
+  _Comma-Separated Value_ (variante europea): valori separati da **punto-e-virgola**
+  
+  &gt; ha sempre estensione `.csv`!!
+
+  - delimitatore decimale: `,` (la virgola!)
+  - delimitatore di colonna: `;` (punto-e-virgola!)
+
+  - possiamo importarlo in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> con
+    
+    ```r
+    *library(tidyverse)
+    
+    db &lt;- read_csv2("&lt;path/to/file.csv&gt;")
+    ```
+  
+
+  ]
+  .panel[.panel-name[`XLSX`]
+  _Excel_ file (vecchio formato `.xls`)
+  
+  - file proprietario *NON* testo puro (apribile solo con _Excel_ o software dedicati ad aprire tali formati di file)
+  - foglio di calcolo tabellare
+  - adattato per comodità e immediatezza a raccogliere dati
+  
+  - possiamo importarlo in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:purple;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> con
+    
+    ```r
+    library(tidyverse)
+    *library(readxl)
+    
+    db_xls &lt;- read_xls("&lt;path/to/file.xls&gt;")
+    *db_xls_guessed &lt;- read_excel("&lt;path/to/file.xls&gt;")
+    identical(db_xls, db_xls_guessed)
+    
+    db_xlsx &lt;- read_xlsx("&lt;path/to/file.xlsx&gt;")
+    *db_xlsx_guessed &lt;- read_excel("&lt;path/to/file.xlsx&gt;")
+    identical(db_xlsx, db_xlsx_guessed)
+    ```
+
+  ]
+]
+
+
 
 
 ---
-name: somewhere
-class: center, middle
 
-# This is really something!
+name: tipi
 
-.left[words]
-.center[words]
-.right[words]
+.center[
+&lt;div class="figure"&gt;
+&lt;img src="../images/tidydata_1.jpg" alt="Figure from https://github.com/allisonhorst/stats-illustrations" width="100%" /&gt;
+&lt;p class="caption"&gt;Figure from https://github.com/allisonhorst/stats-illustrations&lt;/p&gt;
+&lt;/div&gt;
+]
 
+--
+
+&lt;br&gt;
+&lt;br&gt;
+
+&gt; Non è ottimale per insere dati è normale aspettarsi dati NON-tidy!
+&gt; (ciascuno a modo suo...)
 
 ---
-name: images
-class: center, middle
 
-Hello ![Image of Momtocat](http://bit.ly/momtocat)
+name: missing
 
 
----
+## Dati mancanti
+
+
 .pull-left[
-![Image of Momtocat](http://bit.ly/momtocat)
+ #### Nei dati originali
+ 
+ - `-`
+ - ""
+ - " "
+ - NA
+ - none
+ - missing
+ - -1
+ - -99
+ - -999
+ - `"&lt;unknown&gt;"`
+ 
 ]
 .pull-right[
-![Image of Poptocat](http://bit.ly/poptocat)
+#### In <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:gray;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>
+
+ - `NA`
+ - `NA`
+ - `NA`
+ - `NA`
+ - `NA`
+ - `NA`
+ - `NA`
+ - `NA`
+ - `NA`
+ - `NA`
+
 ]
 
 
----
-name: code
-
 
 ```r
-foo
-*bar
-baz
+library(tidyverse)
+library(readxl)
+
+*db &lt;- read_excel("&lt;path/to/file.xlsx&gt;", na = c("", "-"))
 ```
 
+--
 
-```r
-1+1
-```
-
-```
-*[1] 2
-*```
+.left[
+&gt; Mancanza di informazione (`NA`) `\(\neq\)` (`"NA"`) informazione di mancanza
 
 
-```r
-1+1
-```
+I dati mancanti (di entrambi i tipi) restano **dati**, e richiedono una codifica uniforme
 
-```
-*[1] 2
-
-*NA```
-
-```r
-2+2
-```
-
-```
-*[1] 4
-
-*NA```
-
-```r
-3+3
-```
-
-```
-*[1] 6
-
-*NA```
+]
 
 ---
+
+name: you-1
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+Se tra le celle di un file Excel troviamo sia campi vuoti che alcuni riempiti con il simbolo "`-`", cosa (se) dobbiamo passare all'argomento riportato qui sotto con `___` per fare in modo che entrambi vengano correttamente importati come `NA`?
+
+
+```r
+library(tidyverse)
+library(readxl)
+
+db &lt;- read_excel("&lt;path/to/file.xlsx&gt;", na = ___)
+```
 
 .pull-left[
-&lt;img src="02-importazione_files/figure-html/plot-first-1.png" width="504" /&gt;
+
+A. Nulla, va bene il/i valore/i di default
+
+B. `c("-")`
+
 ]
+
 .pull-right[
 
+C. `c("", "-")`
+
+D. `NA`
+
+]
+]
+.right[
+<div class="countdown" id="timer_61661c81" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+]
+
+
+
+---
+names: empties
+
+## Colone e righe vuote
+
+Primo passo per ottenere una _tabella di dati_ è eliminare quanto non la rende una tabella: righe o colonne completamente vuote:
+
+
 ```r
-ggplot2::quickplot(
-*   mtcars[[1]],
-    mtcars[[2]]
+library(tidyverse)
+library(readxl)
+*library(janitor)
+
+db &lt;- read_excel("&lt;path/to/file.xlsx&gt;", na = c("", "-"))
+*db_full &lt;- remove_empty(db)
+```
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+&gt; Puoi usare l'opzione `which = "rows"` (oppure `which = "cols"`) per rimuovere selettivamente solo le righe (oppure solo le colonne) completamente vuote
+---
+
+name: you-2
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+Per eliminare le righe completamente vuote da una base di dati, come puoi procedere sfruttando le funzioni del pacchetto `{janitor}`?
+
+.pull-left[
+
+A. 
+
+```r
+remove_empty(db)
+```
+
+B. 
+
+```r
+read_excel("&lt;path/to/db.xlsx&gt;",
+  na.rm = remove_empty(
+    which = "rows"
+  )
 )
 ```
+
+]
+
+.pull-right[
+
+C. 
+
+```r
+remove_empty(db, which = "rows")
+```
+
+D. 
+
+```r
+remove_empty(db, which = "cols")
+```
+
+]
+]
+.right[
+<div class="countdown" id="timer_61661de9" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
 ]
 
 
----
-background-image: url(http://bit.ly/arm-greens)
+
 
 ---
-background-image: url(http://bit.ly/arm-greens)
-background-size: cover
+names: varnames
+
+class: middle center
+
+&lt;div class="figure"&gt;
+&lt;img src="../images/coding_cases.png" alt="Figure from https://github.com/allisonhorst/stats-illustrations" width="100%" /&gt;
+&lt;p class="caption"&gt;Figure from https://github.com/allisonhorst/stats-illustrations&lt;/p&gt;
+&lt;/div&gt;
 
 ---
-background-image: url(http://bit.ly/arm-greens)
-background-size: contain
+names: janitor
+
+.center[
+&lt;div class="figure"&gt;
+&lt;img src="../images/janitor_clean_names.png" alt="Figure from https://github.com/allisonhorst/stats-illustrations" width="70%" /&gt;
+&lt;p class="caption"&gt;Figure from https://github.com/allisonhorst/stats-illustrations&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.pull-left[
+
+```r
+library(tidyverse)
+library(readxl)
+*library(janitor)
+
+db &lt;- read_excel(
+  "&lt;path/to/file.xlsx&gt;",
+  na = c("", "-")
+)
+db_full &lt;- remove_empty(db)
+
+*db_names &lt;- clean_names(db_full)
+```
+]
+
+.pull-right[
+#### Stili disponbibili (argomento `case`)
+
+- snake_case: "snake" (**DEFAULT**)
+- lowerCamel: "lower_camel" or "small_camel"
+- UpperCamel: "upper_camel" or "big_camel"
+- ALL_CAPS: "all_caps" or "screaming_snake"
+- lowerUPPER: "lower_upper"
+- UPPERlower: "upper_lower"
+- Sentence case: "sentence"
+]
 
 ---
+
+
+name: you-3
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+Come è necessario chiamare la funzione `clean_names` del pacchetto `{janitor}` per convertire tutti i nomi delle variabili di una base di dati con la notazione _snake case_?
+
+.pull-left[
+
+A. `clean_names(db, case = "snake_case")`
+
+B. `clean_names(db, case = "lower_camel")`
+
+]
+
+.pull-right[
+
+C. `clean_names(db)`
+
+D. `read_excel("&lt;path/to/db.xlsx&gt;", var_name = clean_names())`
+
+]
+]
+.right[
+<div class="countdown" id="timer_61661d4d" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+]
+
+---
+
+name: here
+
+class: middle center
+
+&lt;div class="figure"&gt;
+&lt;img src="../images/here.png" alt="Figure from https://github.com/allisonhorst/stats-illustrations" width="80%" /&gt;
+&lt;p class="caption"&gt;Figure from https://github.com/allisonhorst/stats-illustrations&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+
+name: here-2
+
+## Pacchetto {here} &amp; RStudio `.rproj` 
 
 
 ```r
-# url
-knitr::include_graphics("http://bit.ly/arm-greens")
+library(here)
+
+getwd()
 ```
 
-&lt;img src="http://bit.ly/arm-greens" width="50%" /&gt;
+```
+[1] "C:/Users/corra/Documents/cl/cra.datacleaning/web/slides"
+```
+
+```r
+here()
+```
+
+```
+[1] "C:/Users/corra/Documents/cl/cra.datacleaning/web"
+```
+
+```r
+here("slides/02-importazione.Rmd")
+```
+
+```
+[1] "C:/Users/corra/Documents/cl/cra.datacleaning/web/slides/02-importazione.Rmd"
+```
+
+.center[
+&lt;div class="figure"&gt;
+&lt;img src="../images/cracked_setwd.png" alt="Figure from https://github.com/allisonhorst/stats-illustrations" width="30%" /&gt;
+&lt;p class="caption"&gt;Figure from https://github.com/allisonhorst/stats-illustrations&lt;/p&gt;
+&lt;/div&gt;
+]
+
+---
+names: here-3
+
+## {here} in azione
+
+
+
+
+```r
+*library(here)
+library(tidyverse)
+library(readxl)
+library(janitor)
+
+*xlsx_path &lt;- here("&lt;path/from/.rproj/root/to/file.xlsx&gt;")
+*db &lt;- read_excel(xlsx_path, na = c("", "-"))
+db_full &lt;- remove_empty(db)
+db_cleaned_names &lt;- clean_names(db_full)
+```
+
+
+---
+
+name: me
+class: center middle inverse
+
+
+# Vediamolo tutto da vivo!
+
+`02_ex-importazione.R`
+
+
+
+---
+name: next
+class: inverse, middle, center
+
+# Importazione
+
+### Fine.
+
+### Prossimo argomento: [Espressioni regolari](03-regexp.html) 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

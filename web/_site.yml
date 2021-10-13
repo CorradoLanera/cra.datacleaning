@@ -2,7 +2,7 @@ name: "cra.datacleaning"
 title: "Data Cleaning per la Ricerca Clinica"
 description: |
   Un (per)corso panoramico sulle sfide a un'importazione corretta di dati clinici in un sistema informatico, con esempi e soluzioni in R.
-output_dir: "../../docs"
+output_dir: "../docs"
 creative_commons: CC BY-SA
 repository_url: https://github.com/CorradoLanera/cra.datacleaning
 navbar:

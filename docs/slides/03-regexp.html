@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data Cleaning per la Ricerca Clinica</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="CorradoLanera" />
+    <script src="03-regexp_files/header-attrs-2.11/header-attrs.js"></script>
+    <link href="03-regexp_files/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link href="03-regexp_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <link href="03-regexp_files/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="03-regexp_files/panelset-0.2.6/panelset.js"></script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x853f7e3b7994fc7af493a8f2b5d11e7","expires":14}</script>
+    <script src="03-regexp_files/himalaya-1.1.0/himalaya.js"></script>
+    <script src="03-regexp_files/js-cookie-3.0.0/js.cookie.js"></script>
+    <link href="03-regexp_files/editable-0.2.6/editable.css" rel="stylesheet" />
+    <script src="03-regexp_files/editable-0.2.6/editable.js"></script>
+    <script src="03-regexp_files/xaringanExtra-webcam-0.0.1/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <script src="03-regexp_files/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="03-regexp_files/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="03-regexp_files/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="03-regexp_files/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="03-regexp_files/shareon-1.4.1/shareon.min.js"></script>
+    <link href="03-regexp_files/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="03-regexp_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <script src="03-regexp_files/freezeframe-5.0.2/freezeframe.min.js"></script>
+    <script src="03-regexp_files/xaringanExtra-freezeframe-0.0.1/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="03-regexp_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+    <link href="03-regexp_files/str_view-0.1.0/str_view.css" rel="stylesheet" />
+    <script src="03-regexp_files/str_view-binding-1.4.0/str_view.js"></script>
+    <link href="03-regexp_files/countdown-0.3.5/countdown.css" rel="stylesheet" />
+    <script src="03-regexp_files/countdown-0.3.5/countdown.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+name: regexp-intro
+class: inverse, middle, center
+
+# Espressioni regolari
+
+### Tipi di dati
+
+
+
+
+
+
+
+
+
+
+
+---
+name: tipi
+
+## Tipi di dati principali (in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>)
+
+
+In generale possiamo avere le seguenti tipologie di dati:
+
+1. Booleano  (`TRUE`/`FALSE`)
+2. Intero    (0, 1, -1, 2, -2, 3, ...)
+3. Continuo  (0, 0.1, `\(\pi\)`, `\(\sqrt{2}\)`)
+4. Stringhe di caratteri ("Accende la candela e dice buonasera!")
+
+--
+
+&gt; Ordinati secondo la relazione "**può essere visto come...**", ovvero: Booleano &lt; Intero &lt; Continuo &lt; Carattere.
+
+Infatti:
+- Ogni booleano "può essere visto come" un intero (VERO --&gt; 1 / FALSE --&gt; 0)
+- Ogni intero "può essere visto come" un continuo (1 --&gt; 1)
+- Ogni continuo "può essere visto come" una stringa di caratteri ( `\(\pi\)` --&gt; " `\(\pi\)` " )
+
+
+---
+name: operazioni
+
+## Operazioni
+
+Operare con booleani o oggetti numerici siamo capaci a farlo... e con qualche accortezza, anche in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> è abbastanza semplice
+
+
+```r
+!TRUE
+#&gt; [1] FALSE
+
+TRUE &amp; FALSE
+#&gt; [1] FALSE
+
+(5 + 4 - 3) * 2 / 1
+#&gt; [1] 12
+5 + 4 - 3 * 2 / 1
+#&gt; [1] 3
+
+sqrt(pi)
+#&gt; [1] 1.772454
+```
+
+
+--
+
+Ma con le stringhe?
+
+
+---
+name: operazioni-stringhe
+
+## Operazioni con le stringhe
+
+
+- Aggiunta, rimozione
+
+- Estrazione, sostituzione
+
+--
+
+&gt; Ricerca!
+
+
+--
+
+## Espressioni Regolari
+
+&gt; Stringhe di sequenze di caratteri che codificano, o __esprimono__, uno schema __regolare__ da trovare all'interno di altre stringhe.
+
+--
+
+Una _lingua_ per descrivere in modo estremamente sintetico, ed efficiente quello che vogliamo cercare. 
+
+&gt; Nota: implementata in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:green;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>, ma esterna, e quindi indipendente, dal linguaggio utilizzato!
+
+
+
+---
+name: stringr
+
+## Pacchetto `{stringr}`
+
+
+In <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:brown;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> possiamo usare il pacchetto `{stringr}` per sfruttare le espressioni regolari, e altre funzionalità:
+
+&lt;br&gt;
+
+&gt; Il pacchetto `{stringr}` è incluso nel **Tidyverse**: basta quindi
+
+
+```r
+library(tidyverse)
+```
+
+&lt;br&gt;
+
+&gt; senza chiamata esplicita a:
+
+
+
+```r
+library(stringr)
+```
+
+
+
+---
+name: stringr-funs
+
+## Funzioni utili di `{stringr}`
+
+- `str_detect(string, pattern, negate = FALSE)`
+- `str_extract(string, pattern)`
+
+
+```r
+gatta &lt;- "   acCenDe la CANdela     e dIce    buooooona sera.  "
+gatta
+#&gt; [1] "   acCenDe la CANdela     e dIce    buooooona sera.  "
+str_detect(gatta, "candela")
+#&gt; [1] FALSE
+str_extract(gatta, "ANde")
+#&gt; [1] "ANde"
+```
+
+
+--
+
+- `str_replace(string, pattern, replacement)`
+- `str_remove(string, pattern)`
+
+
+
+
+```r
+str_replace(gatta, "C", "c")
+#&gt; [1] "   accenDe la CANdela     e dIce    buooooona sera.  "
+str_replace_all(gatta, "C", "c")
+#&gt; [1] "   accenDe la cANdela     e dIce    buooooona sera.  "
+str_remove(gatta, "oooo")
+#&gt; [1] "   acCenDe la CANdela     e dIce    buona sera.  "
+```
+
+
+---
+name: check
+
+## Visualizzazione dello schema trovato
+
+- `str_view(string, pattern)`
+
+&lt;br&gt;
+
+
+.left[
+
+```r
+gatta
+#&gt; [1] "   acCenDe la CANdela     e dIce    buooooona sera.  "
+str_view(gatta, "e")
+```
+
+<div id="htmlwidget-6507b9e01430488fc285" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6507b9e01430488fc285">{"x":{"html":"<ul>\n  <li>   acC<span class='match'>e<\/span>nDe la CANdela     e dIce    buooooona sera.  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+--
+&lt;br&gt;
+
+.left[
+
+```r
+str_view_all(gatta, "  ")
+```
+
+<div id="htmlwidget-b06443fc4f03751d4ce9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b06443fc4f03751d4ce9">{"x":{"html":"<ul>\n  <li><span class='match'>  <\/span> acCenDe la CANdela<span class='match'>  <\/span><span class='match'>  <\/span> e dIce<span class='match'>  <\/span><span class='match'>  <\/span>buooooona sera.<span class='match'>  <\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+
+---
+
+name: codifiche
+
+## Jolly
+- `.`: un qualunque carattere!
+
+
+```r
+gatta
+#&gt; [1] "   acCenDe la CANdela     e dIce    buooooona sera.  "
+str_view_all(gatta, "e.")
+```
+
+<div id="htmlwidget-3b5d1fbcf84dfedb2cc6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3b5d1fbcf84dfedb2cc6">{"x":{"html":"<ul>\n  <li>   acC<span class='match'>en<\/span>D<span class='match'>e <\/span>la CANd<span class='match'>el<\/span>a     <span class='match'>e <\/span>dIc<span class='match'>e <\/span>   buooooona s<span class='match'>er<\/span>a.  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+
+
+---
+
+name: you
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+Che stringa restituisce la chiamata seguente?
+
+```
+library(stringr)
+
+str_replace("pun.to", ".", "o")
+```
+
+.pull-left[
+
+A. "punoto"
+
+B. "oun.to"
+
+]
+
+.pull-right[
+
+C. "oooooo"
+
+D. "pun.t."
+
+]
+]
+.right[
+<div class="countdown" id="timer_6166b07b" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+]
+
+---
+name: codifiche
+
+## Ripetizioni
+
+Riferiti al carattere (o gruppo)immediatamente precedente
+
+- `?` : "nessuna o al massimo una volta"
+.left[
+
+```r
+gatta
+#&gt; [1] "   acCenDe la CANdela     e dIce    buooooona sera.  "
+str_view_all(gatta, "o?")
+```
+
+<div id="htmlwidget-19684d2f7adb6181ea30" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-19684d2f7adb6181ea30">{"x":{"html":"<ul>\n  <li><span class='match'><\/span> <span class='match'><\/span> <span class='match'><\/span> <span class='match'><\/span>a<span class='match'><\/span>c<span class='match'><\/span>C<span class='match'><\/span>e<span class='match'><\/span>n<span class='match'><\/span>D<span class='match'><\/span>e<span class='match'><\/span> <span class='match'><\/span>l<span class='match'><\/span>a<span class='match'><\/span> <span class='match'><\/span>C<span class='match'><\/span>A<span class='match'><\/span>N<span class='match'><\/span>d<span class='match'><\/span>e<span class='match'><\/span>l<span class='match'><\/span>a<span class='match'><\/span> <span class='match'><\/span> <span class='match'><\/span> <span class='match'><\/span> <span class='match'><\/span> <span class='match'><\/span>e<span class='match'><\/span> <span class='match'><\/span>d<span class='match'><\/span>I<span class='match'><\/span>c<span class='match'><\/span>e<span class='match'><\/span> <span class='match'><\/span> <span class='match'><\/span> <span class='match'><\/span> <span class='match'><\/span>b<span class='match'><\/span>u<span class='match'>o<\/span><span class='match'>o<\/span><span class='match'>o<\/span><span class='match'>o<\/span><span class='match'>o<\/span><span class='match'><\/span>n<span class='match'><\/span>a<span class='match'><\/span> <span class='match'><\/span>s<span class='match'><\/span>e<span class='match'><\/span>r<span class='match'><\/span>a<span class='match'><\/span>.<span class='match'><\/span> <span class='match'><\/span> <span class='match'><\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+--
+
+- `*` : "nessuna o più volte"
+.left[
+
+```r
+str_view_all(gatta, "CA*")
+```
+
+<div id="htmlwidget-753ea929ec7cd2e9cc7d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-753ea929ec7cd2e9cc7d">{"x":{"html":"<ul>\n  <li>   ac<span class='match'>C<\/span>enDe la <span class='match'>CA<\/span>Ndela     e dIce    buooooona sera.  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+--
+
+- `+` : "una o più volte"
+.left[
+
+```r
+str_view_all(gatta, "CA+")
+```
+
+<div id="htmlwidget-07019914b500eb97538c" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-07019914b500eb97538c">{"x":{"html":"<ul>\n  <li>   acCenDe la <span class='match'>CA<\/span>Ndela     e dIce    buooooona sera.  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+---
+name: gruppi
+
+## Raggruppamento
+
+- `()` : raggruppamento semplice
+
+.left[
+
+```r
+gatta
+#&gt; [1] "   acCenDe la CANdela     e dIce    buooooona sera.  "
+str_view_all(gatta, "(oo)+")
+```
+
+<div id="htmlwidget-3b776f0ad547e090396b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3b776f0ad547e090396b">{"x":{"html":"<ul>\n  <li>   acCenDe la CANdela     e dIce    bu<span class='match'>oooo<\/span>ona sera.  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+
+---
+name: alternative
+
+## Alternative
+
+- `[]` : caratteri alternativi
+.left[
+
+```r
+str_view_all(gatta, "[cC]e")
+```
+
+<div id="htmlwidget-4aa6a1d2c7e95a25f9b9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4aa6a1d2c7e95a25f9b9">{"x":{"html":"<ul>\n  <li>   ac<span class='match'>Ce<\/span>nDe la CANdela     e dI<span class='match'>ce<\/span>    buooooona sera.  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+--
+
+- `-` : range (solo tra le alternative di caratteri)
+.left[
+
+```r
+str_view_all(gatta, "[a-fs]e")
+```
+
+<div id="htmlwidget-37c2c61efc51ea7458e7" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-37c2c61efc51ea7458e7">{"x":{"html":"<ul>\n  <li>   acCenDe la CAN<span class='match'>de<\/span>la     e dI<span class='match'>ce<\/span>    buooooona <span class='match'>se<\/span>ra.  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+- `^` : negazione (solo per primo, subito dopo `[`, dentro un'alternativa di caratteri)
+.left[
+
+```r
+str_view_all(gatta, "[^cC ]")
+```
+
+<div id="htmlwidget-53da5cd4d893dfca8f03" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-53da5cd4d893dfca8f03">{"x":{"html":"<ul>\n  <li>   <span class='match'>a<\/span>cC<span class='match'>e<\/span><span class='match'>n<\/span><span class='match'>D<\/span><span class='match'>e<\/span> <span class='match'>l<\/span><span class='match'>a<\/span> C<span class='match'>A<\/span><span class='match'>N<\/span><span class='match'>d<\/span><span class='match'>e<\/span><span class='match'>l<\/span><span class='match'>a<\/span>     <span class='match'>e<\/span> <span class='match'>d<\/span><span class='match'>I<\/span>c<span class='match'>e<\/span>    <span class='match'>b<\/span><span class='match'>u<\/span><span class='match'>o<\/span><span class='match'>o<\/span><span class='match'>o<\/span><span class='match'>o<\/span><span class='match'>o<\/span><span class='match'>n<\/span><span class='match'>a<\/span> <span class='match'>s<\/span><span class='match'>e<\/span><span class='match'>r<\/span><span class='match'>a<\/span><span class='match'>.<\/span>  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+
+---
+name: gruppi-2
+
+## Alternative
+
+
+- `|` : alternativa globale ("oppure")
+.left[
+
+```r
+gatta
+#&gt; [1] "   acCenDe la CANdela     e dIce    buooooona sera.  "
+str_view_all(gatta, "([a-cA-C]e)|sera")
+```
+
+<div id="htmlwidget-c3b50508d8b817140cdc" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c3b50508d8b817140cdc">{"x":{"html":"<ul>\n  <li>   ac<span class='match'>Ce<\/span>nDe la CANdela     e dI<span class='match'>ce<\/span>    buooooona <span class='match'>sera<\/span>.  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+
+
+---
+name: ancoraggi
+
+## Ancoraggi
+
+- `^` : inizio della stringa
+.left[
+
+```r
+str_view_all(gatta, "^( +)")
+```
+
+<div id="htmlwidget-339163aa9b2f4a51a195" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-339163aa9b2f4a51a195">{"x":{"html":"<ul>\n  <li><span class='match'>   <\/span>acCenDe la CANdela     e dIce    buooooona sera.  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+
+- `$` : fine della stringa
+.left[
+
+```r
+str_view_all(gatta, " $")
+```
+
+<div id="htmlwidget-1dbf8ca392deda628951" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1dbf8ca392deda628951">{"x":{"html":"<ul>\n  <li>   acCenDe la CANdela     e dIce    buooooona sera. <span class='match'> <\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+
+---
+name: ancoraggi
+
+## Escape
+
+
+- `\`: permette di usare i caratteri speciali come normali
+.left[
+
+```r
+gatta
+#&gt; [1] "   acCenDe la CANdela     e dIce    buooooona sera.  "
+str_view_all(gatta, "\\.")
+```
+
+<div id="htmlwidget-241b51415fbe960b7438" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-241b51415fbe960b7438">{"x":{"html":"<ul>\n  <li>   acCenDe la CANdela     e dIce    buooooona sera<span class='match'>.<\/span>  <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+]
+
+--
+
+&gt; NOTA: anche in <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:purple;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> il backslash `\` è un carattere speciale che serve da _escape_, quindi per fare un backslash dentro una stringa di <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:pink;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> bisogna metterne due di fila (che all'interno di una espressione regolare diventa il carattere di _escape_ per loro)
+
+.center[
+&lt;div class="figure"&gt;
+&lt;img src="https://imgs.xkcd.com/comics/backslashes.png" alt="Figure from https://xkcd.com/1638" width="70%" /&gt;
+&lt;p class="caption"&gt;Figure from https://xkcd.com/1638&lt;/p&gt;
+&lt;/div&gt;
+]
+
+---
+name: squish
+
+.center[
+&lt;img src="../images/str_squish.png" width="80%" /&gt;
+]
+
+
+```r
+gatta
+#&gt; [1] "   acCenDe la CANdela     e dIce    buooooona sera.  "
+str_trim(gatta)
+#&gt; [1] "acCenDe la CANdela     e dIce    buooooona sera."
+str_squish(gatta)
+#&gt; [1] "acCenDe la CANdela e dIce buooooona sera."
+```
+
+---
+
+name: snake
+
+
+.center[
+&lt;img src="../images/coding_cases.png" width="80%" /&gt;
+]
+
+
+```r
+str_to_upper(gatta)
+#&gt; [1] "   ACCENDE LA CANDELA     E DICE    BUOOOOONA SERA.  "
+str_to_lower(gatta)
+#&gt; [1] "   accende la candela     e dice    buooooona sera.  "
+str_to_title(gatta)
+#&gt; [1] "   Accende La Candela     E Dice    Buooooona Sera.  "
+str_to_sentence(gatta)
+#&gt; [1] "   Accende la candela     e dice    buooooona sera.  "
+```
+
+---
+
+name: you-2
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+Come possiamo eliminare gli spazi in eccesso nella stringa:
+
+
+```r
+s &lt;- "  Espressioni  Regolari  "
+```
+
+
+.pull-left[
+
+A. `str_squish(s)`
+
+B. `str_trim(s)`
+
+]
+
+.pull-right[
+
+C. `str_replace(s, " ", "")`
+
+D. `str_replace_all(s, " ", "")`
+
+]
+]
+.right[
+<div class="countdown" id="timer_6166b0b7" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+]
+
+
+---
+
+name: you-3
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+Cosa restituisce la seguente istruzione?
+
+
+```r
+library(stringr)
+
+str_to_lower("BMI-Score")
+#&gt; [1] "bmi-score"
+```
+
+
+.pull-left[
+
+A. "bMI-Score"
+
+B. "bmi-score"
+
+]
+
+.pull-right[
+
+C. "bmi_score"
+
+D. Un errore per la presenza di un carattere non alfabetico.
+
+]
+]
+.right[
+<div class="countdown" id="timer_6166b17e" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+]
+
+
+---
+name: regexp-next
+class: inverse, middle, center
+
+# Espressioni regolari
+
+### Fine. (Esempi concreti in tutto il seguito)
+
+### Prossimo argomento: [{unheadr}](04-unheadr.html) 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
