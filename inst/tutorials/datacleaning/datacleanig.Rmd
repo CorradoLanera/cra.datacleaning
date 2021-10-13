@@ -1,0 +1,461 @@
+---
+title: "Data Cleaning per la Ricerca Clinica"
+subtitle: "Verifiche formative rapide"
+description: "Tutorial per sperimentarsi sull'utilizzo degli strumenti descritti durante il corso _**Data cleaning per la ricerca clinica**_ per una corretta e completa importazione di basi di dati in R da fonti esterne (principalmente file `.csv` o fogli Excel)."
+author: "Corrado Lanera"
+output:
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+library(tidyverse)
+
+knitr::opts_chunk$set(echo = FALSE)
+gradethis::gradethis_setup(
+    pass.praise = TRUE,
+    fail.encourage = TRUE,
+    fail.hint = TRUE
+)
+```
+
+
+
+## Importazione
+
+Rispondi alle seguenti domande.
+
+### Dati mancanti
+
+```{r missing}
+quiz(caption = "Come segnalare alle funzioni di import come sono codificati nel file sorgente i dati mancanti.",
+  question('
+Se tra le celle di un file Excel troviamo sia campi vuoti che alcuni riempiti con il simbolo `-`, cosa (se) dobbiamo passare all\'argomento
+riportato qui sotto con `___` per fare in modo che entrambi vengano correttamente importati come `NA`?
+
+ ```r
+library(tidyverse)
+library(readxl)
+
+db <- read_excel("<path/to/file.xlsx>", na = ___)
+ ```
+
+
+',
+           
+    answer('`c("", "-")`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`c("-")`',
+           message = "Attribuendo un valore di al paramentro `na = ` sostituiamo, e non _aggiungiamo_, quanto definizmo noi al/ai valori già presenti di default per tale argomento."),
+    
+    answer('Nulla, va bene il/i valore/i di default',
+           message = 'Il valore di default è il campo vuoto, che lo rappresentiamo con una stringa vuota: `""`'),
+    
+    answer('`NA`',
+           message = "`NA` è il valore che vogliamo inserire per codificare i dati mancanti, non quello che 'leggiamo' nei dati sorgente"),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+### Righe e colonne mancanti
+
+< da aggiungere in futuro >
+
+
+
+
+### Uniformità nomi colonne
+
+< da aggiungere in futuro >
+
+
+
+## Espressioni regolari
+
+Rispondi alle seguenti domande.
+
+
+### Carattere Jolly
+
+```{r jolly}
+quiz(caption = "Il punto `.` nelle espressioni regolari rappresenta un generico carattere, ma come lo sfruttiamo e come si differenzia tra l\'espressione e il testo?",
+  question('Che stringa restituisce la chiamata seguente?
+
+  ```r
+  library(stringr)
+  
+  str_replace("pun.to", ".", "o")
+  ```
+',
+           
+    answer('"oun.to"',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('"punoto"',
+           message = "Il punto nell'espressione regolare è un giolli che rappresenta un carattere qualsiasi e non un 'vero' punto, se vuoi cercare un 'vero' punto, devi anteporre, nell'espressione regolare un backslash (in R quindi due), per esempio: `str_replace(\"pun.to\", \"\\\\.\", \"o\")`"),
+    
+    answer('"oooooo"',
+           message = '`str_replace` trova solo la prima occorrenza che soddisfa il pattern descritto dall\'espressione regolare, e non tutte.'),
+    
+    answer('"pun.t."',
+           message = "Il secondo argomento di `str_replace` è il pattern e il terzo la stringa da usare per sostiuire la porzione corrispondente a quella descritta dall'espressione regolare; non viceversa."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+### Scorciatoie
+
+```{r scorciatoie}
+quiz(caption = "Nel pacchetto `{stringr}` sono presenti numerose funzioni utili come scorciatoie per non scrivere ogni volta (rischiando quindi anche di sbagliare) espressioni regolari complesse ma per assolvere compiti comuni. Vediamone qualcuna.",
+  question('Come possiamo eliminare gli spazi in eccesso nella stringa:
+
+  ```r
+  s <- "  Espressioni  Regolari  "
+  
+  ```
+',
+           
+    answer('`str_squish(s)`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`str_trim(s)`',
+           message = "`str_trim` elimina solo gli spazi all'inizio e alla fine, non anche quelli in eccesso ridondanti in mezzo al testo"),
+    
+    answer('`str_replace(s, " ", "")`',
+           message = 'In questo modo eliminiamo solo (e sempre) il primo spazio (se presente), potrebbe non essere uno spazio ridondante né superfluo.'),
+    
+    answer('`str_replace_all(s, " ", "")`',
+           message = "In questo modo eliminiamo tutti gli spazi presenti nella stringa, indipendentemente dal fatto che siano o meno ridondanti."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+## `{unheadr}`
+
+Rispondi alle seguenti domande.
+
+### Intestazioni
+
+```{r header}
+quiz(caption = "Nel pacchetto `{unheadr}` sono presenti funzioni utili per \"aggiustare\" problematiche legate alle intestazioni (raggruppate o spezzate su più righe).",
+  question('Come possiamo importare correttamente la seguente tabella?
+
+  ID | Peso | Altezza
+  ---|------|--------
+     | (KG) | (KG)
+  1  |    70| 170
+  2  |    80| 180
+
+
+',
+           
+    answer('`read_xlsx("test.xlsx") |> mash_colnames(1)`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`read_xlsx("test.xlsx") |> mash_colnames(2)`',
+           message = "La riga di intestazione non viene contata da `mash_colnames` tra quelle da comprimere (anche se viene compressa anch'essa)"),
+    
+    answer('`read_xlsx("test.xlsx") |> unbreak_vals("\\(", B) |> unbreak_vals("\\(", C)`',
+           message = 'Facendo collassare i valori collassiamo una colonna per volta, mettendo a `NA` tutto il resto.'),
+    
+    answer('`read_xlsx("test.xlsx", skip=1)`',
+           message = "se evitiamo di importare la prima riga, non possiamo più utilizzarla."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+
+### Valori spezzati e raggruppati
+
+```{r valori}
+quiz(caption = "Nel pacchetto `{unheadr}` sono presenti funzioni utili per \"aggiustare\" anche problematiche legate ai dati (raggruppati tra le righe o con valori spezzati tra più righe).",
+  question('Come possiamo riattaccare i valori "very" e "bed" nella seguente tabella (ipotizzando sia memorizzata in una variabile `df`)?
+
+  A     |  B
+  ------|-----
+  "good"| 1
+  "bad" | 2
+  "very"| 3
+  "bad" | NA
+
+',
+           
+    answer('`unbreak_rows(df, "very", A)`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`unbreak_rows(df, "very", "A")`',
+           message = "La colonna identificata accetta solo la notazione senza virgolette"),
+    
+    answer('`unbreak_rows(df, "bad", A)`',
+           message = '`unbreak_rows` riunisce valori spezzatti a partire dalle righe identificate dall\'espressione regolare a scendere.'),
+    
+    answer('`unbreak_vals(df, "bad", A, AA)`',
+           message = "In questo modo riattacchiamo ai valori della riga superiore tute le righe che contengono \"bad\" nella colonna identificata"),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  question('Come possiamo riattaccare i valori delle misure con le loro unità (ipotizzando sia memorizzata in una variabile `df`)?
+
+  ID |Peso| Altezza
+  ---|----|--------
+  1  |"70"| "170"
+  NA |"kg"| "cm"
+  2  |"80"| "180"
+  NA |"kg"| "cm"
+
+
+',
+           
+    answer('`unbreak_rows(df, "^[0-9]", Peso)`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`unbreak_vals(df, "^[a-z]", Peso, Peso_fixed)`',
+           message = "Facendo risalre solo il valore, le unità relartive all\'altezza si perdono."),
+    
+    answer('`unbreak_rows(df, "^[a-z]", Peso)`',
+           message = '`unbreak_rows` identifica la prima riga da cui partire per l\'unione delle celle.'),
+    
+    answer('`unbreak_rows(df, "kg", "Peso")`',
+           message = "La colonna identificata va riportata solo senza virgolette."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+    question('Come possiamo riattaccare i valori dei pazienti con i loro ID (ipotizzando sia memorizzata in una variabile `df`)?
+
+  ID         |Peso|Altezza
+  -----------|----|-------
+  "1a"       |"70"|"170"  
+  "(Judy)"   |NA  |NA     
+  "b2"       |"80"|"180"
+  "(Mark)"   |NA  |NA   
+  "3c (jade)"|"90"|"190"
+  
+
+',
+           
+    answer('`unbreak_vals(df, "^\\(", ID, id_name)`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`unbreak_vals(df, "^[a-zA-Z0-9]", ID, id_name)`',
+           message = "In questo modo vengono alzate tutte le righe qui riportate in posizione dispari (prima terza e quinta) su quella superiore (non presente per la prima riga)"),
+    
+    answer('`unbreak_rows(df, "^[a-zA-Z0-9]", ID)`',
+           message = '`L\'ultima cella riporta un numero iniziale nella colonna identificata e quindi si sta chiedendo in questo modo di unirla alla riga sottostante... che noon c\'è.'),
+    
+    answer('`unbreak_vals(df, "^[a-zA-Z]", ID, id_name)`',
+           message = "`unbreak_vals` identifica la parte terminale dei valori spezzati, non quella nella prima riga di questi."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+    question('Come possiamo rendere espliciti i raggruppamenti effettuati tra i dati della seguente tabella (ipotizzando sia memorizzata in una variabile `df`)?
+
+  ID           |Peso | Altezza
+  -------------|-----|--------
+  "Placebo"    |NA   |NA
+  "1"          |"60" |"160"
+  "2"          |"70" |"170"
+  "Trattamento"|NA   |NA
+  "1"          |"80" |"180"
+  "2"          |"90" |"190"
+
+
+',
+           
+    answer('`unbreak_vals(d`',
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer('`unbreak_rows(df, "Placebo|Trattamento", ID)`',
+           message = "In questo modo solleviamo i valori del primo paziente sotto al gruppo a riempire le celle mancanti superiori, noi vogliamo eliminare i gruppi così riportati e metterli in una loro propria colonna."),
+    
+    answer('`unbreak_vals(df, "Placebo|Trattamento", ID, Braccio)`',
+           message = 'I nomi dei gruppi non sono spezzati su più righe, ma ci sono più gruppi ciascuno riportato in una riga in mezzo ai dati, noi vogliamo eliminare i gruppi così riportati e metterli in una loro propria colonna.'),
+    
+    answer('`untangle2(df, "^[0-9]", ID, "Braccio")`',
+           message = "I numeri rappresentano gli id dei pazienti in ciascun gruppo, e non i gruppi in cui sono suddivisi."),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+## Tidy data
+
+Rispondi alle seguenti domande.
+
+
+< da aggiungere in futuro >
+
+## Numeri
+
+Rispondi alle seguenti domande.
+
+< da aggiungere in futuro >
+
+### A
+
+```{r numbers}
+quiz(caption = "XXX-quiz",
+  question("q",
+           
+    answer("a",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("b",
+           message = ""),
+    
+    answer("c",
+           message = ""),
+    
+    answer("d",
+           message = ""),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+
+
+### Ce l'hai fatta!!!
+
+###
+
+Hai risposto a tutto e quindi ora padroneggi:
+
+- a
+
+- b
+
+- c
+  
+
+Congratulazioni!!
+  
+
+Grazie mille per aver partecipato a questo corso!
+
+___\@CorradoLanera___
+
+
+
+
+
+
+```{r quiz-template, eval=FALSE, include=FALSE}
+quiz(caption = "XXX-quiz",
+  question("q",
+           
+    answer("a",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("b",
+           message = ""),
+    
+    answer("c",
+           message = ""),
+    
+    answer("d",
+           message = ""),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+<!-- * Submit `1+1` to receive a correct grade. -->
+<!-- ```{r ex-template-code, include = FALSE, exercise = TRUE, eval=FALSE, exercise.lines = 3} -->
+
+<!-- ``` -->
+
+
+```{r ex-template-code-hint-1, eval=FALSE, include = FALSE}
+# start typing
+1
+```
+
+```{r ex-template-code-hint-2, eval=FALSE, include = FALSE}
+# next
+1 + 
+```
+
+```{r ex-template-code-solution, eval=FALSE, include = FALSE}
+1 + 1
+```
+
+
+```{r ex-template-check, eval=FALSE, include=FALSE}
+grade_result(pass_if(~{
+  ref <- 2
+  identical(.result, ref)
+  
+}), incorrect = "Wrong answer.")
+```
+
+
+
+
+
+
+
+<!-- ```{r blank, exercise = TRUE, exercise.blanks = "___+", eval = FALSE, include = FALSE} -->
+<!-- 1 + ____ -->
+<!-- ``` -->
+
+
+
+```{r blank-solution, eval = FALSE, include = FALSE}
+1 + 3
+```
+
+```{r blank-code-check, eval = FALSE, include = FALSE}
+grade_code()
+```
+

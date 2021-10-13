@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data Cleaning per la Ricerca Clinica</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="CorradoLanera" />
+    <script src="04-unheadr_files/header-attrs-2.11/header-attrs.js"></script>
+    <link href="04-unheadr_files/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link href="04-unheadr_files/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <link href="04-unheadr_files/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="04-unheadr_files/panelset-0.2.6/panelset.js"></script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xed44c0ce07c40d291a034d9573cd66d","expires":14}</script>
+    <script src="04-unheadr_files/himalaya-1.1.0/himalaya.js"></script>
+    <script src="04-unheadr_files/js-cookie-3.0.0/js.cookie.js"></script>
+    <link href="04-unheadr_files/editable-0.2.6/editable.css" rel="stylesheet" />
+    <script src="04-unheadr_files/editable-0.2.6/editable.js"></script>
+    <script src="04-unheadr_files/xaringanExtra-webcam-0.0.1/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <script src="04-unheadr_files/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="04-unheadr_files/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="04-unheadr_files/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="04-unheadr_files/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="04-unheadr_files/shareon-1.4.1/shareon.min.js"></script>
+    <link href="04-unheadr_files/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="04-unheadr_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <script src="04-unheadr_files/freezeframe-5.0.2/freezeframe.min.js"></script>
+    <script src="04-unheadr_files/xaringanExtra-freezeframe-0.0.1/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <link href="04-unheadr_files/countdown-0.3.5/countdown.css" rel="stylesheet" />
+    <script src="04-unheadr_files/countdown-0.3.5/countdown.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+name: unheadr-intro
+class: inverse, middle, center
+
+# {unheadr}
+
+### Tipi di metadati
+
+
+
+
+
+
+
+
+
+
+
+---
+name: overview
+
+## Metadati
+
+.pull-left[
+- nomi delle colonne
+- disposizione di celle multiple di una medesima informazione (es: **nomi colonne su più righe**)
+- raggruppamenti tra le colonne (es: **tempi di raccolta delle medesime variabili**)
+
+&lt;br&gt;
+
+- raggruppamenti tra le righe (es: **separazione dei pazienti in categorie**)
+]
+
+.pull-right[.center[
+&lt;img src="../images/messy_headers.jpg" width="80%" /&gt;
+
+&lt;img src="../images/messy_groups.jpg" width="80%" /&gt;
+]]
+
+
+
+---
+
+name: intestazioni
+
+## Intestazioni
+
+- Pieno controllo delle intestazioni --&gt; rendiamole **_dati_**!!
+
+```r
+library(tidyverse)
+library(readxl)
+
+read_excel(&lt;...&gt;,
+*  col_names = FALSE
+)
+```
+
+
+---
+name: mash
+
+## {unheadr} Intestazioni raggruppate e frammentate
+
+- `mash_colnames`:
+  - numero di righe da unire (`n_name_rows`)
+  - inclusione o meno delle intestazioni originali (`keep_names = TRUE`)
+  - Ripristino struttura tabellare prima riga di "raggruppamento" (`sliding_headers = FALSE`)
+
+.center[
+&lt;img src="../images/messy_headers.jpg" width="80%" /&gt;
+]
+
+
+---
+
+name: me
+class: center middle inverse
+
+
+# Vediamolo dal vivo!
+
+`04_ex-unheadr-headers.R`
+
+
+
+
+
+
+
+---
+name: unbreak
+
+## {unheadr} valori spezzati
+
+- `unbreak_vals`:
+  - un valore su due celle consecutive della stessa colonna (**`ogcol`**)
+  - match con la parte finale del/i valore/i spazzato/i (**`regex`**)
+  - necessario assegnare un nuovo nome alla colonna!! (**`newcol`**)
+  - Unisce i valori di quella colonna (**`sep = " "`**) tutto il resto della riga è (comunque considerata) `NA`
+
+- `unbreak_rows`:
+  - una riga "doppia" con i campi riportati su celle consecutive delle stesse colonne (**`ogcol`**)
+  - match con la parte iniziale del/i valore/i spazzato/i (**regex**)
+  - è sufficiente presentare una sola colonna utile a stabilire da quali righe partire
+  - la riga viene "unita" a quella sottostante (**`sep = " "`**)
+
+.center[
+&lt;img src="../images/messy_groups.jpg" width="80%" /&gt;
+]
+
+---
+
+## Argomenti `unbreak_*` 
+
+&gt; - `regex`: espressione regolare per trovare le righe di riferimento da "unire"
+
+&gt; - `ogcol`: colonna originale di riferimento
+
+&gt; - `newcol`: **solo per valori di una sola variabile**, nome della nuova variabile
+
+&gt; - `sep = " " `: separatore tra i valori uniti
+
+---
+
+name: you
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+
+.pull-left[
+Come importeresti il seguente dataset `test.xlsx`?
+]
+.pull-right[
+
+|ID |Peso |Altezza |
+|:--|:----|:-------|
+|   |(KG) |(KG)    |
+|1  |70   |170     |
+|2  |80   |180     |
+]
+
+.pull-left[
+
+A.
+
+`read_xlsx("test.xlsx") |&gt; mash_colnames(1)`
+
+B.
+
+`read_xlsx("test.xlsx") |&gt; mash_colnames(2)`
+
+]
+
+.pull-right[
+
+C.
+
+`read_xlsx("test.xlsx") |&gt; unbreak_vals("\\(", B) |&gt; unbreak_vals("\\(", C)`
+
+D. 
+
+`read_xlsx("test.xlsx", skip=1)`
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+]
+]
+
+
+.right[
+<div class="countdown" id="timer_6166b5d5" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+]
+
+
+---
+
+name: me
+class: center middle inverse
+
+
+# Vediamolo da vivo!
+
+`04_ex-unheadr-mash.R` ("mash")
+
+
+---
+
+name: you-2
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+
+.pull-left[
+Come possiamo riattaccare i valori "very" e "bed" nella seguente tabella (ipotizzando sia memorizzata in una variabile `df`)?
+]
+.pull-rigth[
+
+|A    |  B|
+|:----|--:|
+|good |  1|
+|bad  |  2|
+|very |  3|
+|bad  | NA|
+]
+
+.pull-left[
+
+A.
+
+`unbreak_rows(df, "very", "A")`
+
+B.
+
+`unbreak_rows(df, "very", A)`
+
+]
+
+.pull-right[
+
+C.
+
+`unbreak_rows(df, "bad", A)`
+
+D. 
+
+`unbreak_vals(df, "bad", A, AA)`
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+]
+]
+
+
+.right[
+<div class="countdown" id="timer_6166b640" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+]
+
+---
+
+name: you-3
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+
+.pull-left[
+Come possiamo riattaccare i valori delle misure con le loro unità (ipotizzando sia memorizzata in una variabile `df`)?
+]
+
+.pull-right[
+
+| ID|Peso |Altezza |
+|--:|:----|:-------|
+|  1|70   |170     |
+| NA|kg   |cm      |
+|  2|80   |180     |
+| NA|kg   |cm      |
+]
+
+.pull-left[
+
+A.
+
+`unbreak_vals(df, "^[a-z]", Peso, Peso_fixed)`
+
+B.
+
+`unbreak_rows(df, "^[0-9]", Peso)`
+
+]
+
+.pull-right[
+
+C.
+
+`unbreak_rows(df, "^[a-z]", Peso)`
+
+D. 
+
+`unbreak_rows(df, "kg", "Peso")`
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+]
+]
+
+
+.right[
+<div class="countdown" id="timer_6166b441" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+]
+
+
+---
+
+name: you-4
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+
+.pull-left[
+Come possiamo riattaccare i valori dei pazienti con i loro ID (ipotizzando sia memorizzata in una variabile `df`)?
+]
+
+.pull-right[
+
+|ID        |Peso |Altezza |
+|:---------|:----|:-------|
+|1a        |70   |170     |
+|(Judy)    |NA   |NA      |
+|b2        |80   |180     |
+|(Mark)    |NA   |NA      |
+|3c (jade) |90   |190     |
+]
+
+.pull-left[
+
+A.
+
+`unbreak_vals(df, "^\\(", ID, id_name)`
+
+B.
+
+`unbreak_vals(df, "^[a-zA-Z0-9]", ID, id_name)`
+
+]
+
+.pull-right[
+
+C.
+
+`unbreak_rows(df, "^[a-zA-Z0-9]", ID)`
+
+D. 
+
+`unbreak_vals(df, "^[a-zA-Z]", ID, id_name)`
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+]
+]
+
+
+.right[
+<div class="countdown" id="timer_6166b750" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+]
+
+
+---
+
+name: me
+class: center middle inverse
+
+
+# Vediamolo da vivo!
+
+`04_ex-unheadr-mash.R` ("unbreak")
+
+
+
+---
+name: groups
+
+## {unheadr} valori raggruppati
+
+Presenti in una colonna le categorie di raggruppamento dei pazienti (es.
+Trattamento e Controllo)
+
+- `untangle2`:
+  - identifichiamo i gruppi con una espressione regolare (**`regex`**)
+  - identifichiamo la colonna in cui troviamo i gruppi (**`orig`**)
+  - definiamo il nome della colonna in cui metteremo i gruppi (**`new`**)
+
+
+.pull-left[
+&lt;img src="../images/messy_groups.jpg" width="80%" /&gt;
+]
+
+--
+
+.pull-right[
+&gt; Tutti gli altri valori della riga vengono scartati
+
+&gt; Ricordiamo le "alternative" esplicite formate con `|`
+]
+
+
+
+
+---
+name: you-5
+class: center middle inverse
+
+# Tocca a te
+
+.left[
+
+.pull-left[
+Come possiamo rendere espliciti i raggruppamenti effettuati tra i dati della seguente tabella (ipotizzando sia memorizzata in una variabile `df`)?
+]
+
+.pull-right[
+
+|ID          |Peso |Altezza |
+|:-----------|:----|:-------|
+|Placebo     |NA   |NA      |
+|1           |60   |160     |
+|2           |70   |170     |
+|Trattamento |NA   |NA      |
+|1           |80   |180     |
+|2           |90   |190     |
+]
+
+.pull-left[
+
+A.
+
+`unbreak_rows(df, "Placebo|Trattamento", ID)`
+
+B.
+
+`unbreak_vals(df, "Placebo|Trattamento", ID, Braccio)`
+
+]
+
+.pull-right[
+
+C.
+
+`untangle2(df, "^[^0-9]", ID, "Braccio")`
+
+D. 
+`untangle2(df, "^[0-9]", ID, "Braccio")`
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+]
+]
+
+
+.right[
+<div class="countdown" id="timer_6166b4d8" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+]
+
+
+
+
+
+
+
+
+
+
+---
+name: unheadr-next
+class: inverse, middle, center
+
+# {unheadr}
+
+### Fine.
+
+### Prossimo argomento: [Tidy data](05-tidy.html) 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

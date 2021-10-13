@@ -1,0 +1,158 @@
+---
+title: "Data Cleaning per la Ricerca Clinica"
+subtitle: "Clinical Research Academy"
+author: "[CorradoLanera](www.CorradoLanera.it)"
+date: "2021-10-13 (last update: `r Sys.Date()`)"
+output: 
+  xaringan::moon_reader:
+    seal: false  # no title slide! Do It Yourself
+    nature:
+      highlightStyle: github
+      highlightLines: true
+    css: xaringan-themer.css
+---
+name: tidy-intro
+class: inverse, middle, center
+
+# Materiale aggiuntivo
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  fig.retina = 3,
+  warning = FALSE,
+  message = FALSE,
+  comment = ""
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+red <- "#f34213"
+purple <- "#3e2f5b"
+orange <- "#ff8811"
+green <- "#136f63"
+white <- "#FFFFFF"
+
+pastel_orange <- "#F97B64"
+blu_gray <- "#1F4257"
+
+style_duo_accent(
+    # primary_color = pastel_orange
+    # secondary_color = purple,
+    colors = c(
+        red = red,
+        purple = purple,
+        orange = orange,
+        green = green,
+        white = white,
+        pastel_orange = pastel_orange,
+        blu_gray = blu_gray
+    )
+)
+```
+
+```{r xaringanExtra, include=FALSE}
+xaringanExtra::use_xaringan_extra(c(
+  "tileview",
+  "animate_css",
+  "tachyons",
+  "editable",
+  "panelset",
+  "webcam",
+  "clipboard",
+  "freezeframe",
+  "share_again"
+))
+```
+
+```{r countdown, echo = FALSE, include = FALSE}
+library(countdown)
+# countdown(minutes = 0, seconds = 15)
+```
+
+
+---
+
+
+### Materiale (tutto)
+
+[www.cra-datacleaning.netlify.app](www.cra-datacleaning.netlify.app)
+
+
+-- 
+
+### Esercizi e soluzioni proposte
+
+```{r, eval = FALSE}
+# install.packages("usethis")
+usethis::use_course("CorradoLanera/cra.datacleaning/web/esercizi")
+
+```
+
+--
+
+### RStudio cloud
+
+[https://bit.ly/datacleaning-cra](https://bit.ly/datacleaning-cra)
+
+
+--
+
+### Pacchetto con tutorial
+
+```{r, eval = FALSE}
+# install.packages("remotes")
+
+remotes::install_github("CorradoLanera/cra.datacleaning")
+
+```
+
+
+> esercizio completo: `caso-studio-completo.R`
+
+> soluzione completa proposta:
+ `soluzioni/soluzione_caso-studio-completo.R`
+
+
+
+--- 
+
+class: inverse, bottom, right
+
+
+# Grazie pepr l'attenzione e congratulazioni!
+
+---
+name: whoami
+class: inverse, bottom, right
+
+
+
+```{r, echo=FALSE, out.width = "40%"}
+knitr::include_graphics("../images/profilo_CL.jpg")
+```
+
+# Dove trovarmi...
+
+
+[`r fontawesome::fa("link")`](https://www.unipd-ubep.it/) [**www.unipd-ubep.it**](https://www.unipd-ubep.it/)
+
+[`r fontawesome::fa("link")`](https://www.CorradoLanera.it) [**www.CorradoLanera.it**](https://www.CorradoLanera.it)
+
+[`r fontawesome::fa("mail-bulk")`](mailto:Corrado.Lanera@ubep.unipd.it) [**Corrado.Lanera@ubep.unipd.it**](mailto:Corrado.Lanera@ubep.unipd.it)
+
+[`r fontawesome::fa("mail-bulk")`](mailto:Corrado.Lanera@gmail.com) [**Corrado.Lanera@gmail.com**](mailto:Corrado.Lanera@gmail.com)
+
+[`r fontawesome::fa("github")`](https://github.com/corradolanera)
+[`r fontawesome::fa("twitter")`](https://twitter.com/corradolanera)
+[`r fontawesome::fa("telegram-plane")`](https://telegram.me/CorradoLanera)
+**@CorradoLanera**
+
+[`r fontawesome::fa("telegram-plane")`](https://telegram.me/puffrbacco)
+[**puffRbacco**](https://telegram.me/puffrbacco)
+
+[`r fontawesome::fa("calendar-check")` ](https://calendly.com/corradolanera) [**calendly.com/corradolanera**](https://calendly.com/corradolanera)
+

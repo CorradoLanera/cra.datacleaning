@@ -1,0 +1,26 @@
+Package: cra.datacleaning
+Title: Data Cleaning per la Ricerca Clinica
+Version: 0.0.0.9000
+Authors@R: 
+    person("Corrado", "Lanera", , "corrado.lanera@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-0520-7428"))
+Description: Provides the materials for the "Data Cleaning per la Ricerca
+    Clinica" course.Provides the materials for the "Data Cleaning per la
+    Ricerca Clinica" course.
+License: MIT + file LICENSE
+Imports: 
+    dplyr,
+    gradethis,
+    here,
+    janitor,
+    learnr,
+    purrr,
+    readr,
+    readxl,
+    stringr,
+    tidyr,
+    unheadr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2

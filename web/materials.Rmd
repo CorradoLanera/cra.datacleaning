@@ -1,0 +1,97 @@
+---
+title: "Materiale"
+description: |
+  Qui puoi trovare tutto il materiale utile per il corso.
+output: 
+  distill::distill_article:
+    toc: true
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c(
+    "panelset", "clipboard"
+))
+```
+
+## Ambiente di lavoro remoto {#rs-cloud}
+
++ [RStudio Cloud workspace](https://bit.ly/datacleaning-cra)
+
+<aside>
+Il link allo spazio di lavoro [RStudio Cloud](https://rstudio.cloud/) sarà attivo durante il corso.
+</aside>
+
+
+## Materiale
+
+
+<aside>
+Il materiale sarà reso disponibile dal giorno del corso.
+</aside>
+
+
+### Slides
+
+
+#### [Introduzione](slides/01-introduzione.html)
+
+```{r embed-intro, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/01-introduzione.html")
+```
+
+#### [Importazione](slides/02-importazione.html)
+
+```{r embed-import, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/02-importazione.html")
+```
+
+#### [Espressioni Regolari](slides/03-regexp.html)
+
+```{r embed-regexp, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/03-regexp.html")
+```
+
+#### [{unheadr}](slides/04-unheadr.html)
+
+```{r embed-unheadr, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/04-unheadr.html")
+```
+
+
+#### [Tidy data](slides/05-tidy.html)
+
+```{r embed-tidy, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/05-tidy.html")
+```
+
+#### [Outro](slides/07-outro.html)
+
+```{r embed-outro, echo=FALSE}
+xaringanExtra::embed_xaringan("slides/07-outro.html")
+```
+
+
+### Sfide
+
++ [02: Importazione](esercizi/02_ex-importazione.R)
++ [04a: Intestazioni raggruppate e spezzate](esercizi/04a_ex-unheadr-headers.R)
++ [04b: Valori e osservazioni raggruppate e spezzate](esercizi/04b_ex-unheadr-mash.R)
++ [05: Tidy data](esercizi/05_ex-tidy.R)
+
+
++ [Caso studio completo](esercizi/caso-studio-completo.R)
+
+### Soluzioni proposte
+
++ [02: Importazione](esercizi/soluzioni/02_sol-importazione.R)
++ [04a: Intestazioni raggruppate e spezzate](esercizi/soluzioni/04a_sol-unheadr-headers.R)
++ [04b: Valori e osservazioni raggruppate e spezzate](esercizi/soluzioni/04b_sol-unheadr-mash.R)
++ [05: Tidy data](esercizi/soluzioni/05_sol-tidy.R)
+
++ [Caso studio completo](esercizi/soluzioni/soluzione_caso-studio-completo.R)
